@@ -74,38 +74,23 @@
           // $db         = "the_pa";
 
           // $conn       = mysqli_connect($servername, $username, $password, $db);
-          include '1koneksidb.php';
+          // include '1koneksidb.php';
           
-          $sql = "SELECT id_ova, nama_univ FROM overall";
-          $result = $conn->query($sql);
+          // $sql = "SELECT id_ova, nama_univ FROM overall";
+          // $result = $conn->query($sql);
               // Create connection
               
               // Check connection
-          if (!$conn) {
-            die("<H1>Connection failed: " . mysqli_connect_error() . "</H1>");
-          }
+          // if (!$conn) {
+          //   die("<H1>Connection failed: " . mysqli_connect_error() . "</H1>");
+          // }
           ?>
           <th width="300px">
             <!-- <form method='POST' action="fetch_uni_name.php" > -->
 
-              <select class="form-control" id="" onchange="fetchUniversityData(this.value)">
-                <option value="0">--Select universities </option>
-                <?php
-              
-              if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                  echo "<option value='" . $row['id_ova'] . "'>" . $row['nama_univ'] . "</option>";
-                }
-              } else {
-                echo "<option value='0'>No universities found</option>";
-              }
-              ?>
-              <!-- <input type="submit"> -->
-            </select>
+            <input type="text" class="form-control" id="searchInput" placeholder="Search universities..." onkeyup="fetchUniversityData(this.value)">
+
           <!-- </form> -->
-
-
-
 
           </th>
           <?php 
@@ -115,35 +100,34 @@
           // $db         = "the_pa";
 
           // $conn       = mysqli_connect($servername, $username, $password, $db);
-          include '1koneksidb.php';
+          // include '1koneksidb.php';
           
-          $sql = "SELECT id_ova, nama_univ FROM overall";
-          $result = $conn->query($sql);
+          // $sql = "SELECT id_ova, nama_univ FROM overall";
+          // $result = $conn->query($sql);
               // Create connection
               
               // Check connection
-          if (!$conn) {
-            die("<H1>Connection failed: " . mysqli_connect_error() . "</H1>");
-          }
-          ?>
+          // if (!$conn) {
+          //   die("<H1>Connection failed: " . mysqli_connect_error() . "</H1>");
+          // }
+          // ?>
           <th width="300px">
-          <select class="form-control" id="" onchange="fetchUniversityData2(this.value)">
-                <option value="0">--Select universities </option>
+          <input type="text" class="form-control" id="searchInput" placeholder="Search universities..." onkeyup="fetchUniversityData2(this.value)">
                 <?php
               
-              if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                  echo "<option value='" . $row['id_ova'] . "'>" . $row['nama_univ'] . "</option>";
-                }
-              } else {
-                echo "<option value='0'>No universities found</option>";
-              }
+              // if ($result->num_rows > 0) {
+              //   while($row = $result->fetch_assoc()) {
+              //     echo "<option value='" . $row['id_ova'] . "'>" . $row['nama_univ'] . "</option>";
+              //   }
+              // } else {
+              //   echo "<option value='0'>No universities found</option>";
+              // }
               ?>
               <!-- <input type="submit"> -->
-            </select>
+            <!-- </select> -->
           <!-- </form> -->
             <?php
-              $conn->close();
+              // $conn->close();
             ?>
           </th>
           <!-- ------------------------ -->

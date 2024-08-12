@@ -200,9 +200,9 @@
 
 
 
-function fetchUniversityData(universityId) {
-  if (universityId == 0) {
-      return;
+function fetchUniversityData(searchTerm) {
+  if (!searchTerm.trim()) {
+      return; // Don't proceed if the search term is empty
   }
 
   // Create a new XMLHttpRequest
@@ -213,28 +213,31 @@ function fetchUniversityData(universityId) {
   // Define what happens on successful data submission
   xhr.onload = function () {
       if (xhr.status == 200) {
-          var data = JSON.parse(xhr.responseText);
-          if (data) {
-              document.getElementById('univ2').innerHTML = data.nama_univ;
-              document.getElementById('lokasi2').innerHTML = data.lokasi;
-              document.getElementById('wrld_rank2').innerHTML = data.wrld_rank;
-              document.getElementById('teaching2').innerHTML = data.teaching;
-              document.getElementById('point2').innerHTML = data.teaching_points_needed;
-              document.getElementById('research2').innerHTML = data.research;
-              document.getElementById('citation2').innerHTML = data.citation;
-              document.getElementById('outlook2').innerHTML = data.int_outlook;
+          try {
+              var data = JSON.parse(xhr.responseText);
+              if (data) {
+                  document.getElementById('univ2').innerHTML = data.nama_univ;
+                  document.getElementById('lokasi2').innerHTML = data.lokasi;
+                  document.getElementById('wrld_rank2').innerHTML = data.wrld_rank;
+                  document.getElementById('teaching2').innerHTML = data.teaching;
+                  document.getElementById('point2').innerHTML = data.teaching_points_needed;
+                  document.getElementById('research2').innerHTML = data.research;
+                  document.getElementById('citation2').innerHTML = data.citation;
+                  document.getElementById('outlook2').innerHTML = data.int_outlook;
+              }
+          } catch (e) {
+              console.error("Error parsing JSON:", e);
           }
       }
   };
 
-  // Send the request with the university ID
-  xhr.send("id_ova=" + universityId);
+  // Send the request with the search term
+  xhr.send("search_term=" + encodeURIComponent(searchTerm));
 }
 
-
-function fetchUniversityData2(universityId) {
-  if (universityId == 0) {
-      return;
+function fetchUniversityData2(searchTerm) {
+  if (!searchTerm.trim()) {
+      return; // Don't proceed if the search term is empty
   }
 
   // Create a new XMLHttpRequest
@@ -245,23 +248,28 @@ function fetchUniversityData2(universityId) {
   // Define what happens on successful data submission
   xhr.onload = function () {
       if (xhr.status == 200) {
-          var data = JSON.parse(xhr.responseText);
-          if (data) {
-              document.getElementById('univ3').innerHTML = data.nama_univ;
-              document.getElementById('lokasi3').innerHTML = data.lokasi;
-              document.getElementById('wrld_rank3').innerHTML = data.wrld_rank;
-              document.getElementById('teaching3').innerHTML = data.teaching;
-              document.getElementById('point3').innerHTML = data.teaching_points_needed;
-              document.getElementById('research3').innerHTML = data.research;
-              document.getElementById('citation3').innerHTML = data.citation;
-              document.getElementById('outlook3').innerHTML = data.int_outlook;
+          try {
+              var data = JSON.parse(xhr.responseText);
+              if (data) {
+                  document.getElementById('univ3').innerHTML = data.nama_univ;
+                  document.getElementById('lokasi3').innerHTML = data.lokasi;
+                  document.getElementById('wrld_rank3').innerHTML = data.wrld_rank;
+                  document.getElementById('teaching3').innerHTML = data.teaching;
+                  document.getElementById('point3').innerHTML = data.teaching_points_needed;
+                  document.getElementById('research3').innerHTML = data.research;
+                  document.getElementById('citation3').innerHTML = data.citation;
+                  document.getElementById('outlook3').innerHTML = data.int_outlook;
+              }
+          } catch (e) {
+              console.error("Error parsing JSON:", e);
           }
       }
   };
 
-  // Send the request with the university ID
-  xhr.send("id_ova=" + universityId);
+  // Send the request with the search term
+  xhr.send("search_term=" + encodeURIComponent(searchTerm));
 }
+
 
 /////////////////////////////////////////
 // CHART FIXED
