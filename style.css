@@ -1,0 +1,109 @@
+/* Style untuk form login */
+form.loginForm {
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f7f7f7;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+form.loginForm input[type="text"],
+form.loginForm input[type="password"] {
+  width: 100%;
+  margin: 10px 0px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+form.loginForm input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Style untuk form signup */
+form.signupForm {
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f7f7f7;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+form.signupForm input[type="text"],
+form.signupForm input[type="password"] {
+  width: 100%;
+  margin: 10px 0px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+form.signupForm input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.teks-tengah {
+  width: 320px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+
+body {
+  background-color: wheat;
+  background-repeat: no-repeat;
+}
+.border {
+  border: #4caf50 solid;
+}
+
+.chartContainer {
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin:20px;
+}
+
+
+/* tr{
+  background-color: white;
+}
+
+tr:nth-child(even){
+  background-color: black;
+} */
+
+th {
+  position: sticky;
+  top: 0;
+  border: 1px solid #ddd;
+  background-color: #f2f2f2;
+  padding: 8px;
+}
+#lineChart {
+  
+}
+
+#chartTeaching {
+  
+}
