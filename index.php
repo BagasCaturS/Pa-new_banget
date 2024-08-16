@@ -44,7 +44,7 @@
             <a class="nav-link" href="index.php">Compare</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About us</a>
+            <a class="nav-link" href="about.php">About us</a>
           </li>
         </ul>
       </div>
@@ -58,80 +58,26 @@
         <tr class="bg-light">
           <th>Pilih Universitas</th>
           <th width="300px">
-            <!-- Original -->
-             <form method='POST' action="search.php">
 
+             <!-- <form method='POST' action="search.php">
                <input type="text" id="searchInput" placeholder="Search universities..." onkeyup="searchUniversities()">
                <div id="searchResults"></div>
-               <!-- end original -->
                 <input type="submit" value="Submit">
               </form>
-          </th>
-          <?php 
-          // $servername = "localhost";
-          // $username   = "root";
-          // $password   = "";
-          // $db         = "the_pa";
-
-          // $conn       = mysqli_connect($servername, $username, $password, $db);
-          // include '1koneksidb.php';
-          
-          // $sql = "SELECT id_ova, nama_univ FROM overall";
-          // $result = $conn->query($sql);
-              // Create connection
-              
-              // Check connection
-          // if (!$conn) {
-          //   die("<H1>Connection failed: " . mysqli_connect_error() . "</H1>");
-          // }
-          ?>
+          </th> -->
           <th width="300px">
-            <!-- <form method='POST' action="fetch_uni_name.php" > -->
-
-            <input type="text" class="form-control" id="searchInput" placeholder="Search universities..." onkeyup="fetchUniversityData(this.value)">
-
-          <!-- </form> -->
+            
+            <input type="text" class="form-control" id="searchInput" placeholder="Search universities..." onkeyup="searchAndUpdateChart(this.value)">
 
           </th>
-          <?php 
-          // $servername = "localhost";
-          // $username   = "root";
-          // $password   = "";
-          // $db         = "the_pa";
-
-          // $conn       = mysqli_connect($servername, $username, $password, $db);
-          // include '1koneksidb.php';
-          
-          // $sql = "SELECT id_ova, nama_univ FROM overall";
-          // $result = $conn->query($sql);
-              // Create connection
-              
-              // Check connection
-          // if (!$conn) {
-          //   die("<H1>Connection failed: " . mysqli_connect_error() . "</H1>");
-          // }
-          // ?>
           <th width="300px">
-          <input type="text" class="form-control" id="searchInput" placeholder="Search universities..." onkeyup="fetchUniversityData2(this.value)">
-                <?php
-              
-              // if ($result->num_rows > 0) {
-              //   while($row = $result->fetch_assoc()) {
-              //     echo "<option value='" . $row['id_ova'] . "'>" . $row['nama_univ'] . "</option>";
-              //   }
-              // } else {
-              //   echo "<option value='0'>No universities found</option>";
-              // }
-              ?>
-              <!-- <input type="submit"> -->
-            <!-- </select> -->
-          <!-- </form> -->
-            <?php
-              // $conn->close();
-            ?>
+          <input type="text" class="form-control" id="searchInput" placeholder="Search universities..." onkeyup="searchAndUpdateChart2(this.value)">
           </th>
           <!-- ------------------------ -->
-      
+          <input type="text" class="form-control" id="university1Input" onkeyup="searchAndUpdateChart2(this.value)" placeholder="Search for University 1...">
+          <input type="text" class="form-control" id="university2Input" onkeyup="searchAndUpdateChart2(this.value)" placeholder="Search for University 2...">
+          <input type="text" class="form-control" id="university3Input" placeholder="Search for University 3...">
+
           <!-- ------------------------ -->
         <tr>
           <th>Nama Universitas</th>
@@ -189,19 +135,11 @@
     <canvas id="chartTeaching"></canvas>
     <canvas id="lineChart"></canvas>
   </div>
-  <!-- Gimana cara gabung ada line chart dan bar chart pada sat ucanvas?-->
-  <!-- <canvas id="chartResearch"></canvas>
-  <canvas id="chartCitation"></canvas>
-  <canvas id="chartOutlook"></canvas>
-  <canvas id="overallChart"></canvas>
-
-  <canvas id="combinedChart"></canvas> -->
-  <!-- <div id="chartContainer" style="height: 300px; width: 100%;"></div> -->
+  
 
 
   <script src="src/universitas.js"></script>
   <script src="src/main.js" type=""></script>
-  <!-- <script src="src/main.js" type=""></script> -->
 </body>
 
 </html>

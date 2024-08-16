@@ -1,387 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <title>Index</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        border-radius: 10px;
+        border: 5px solid #000;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <title>Landing</title>
-  <style>
-        table {
-            margin-top: 20px;
-            border-collapse: collapse;
-            width: 100%;
-        }
+      th, td {
+        text-align: center;
+        padding: 8px;
+      }
 
-        table th,
-        table td {
-            padding: 8px;
-            text-align: left;
-            border: 1px solid black;
-        }
-        
-tr{
-  background-color: #D0B8A8;
-}
+      th {
+        background-color: #1f2937;
+        color: white;
+      }
 
+      td {
+        border: 1px solid #ddd;
+      }
 
-tr:nth-child(even){
-  background-color: #DFD3C3;
-}
+      tr:nth-child(even) {background-color: #f2f2f2;}
 
-
-th {
-  position: sticky;
-  top: 0;
-  border: 1px solid #ddd;
-  background-color: #8D493A;
-  color: white;
-  padding: 8px;
-}
-
+      tr:hover {background-color: #ddd;}
+      .pointer{
+        cursor: pointer;
+      }
     </style>
-</head>
-
-<!-- <body background="img/telkom-landmark.jpg"> -->
-    <body>
-        
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">My Logo</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="landing.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">Compare</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About us</a>
-          </li>
-        </ul>
+  </head>
+  <body>
+    <nav class="bg-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <img
+                class="h-8 w-8"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                alt="Logo"
+              />
+            </div>
+            <div
+              class="hidden md:-my-px md:ml-10 md:flex md:items-center md:grow-0"
+            >
+              <a
+                href="landing.php"
+                class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white bg-indigo-900 focus:outline-none focus:text-white focus:bg-indigo-700"
+              >
+                Home
+              </a>
+              <a
+                href="index.php"
+                class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700"
+              >
+                Compare
+              </a>
+              <a
+                href="index.php"
+                class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700"
+              >
+                About us
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+    </nav>
+
+    <div class="container mx-auto pt-6 text-center px-4 w-fit">
+      <h1 class="text-2xl font-bold">Selamat datang!</h1>   
+    <div class="container mx-auto items-center">    
+        <h3>Silahkan pilih parameter yang akan digunakan!</h3>
+        <div class="mt-5 border border-gray-300 rounded-lg p-4 ">
+            
+          <h2 class="text-lg font-semibold mb-2">Klik untuk melihat parameter yang tersedia</h2>
+          <?php
+            include '1koneksidb.php';
+            if (isset($_POST['submit'])) {
+                $selectedParameter = $_POST['parameter'];
+                echo "<h2 class='text-lg font-bold mb-2 uppercase '>$selectedParameter</h2>";
+            $conn->close();
+        }
+        ?> 
+          <div class="flex justify-center items-center">
+            <form action="landing.php" method="POST" class="w-1/2">
+              <select name="parameter" class="w-full mt-2 border border-gray-300 rounded-lg p-2">
+                <option value="research" name="research">Research</option>
+                <option value="citation" name="citation">Citation</option>
+                <option value="teaching" name="teaching">Teaching</option>
+                <option value="industry_income" name="industry_income">Industry Income</option>
+                <option value="international_outlook" name="international_outlook">International Outlook</option>
+                <option value="ova" name="ova">Overall Score</option>
+                <option value="campus_info" name="campus_info">Campus Info</option>
+              </select>
+              <input type="submit" value="Submit" name="submit" class="pointer mt-4 px-4 py-2 bg-indigo-800 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700">
+            </form>
+            
+          </div>   
+        </div>
     </div>
-  </nav>
-  <div class="container-fluid pt-3 text-center">
-    <h1>Selamat datang!</h1>
-  </div>
-  <!-- <div class="border"> -->
-  <div class="container mt-5">
-    <h3>Silahkan pilih parameter yang akan digunakan!</h3>
+      <?php
+      include '1koneksidb.php';
+        if (isset($_POST['submit'])) {
+            $selectedParameter = $_POST['parameter'];
+            if ($selectedParameter === "campus_info") {
+                $sql = "SELECT * FROM campus_info";
+                if ($sql !== "") {
+                    $result = $conn->query($sql);
     
+                    if ($result->num_rows > 0) {
+                        echo "<table>";
+                        echo "<tr>";
+                        echo "<th>ID</th>";
+                        echo "<th>World Rank</th>";
+                        echo "<th>Nama Universitas</th>";
+                        echo "<th>Lokasi</th>";
+                        echo "<th>tanggal</th>";
+                        echo "</tr>";
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row["id_info"] . "</td>";
+                            echo "<td>" . $row["wrld_rank"] . "</td>";
+                            echo "<td>" . $row["nama_univ"] . "</td>";
+                            echo "<td>" . $row["lokasi"] . "</td>";
+                            echo "<td>" . $row["tanggal"] . "</td>";
+                            echo "</tr>";
+                        }
+    
+                        echo "</table>";
+                    } else {
+                        echo "No data available.";
+                    }
+                }
+            }
+            elseif ($selectedParameter === "citation") {
+                $sql = "SELECT * FROM citation";
+                if ($sql !== "") {
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        echo "<table>";
+                        echo "<tr>";
+                        echo "<th>ID</th>";
+                        echo "<th>World Rank</th>";
+                        echo "<th>Nama Universitas</th>";
+                        echo "<th>Citation</th>";
+                        echo "<th>Rank Citation</th>";
+                        echo "</tr>";
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row["id_ctn"] . "</td>";
+                            echo "<td>" . $row["wrld_rank"] . "</td>";
+                            echo "<td>" . $row["nama_univ"] . "</td>";
+                            echo "<td>" . $row["citation"] . "</td>";
+                            echo "<td>" . $row["rank_ctn"] . "</td>";
+                            echo "</tr>";
+                        }
+                        echo "</table>";
+                    } else {
+                        echo "No data available.";
+                    }
+                }
+            }
+            elseif ($selectedParameter === "research") {
+                $sql = "SELECT * FROM research";
+                if ($sql !== "") {
+                    $result = $conn->query($sql);
+        
+                    if ($result->num_rows > 0) {
+                        echo "<table>";
+                        echo "<tr>";
+                        echo "<th>ID</th>";
+                        echo "<th>World Rank</th>";
+                        echo "<th>Nama Universitas</th>";
+                        echo "<th>Research</th>";
+                        echo "<th>Rank Research</th>";
+                        echo "</tr>";
+        
 
-    <div class="mt-5 dropdown">
-      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-        Klik untuk melihat parameter yang tersedia
-      </button>
-      <ul class="dropdown-menu">
-        <form action="landing.php" method="POST">
-          <select name="parameter" class="dropdown-item">
-            <option value="research" name="research">Research</option>
-            <option value="citation" name="citation">Citation</option>
-            <option value="teaching" name="teaching">Teaching</option>
-            <option value="industry_income" name="industry_income">Industry Income</option>
-            <option value="international_outlook" name="international_outlook">International Outlook</option>
-            <option value="ova" name="ova">Overall Score</option>
-            <option value="campus_info" name="campus_info">Campus Info</option>
-          </select>
-          <input type="submit" value="Submit" name="submit">
-        </form>
-        <!-- <form action="landing.php">
-        <input type="text" name="university_name" placeholder="Enter university name">
-
-        </form> -->
-      </ul>
-    </div>
-
-
-  </div>
-  <!-- </div> -->
-  <?php
-    if (isset($_POST['submit'])) {
-        $selectedParameter = $_POST['parameter'];
-        echo "<h4>You selected: $selectedParameter</h4>";
-
-        // Database connection settings
-        $host = "localhost";
-        $username = "root";
-        $password = "";
-        // $database = "analisis_the_baru";
-        $database = 'the_pa';
-
-        // Create a database connection
-        $conn = new mysqli($host, $username, $password, $database);
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row["id_rsc"] . "</td>";
+                            echo "<td>" . $row["wrld_rank"] . "</td>";
+                            echo "<td>" . $row["nama_univ"] . "</td>";
+                            echo "<td>" . $row["research"] . "</td>";
+                            echo "<td>" . $row["rank_rsc"] . "</td>";
+                            echo "</tr>";
+                        }
+        
+                        echo "</table>";
+                    } else {
+                        echo "No data available.";
+                    }
+                }
+            } 
+            elseif ($selectedParameter === "industry_income") {
+                $sql = "SELECT * FROM industry_income";
+                if ($sql !== "") {
+                    $result = $conn->query($sql);
+        
+                    if ($result->num_rows > 0) {
+                        echo "<table>";
+                        echo "<tr>";
+                        echo "<th>ID</th>";
+                        echo "<th>World Rank</th>";
+                        echo "<th>Nama Universitas</th>";
+                        echo "<th>Industry Income</th>";
+                        echo "<th>Rank Industry Income</th>";
+                        echo "</tr>";
+        
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row["id_inc"] . "</td>";
+                            echo "<td>" . $row["wrld_rank"] . "</td>";
+                            echo "<td>" . $row["nama_univ"] . "</td>";
+                            echo "<td>" . $row["income"] . "</td>";
+                            echo "<td>" . $row["rank_inc"] . "</td>";
+                            echo "</tr>";
+                        }
+        
+                        echo "</table>";
+                    } else {
+                        echo "No data available.";
+                    }
+                }
+            } 
+            elseif ($selectedParameter === "international_outlook") {
+                $sql = "SELECT * FROM international_outlook";
+                if ($sql !== "") {
+                    $result = $conn->query($sql);
+        
+                    if ($result->num_rows > 0) {
+                        echo "<table class = 'min-w-full border-collapse'>";
+                        echo "<tr>";
+                        echo "<th class= ''>ID</th>";
+                        echo "<th class= ''>World Rank</th>";
+                        echo "<th class= ''>Nama Universitas</th>";
+                        echo "<th class= ''>International Outlook</th>";
+                        echo "<th class= ''>Rank International Outlokk</th>";
+                        echo "</tr>";
+        
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row["id_int_outlook"] . "</td>";
+                            echo "<td>" . $row["wrld_rank"] . "</td>";
+                            echo "<td>" . $row["nama_univ"] . "</td>";
+                            echo "<td>" . $row["int_outlook"] . "</td>";
+                            echo "<td>" . $row["rank_int_outlook"] . "</td>";
+                            echo "</tr>";
+                        }
+        
+                        echo "</table>";
+                    } else {
+                        echo "No data available.";
+                    }
+                }
+            } 
+            elseif ($selectedParameter === "teaching") {
+                $sql = "SELECT * FROM teaching";
+                if ($sql !== "") {
+                    $result = $conn->query($sql);
+        
+                    if ($result->num_rows > 0) {
+                        echo "<table>";
+                        echo "<tr>";
+                        echo "<th>ID</th>";
+                        echo "<th>World Rank</th>";
+                        echo "<th>Nama Universitas</th>";
+                        echo "<th>Teaching</th>";
+                        echo "<th>Rank Teaching</th>";
+                        echo "</tr>";
+        
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row["id_teaching"] . "</td>";
+                            echo "<td>" . $row["wrld_rank"] . "</td>";
+                            echo "<td>" . $row["nama_univ"] . "</td>";
+                            echo "<td>" . $row["teaching"] . "</td>";
+                            echo "<td>" . $row["rank_teaching"] . "</td>";
+                            echo "</tr>";
+                        }
+        
+                        echo "</table>";
+                    } else {
+                        echo "No data available.";
+                    } 
+                }
+            } 
+            elseif ($selectedParameter === "ova") {
+                $sql = "SELECT * FROM overall";
+                if ($sql !== "") {//
+                    $result = $conn->query($sql);
+        
+                    if ($result->num_rows > 0) {
+                        echo "<table>";
+                        echo "<tr>";
+                        echo "<th>ID</th>";
+                        echo "<th>World Rank</th>";
+                        echo "<th>Nama Universitas</th>";
+                        echo "<th>Lokasi</th>";
+                        echo "<th>Citation</th>";
+                        echo "<th>Rank Citation</th>";
+                        echo "<th>Teaching</th>";
+                        echo "<th>Rank Teaching</th>";
+                        echo "<th>International Outlook</th>";
+                        echo "<th>Rank International Outlokk</th>";
+                        echo "<th>Industry Income</th>";
+                        echo "<th>Rank Industry Income</th>";
+                        echo "<th>Research</th>";
+                        echo "<th>Rank Research</th>";
+                        echo "<th>Rank Citation</th>";
+                        echo "<th>Tanggal</th>";
+                        echo "</tr>";
+        
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row["id_ova"] . "</td>";
+                            echo "<td>" . $row["wrld_rank"] . "</td>";
+                            echo "<td>" . $row["nama_univ"] . "</td>";
+                            echo "<td>" . $row["lokasi"] . "</td>";
+                            echo "<td>" . $row["citation"] . "</td>";
+                            echo "<td>" . $row["rank_ctn"] . "</td>";
+                            echo "<td>" . $row["teaching"] . "</td>";
+                            echo "<td>" . $row["rank_teaching"] . "</td>";
+                            echo "<td>" . $row["int_outlook"] . "</td>";
+                            echo "<td>" . $row["rank_int_outlook"] . "</td>";
+                            echo "<td>" . $row["income"] . "</td>";
+                            echo "<td>" . $row["rank_inc"] . "</td>";
+                            echo "<td>" . $row["research"] . "</td>";
+                            echo "<td>" . $row["rank_rsc"] . "</td>";
+                            echo "<td>" . $row["rank_ctn"] . "</td>";
+                            echo "<td>" . $row["tanggal"] . "</td>";
+                            echo "</tr>";
+                        }
+        
+                        echo "</table>";
+                    } else {
+                        echo "No data available.";
+                    }
+                }
+            } 
+            $conn->close();
         }
-        // $universityName = $_POST['university_name'];
-
-        // SQL query to select data  from the respective tables based on the selected parameter
-        $sql = "";
-        if ($selectedParameter === "campus_info") {
-            $sql = "SELECT * FROM campus_info";
-            if ($sql !== "") {
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    echo "<table>";
-                    echo "<tr>";
-                    echo "<th>ID</th>";
-                    echo "<th>World Rank</th>";
-                    echo "<th>Nama Universitas</th>";
-                    echo "<th>Lokasi</th>";
-                    echo "<th>tanggal</th>";
-                    echo "</tr>";
-
-                    // Output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row["id_info"] . "</td>";
-                        echo "<td>" . $row["wrld_rank"] . "</td>";
-                        echo "<td>" . $row["nama_univ"] . "</td>";
-                        echo "<td>" . $row["lokasi"] . "</td>";
-                        echo "<td>" . $row["tanggal"] . "</td>";
-                        echo "</tr>";
-                    }
-
-                    echo "</table>";
-                } else {
-                    echo "No data available.";
-                }
-            }
-        }
-        elseif ($selectedParameter === "citation") {
-            $sql = "SELECT * FROM citation";
-            if ($sql !== "") {
-                $result = $conn->query($sql);
-    
-                if ($result->num_rows > 0) {
-                    echo "<table>";
-                    echo "<tr>";
-                    echo "<th>ID</th>";
-                    echo "<th>World Rank</th>";
-                    echo "<th>Nama Universitas</th>";
-                    echo "<th>Citation</th>";
-                    echo "<th>Rank Citation</th>";
-                    echo "</tr>";
-    
-                    // Output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row["id_ctn"] . "</td>";
-                        echo "<td>" . $row["wrld_rank"] . "</td>";
-                        echo "<td>" . $row["nama_univ"] . "</td>";
-                        echo "<td>" . $row["citation"] . "</td>";
-                        echo "<td>" . $row["rank_ctn"] . "</td>";
-                        echo "</tr>";
-                    }
-    
-                    echo "</table>";
-                } else {
-                    echo "No data available.";
-                }
-            }
-        }
-        elseif ($selectedParameter === "research") {
-            $sql = "SELECT * FROM research";
-            if ($sql !== "") {
-                $result = $conn->query($sql);
-    
-                if ($result->num_rows > 0) {
-                    echo "<table>";
-                    echo "<tr>";
-                    echo "<th>ID</th>";
-                    echo "<th>World Rank</th>";
-                    echo "<th>Nama Universitas</th>";
-                    echo "<th>Research</th>";
-                    echo "<th>Rank Research</th>";
-                    echo "</tr>";
-    
-                    // Output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row["id_rsc"] . "</td>";
-                        echo "<td>" . $row["wrld_rank"] . "</td>";
-                        echo "<td>" . $row["nama_univ"] . "</td>";
-                        echo "<td>" . $row["research"] . "</td>";
-                        echo "<td>" . $row["rank_rsc"] . "</td>";
-                        echo "</tr>";
-                    }
-    
-                    echo "</table>";
-                } else {
-                    echo "No data available.";
-                }
-            }
-        } 
-        elseif ($selectedParameter === "industry_income") {
-            $sql = "SELECT * FROM industry_income";
-            if ($sql !== "") {
-                $result = $conn->query($sql);
-    
-                if ($result->num_rows > 0) {
-                    echo "<table>";
-                    echo "<tr>";
-                    echo "<th>ID</th>";
-                    echo "<th>World Rank</th>";
-                    echo "<th>Nama Universitas</th>";
-                    echo "<th>Industry Income</th>";
-                    echo "<th>Rank Industry Income</th>";
-                    echo "</tr>";
-    
-                    // Output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row["id_inc"] . "</td>";
-                        echo "<td>" . $row["wrld_rank"] . "</td>";
-                        echo "<td>" . $row["nama_univ"] . "</td>";
-                        echo "<td>" . $row["income"] . "</td>";
-                        echo "<td>" . $row["rank_inc"] . "</td>";
-                        echo "</tr>";
-                    }
-    
-                    echo "</table>";
-                } else {
-                    echo "No data available.";
-                }
-            }
-        } 
-        elseif ($selectedParameter === "international_outlook") {
-            $sql = "SELECT * FROM international_outlook";
-            if ($sql !== "") {
-                $result = $conn->query($sql);
-    
-                if ($result->num_rows > 0) {
-                    echo "<table class = 'min-w-full border-collapse'>";
-                    echo "<tr>";
-                    echo "<th class= ''>ID</th>";
-                    echo "<th class= ''>World Rank</th>";
-                    echo "<th class= ''>Nama Universitas</th>";
-                    echo "<th class= ''>International Outlook</th>";
-                    echo "<th class= ''>Rank International Outlokk</th>";
-                    echo "</tr>";
-    
-                    // Output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row["id_int_outlook"] . "</td>";
-                        echo "<td>" . $row["wrld_rank"] . "</td>";
-                        echo "<td>" . $row["nama_univ"] . "</td>";
-                        echo "<td>" . $row["int_outlook"] . "</td>";
-                        echo "<td>" . $row["rank_int_outlook"] . "</td>";
-                        echo "</tr>";
-                    }
-    
-                    echo "</table>";
-                } else {
-                    echo "No data available.";
-                }
-            }
-        } 
-        elseif ($selectedParameter === "teaching") {
-            $sql = "SELECT * FROM teaching";
-            if ($sql !== "") {
-                $result = $conn->query($sql);
-    
-                if ($result->num_rows > 0) {
-                    echo "<table>";
-                    echo "<tr>";
-                    //terakhir  ngebaikin tabel biar tambah bagus dan ga transparan
-                    echo "<th class= 'sticky top-0 border px-4 py-2 bg-gray-200'>ID</th>";
-                    echo "<th class= 'sticky top-0 border px-4 py-2 bg-gray-200'>World Rank</th>";
-                    echo "<th class= 'sticky top-0 border px-4 py-2 bg-gray-200'>Nama Universitas</th>";
-                    echo "<th class= 'sticky top-0 border px-4 py-2 bg-gray-200'>Teaching</th>";
-                    echo "<th class= 'sticky top-0 border px-4 py-2 bg-gray-200'>Rank Teaching</th>";
-                    echo "</tr>";
-    
-                    // Output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row["id_teaching"] . "</td>";
-                        echo "<td>" . $row["wrld_rank"] . "</td>";
-                        echo "<td>" . $row["nama_univ"] . "</td>";
-                        echo "<td>" . $row["teaching"] . "</td>";
-                        echo "<td>" . $row["rank_teaching"] . "</td>";
-                        echo "</tr>";
-                    }
-    
-                    echo "</table>";
-                } else {
-                    echo "No data available.";
-                } 
-            }
-        } 
-        elseif ($selectedParameter === "ova") {
-            $sql = "SELECT * FROM overall";
-            if ($sql !== "") {//
-                $result = $conn->query($sql);
-    
-                if ($result->num_rows > 0) {
-                    echo "<table>";
-                    echo "<tr>";
-                    echo "<th>ID</th>";
-                    echo "<th>World Rank</th>";
-                    echo "<th>Nama Universitas</th>";
-                    echo "<th>Lokasi</th>";
-                    echo "<th>Citation</th>";
-                    echo "<th>Rank Citation</th>";
-                    echo "<th>Teaching</th>";
-                    echo "<th>Rank Teaching</th>";
-                    echo "<th>International Outlook</th>";
-                    echo "<th>Rank International Outlokk</th>";
-                    echo "<th>Industry Income</th>";
-                    echo "<th>Rank Industry Income</th>";
-                    echo "<th>Research</th>";
-                    echo "<th>Rank Research</th>";
-                    echo "<th>Citation</th>";
-                    echo "<th>Rank Citation</th>";
-                    echo "<th>Tanggal</th>";
-                    echo "</tr>";
-    
-                    // Output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row["id_ova"] . "</td>";
-                        echo "<td>" . $row["wrld_rank"] . "</td>";
-                        echo "<td>" . $row["nama_univ"] . "</td>";
-                        echo "<td>" . $row["lokasi"] . "</td>";
-                        echo "<td>" . $row["citation"] . "</td>";
-                        echo "<td>" . $row["rank_ctn"] . "</td>";
-                        echo "<td>" . $row["teaching"] . "</td>";
-                        echo "<td>" . $row["rank_teaching"] . "</td>";
-                        echo "<td>" . $row["int_outlook"] . "</td>";
-                        echo "<td>" . $row["rank_int_outlook"] . "</td>";
-                        echo "<td>" . $row["income"] . "</td>";
-                        echo "<td>" . $row["rank_inc"] . "</td>";
-                        echo "<td>" . $row["research"] . "</td>";
-                        echo "<td>" . $row["rank_rsc"] . "</td>";
-                        echo "<td>" . $row["citation"] . "</td>";
-                        echo "<td>" . $row["rank_ctn"] . "</td>";
-                        echo "<td>" . $row["tanggal"] . "</td>";
-                        echo "</tr>";
-                    }
-    
-                    echo "</table>";
-                } else {
-                    echo "No data available.";
-                }
-            }
-        } 
-        $conn->close();
-    }
-    ?>
-
-</body>
-
+        ?>
+  </body>
 </html>

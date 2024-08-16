@@ -24,13 +24,23 @@
                 <a class="nav-link" href="index.php">Compare</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About us</a>
+                <a class="nav-link" href="about.php">About us</a>
               </li>
             </ul>
+
+            
           </div>
         </div>
       </nav>
+      <input type="text" class="form-control" id="university1Input" placeholder="Search for University 1...">
+      <input type="text" class="form-control" id="university2Input" placeholder="Search for University 2...">
+      <input type="text" class="form-control" id="university3Input" placeholder="Search for University 3...">
 
-    <img src="img/074891700_1566530242-pcg_3.jpg" alt="" style="width: 45%;">
+      <div class="chartContainer">
+        <canvas id="chartTeaching"></canvas>
+        <canvas id="lineChart"></canvas>
+      </div>
+      <script src="src/universitas.js"></script>
+      <script src="src/main.js" type=""></script>
 </body>
 </html>

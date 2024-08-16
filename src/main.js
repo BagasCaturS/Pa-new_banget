@@ -300,127 +300,277 @@ function searchUniversities() {
 }
 // Create a bar chart for Teaching parameter
 // Fetch the data from the server
-fetch('./1koneksidb.php')
-  .then(response => response.json())
-  .then(chartData => {
-    // Initialize the Chart.js chart
-    const ctxTeaching = document.getElementById('chartTeaching').getContext('2d');
-    new Chart(ctxTeaching, {
-      type: 'bar',
-      data: {
-        // NAMA UNIV PERLU DIGANTI DENGAN NAMA UNVI SESUAI PILIHAN USER
-        // unvierstiy 1 diganti dengan telkom University
-        labels: ['University 1', 'University 2', 'University 3'],
-        datasets: [
-          {
-            label: 'Teaching',
-            data: chartData.teaching,
-            backgroundColor: 'rgba(75, 192, 192, 0.6)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-          },
-          {
-            label: 'Research',
-            data: chartData.research,
-            backgroundColor: 'rgba(255, 159, 64, 0.6)',
-            borderColor: 'rgba(255, 159, 64, 1)',
-            borderWidth: 1
-          },
-          {
-            label: 'International Outlook',
-            data: chartData.int_outlook,
-            backgroundColor: 'rgba(54, 162, 235, 0.6)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-          },
-          {
-            label: 'Citations',
-            data: chartData.citation,
-            backgroundColor: 'rgba(153, 102, 255, 0.6)',
-            borderColor: 'rgba(153, 102, 255, 1)',
-            borderWidth: 1
-          },
-          {
-            label: 'Income',
-            data: chartData.income,
-            backgroundColor: 'rgba(255, 206, 86, 0.6)',
-            borderColor: 'rgba(255, 206, 86, 1)',
-            borderWidth: 1
+function searchAndUpdateChart(searchTerm) {
+  if (searchTerm === '') return;
+
+  // Fetch university data based on the search term
+  fetch(`./fetch_uni_name.php?q=${searchTerm}`)
+      .then(response => response.json())
+      .then(data => {
+          if (data.length > 0) {
+              // Update university details in the HTML
+              document.getElementById('univ2').innerHTML = data[0].nama_univ || 'N/A';
+              document.getElementById('lokasi2').innerHTML = data[0].lokasi || 'N/A';
+              document.getElementById('wrld_rank2').innerHTML = data[0].wrld_rank || 'N/A';
+              document.getElementById('teaching2').innerHTML = data[0].teaching || 'N/A';
+              document.getElementById('point2').innerHTML = data[0].teaching_points_needed || 'N/A';
+              document.getElementById('research2').innerHTML = data[0].research || 'N/A';
+              document.getElementById('citation2').innerHTML = data[0].citation || 'N/A';
+              document.getElementById('outlook2').innerHTML = data[0].int_outlook || 'N/A';
+
+              // Update Chart.js labels and data dynamically
+              const ctxTeaching = document.getElementById('chartTeaching').getContext('2d');
+              const chartData = {
+                  labels: [data[0].nama_univ],  // Use the university name from the data
+                  datasets: [
+                      {
+                          label: 'Teaching',
+                          data: [data[0].teaching],
+                          backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                          borderColor: 'rgba(75, 192, 192, 1)',
+                          borderWidth: 1
+                      },
+                      {
+                          label: 'Research',
+                          data: [data[0].research],
+                          backgroundColor: 'rgba(255, 159, 64, 0.6)',
+                          borderColor: 'rgba(255, 159, 64, 1)',
+                          borderWidth: 1
+                      },
+                      {
+                          label: 'International Outlook',
+                          data: [data[0].int_outlook],
+                          backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                          borderColor: 'rgba(54, 162, 235, 1)',
+                          borderWidth: 1
+                      },
+                      {
+                          label: 'Citations',
+                          data: [data[0].citation],
+                          backgroundColor: 'rgba(153, 102, 255, 0.6)',
+                          borderColor: 'rgba(153, 102, 255, 1)',
+                          borderWidth: 1
+                      },
+                      {
+                          label: 'Income',
+                          data: [data[0].income],
+                          backgroundColor: 'rgba(255, 206, 86, 0.6)',
+                          borderColor: 'rgba(255, 206, 86, 1)',
+                          borderWidth: 1
+                      }
+                  ]
+              };
+              // Destroy the old chart instance if it exists and create a new one
+              if (window.teachingChart) {
+                  window.teachingChart.destroy();
+              }
+              window.teachingChart = new Chart(ctxTeaching, {
+                  type: 'bar',
+                  data: chartData,
+                  options: {
+                      responsive: true,
+                      scales: {
+                          y: {
+                              beginAtZero: true
+                          }
+                      }
+                  }
+              });
+          } else {
+              console.log("No data found");
           }
-        ]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-  })
-  .catch(error => console.error(error));
+      })
+      .catch(error => console.error('Error fetching data:', error));
+}
+
+
   // ----line chart----
-fetch('./1koneksidb.php')
-  .then(response => response.json())
-  .then(chartData => {
-    // Initialize the Chart.js chart
-    const ctxLine = document.getElementById('lineChart').getContext('2d');
-    new Chart(ctxLine, {
-      type: 'line',
-      data: {
-        // LABELS DIGANTI DEGNAN PARAMERTER YANG ADA DI DATABASE
-        labels: ['University 1', 'University 2', 'University 3'],
-        datasets: [
-          {
-            // DATA DIGANTI DENGAN NAMA UNIVERSITAS SESUAI PILIHAN USER
-            label: 'Teaching',
-            data: chartData.teaching,
-            backgroundColor: 'rgba(75, 192, 192, 0.6)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-          },
-          {
-            label: 'Research',
-            data: chartData.research,
-            backgroundColor: 'rgba(255, 159, 64, 0.6)',
-            borderColor: 'rgba(255, 159, 64, 1)',
-            borderWidth: 1
-          },
-          {
-            label: 'International Outlook',
-            data: chartData.int_outlook,
-            backgroundColor: 'rgba(54, 162, 235, 0.6)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-          },
-          {
-            label: 'Citations',
-            data: chartData.citation,
-            backgroundColor: 'rgba(153, 102, 255, 0.6)',
-            borderColor: 'rgba(153, 102, 255, 1)',
-            borderWidth: 1
-          },
-          {
-            label: 'Income',
-            data: chartData.income,
-            backgroundColor: 'rgba(255, 206, 86, 0.6)',
-            borderColor: 'rgba(255, 206, 86, 1)',
-            borderWidth: 1
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true
-          }
+  function searchAndUpdateChart2(searchTerm) {
+    if (searchTerm === '') return;
+  
+    // Fetch university data based on the search term
+    fetch(`./fetch_uni_name.php?q=${searchTerm}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.length > 0) {
+                // Update university details in the HTML
+                document.getElementById('univ3').innerHTML = data[0].nama_univ || 'N/A';
+                document.getElementById('lokasi3').innerHTML = data[0].lokasi || 'N/A';
+                document.getElementById('wrld_rank3').innerHTML = data[0].wrld_rank || 'N/A';
+                document.getElementById('teaching3').innerHTML = data[0].teaching || 'N/A';
+                document.getElementById('point3').innerHTML = data[0].teaching_points_needed || 'N/A';
+                document.getElementById('research3').innerHTML = data[0].research || 'N/A';
+                document.getElementById('citation3').innerHTML = data[0].citation || 'N/A';
+                document.getElementById('outlook3').innerHTML = data[0].int_outlook || 'N/A';
+  
+                // Update Chart.js labels and data dynamically
+                const ctxTeaching = document.getElementById('lineChart').getContext('2d');
+                const chartData = {
+                    labels: [data[0].nama_univ],  // Use the university name from the data
+                    datasets: [
+                        {
+                            label: 'Teaching',
+                            data: [data[0].teaching],
+                            backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Research',
+                            data: [data[0].research],
+                            backgroundColor: 'rgba(255, 159, 64, 0.6)',
+                            borderColor: 'rgba(255, 159, 64, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'International Outlook',
+                            data: [data[0].int_outlook],
+                            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Citations',
+                            data: [data[0].citation],
+                            backgroundColor: 'rgba(153, 102, 255, 0.6)',
+                            borderColor: 'rgba(153, 102, 255, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Income',
+                            data: [data[0].income],
+                            backgroundColor: 'rgba(255, 206, 86, 0.6)',
+                            borderColor: 'rgba(255, 206, 86, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                };
+                // Destroy the old chart instance if it exists and create a new one
+                if (window.teachingChart) {
+                    window.teachingChart.destroy();
+                }
+                window.teachingChart = new Chart(ctxTeaching, {
+                    type: 'line',
+                    data: chartData,
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            } else {
+                console.log("No data found");
+            }
+        })
+        .catch(error => console.error('Error fetching data:', error));
+  }
+  // global chart========================================
+
+
+  // Declare the chart variable globally
+let myChart;
+
+function fetchUniversityData(searchTerm, universityIndex) {
+    // Create a new XMLHttpRequest
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "./fetch_uni_name.php?q=" + encodeURIComponent(searchTerm), true);
+
+    // Define what happens on successful data submission
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            var data = JSON.parse(xhr.responseText);
+            if (data && data.length > 0) {
+                // Assuming the data contains only one university per search
+                const university = data[0];
+
+                // Update the labels and data for the specific university
+                updateChart(university, universityIndex);
+            }
         }
-      }
-    });
-  })
-  .catch(error => console.error(error));
+    };
+
+    // Send the request with the search term
+    xhr.send();
+}
+
+function updateChart(university, index) {
+    const labels = ["Teaching", "Research", "International Outlook", "Citations", "Income"];
+    const newData = [
+        university.teaching,
+        university.research,
+        university.int_outlook,
+        university.citation,
+        university.income
+    ];
+
+    // If the chart is not yet initialized, create it
+    if (!myChart) {
+        const ctx = document.getElementById('chartTeaching').getContext('2d');
+        myChart = new Chart(ctx, {
+            type: 'bar', 
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'University ' + index,
+                    data: newData,
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    } 
+    else {
+        // If the chart exists, update the datasets and labels
+
+        // Check if the dataset for the university index already exists
+        if (myChart.data.datasets[index - 1]) {
+            // Update the existing dataset
+            myChart.data.datasets[index - 1].data = newData;
+            myChart.data.datasets[index - 1].label = 'University ' + index;
+        } else {
+            // Add a new dataset if it doesn't exist
+            myChart.data.datasets.push({
+                label: 'University ' + index,
+                data: newData,
+                backgroundColor: `rgba(${75 + index * 30}, 192, 192, 0.6)`,
+                borderColor: `rgba(${75 + index * 30}, 192, 192, 1)`,
+                borderWidth: 1
+            });
+        }
+
+        // Update the chart with new data
+        myChart.update();
+    }
+}
+
+// Example usage: assuming the input for universities 1, 2, and 3
+document.getElementById("university1Input").addEventListener("keyup", function() {
+    fetchUniversityData(this.value, 1);
+});
+
+document.getElementById("university2Input").addEventListener("keyup", function() {
+    fetchUniversityData(this.value, 2);
+});
+
+document.getElementById("university3Input").addEventListener("keyup", function() {
+    fetchUniversityData(this.value, 3);
+});
+
+
+
+  // global chart========================================
   // Add line chart
   
   // var ctxTeaching = document.getElementById('chartTeaching').getContext('2d');

@@ -1,19 +1,32 @@
 <?php 
 include '1koneksidb.php';
 
-$searchTerm = isset($_POST['search_term']) ? $_POST['search_term'] : '';
+$searchTerm = isset($_GET['q']) ? $_GET['q'] : '';
 
-$query = $conn->prepare("SELECT * FROM overall WHERE nama_univ LIKE ?");
-$searchTermLike = "%$searchTerm%";
-$query->bind_param('s', $searchTermLike);
+if (!empty($searchTerm)) {
+    // Prepare the SQL statement to search for universities based on the search term
+    $query = $conn->prepare("SELECT * FROM overall WHERE nama_univ LIKE ?");
+    $searchTermLike = "%" . $searchTerm . "%";
+    $query->bind_param('s', $searchTermLike);
 
-$query->execute();
-$result = $query->get_result();
+    // Execute the query
+    $query->execute();
+    $result = $query->get_result();
 
-$data = $result->fetch_assoc();
+    // Fetch the results as an associative array
+    $data = [];
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
 
-echo json_encode($data);
+    // Return the data as JSON
+    echo json_encode($data);
+} else {
+    // If no search term is provided, return an empty array
+    echo json_encode([]);
+}
 
+// Close the database connection
 $conn->close();
 
 ?>
