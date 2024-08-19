@@ -59,24 +59,20 @@
           <th>Pilih Universitas</th>
           <th width="300px">
 
-             <!-- <form method='POST' action="search.php">
-               <input type="text" id="searchInput" placeholder="Search universities..." onkeyup="searchUniversities()">
-               <div id="searchResults"></div>
-                <input type="submit" value="Submit">
-              </form>
-          </th> -->
+          <input type="text" class="form-control" id="university1Input" onkeyup="searchAndUpdateChart2(this.value)" placeholder="Search for University 1...">
+          </th>
           <th width="300px">
-            
-            <input type="text" class="form-control" id="searchInput" placeholder="Search universities..." onkeyup="searchAndUpdateChart(this.value)">
+          <input type="text" class="form-control" id="university2Input" onkeyup="searchAndUpdateChart2(this.value)" placeholder="Search for University 2...">
+
 
           </th>
           <th width="300px">
-          <input type="text" class="form-control" id="searchInput" placeholder="Search universities..." onkeyup="searchAndUpdateChart2(this.value)">
+          <input type="text" class="form-control" id="university3Input" placeholder="Search for University 3...">
+
           </th>
           <!-- ------------------------ -->
-          <input type="text" class="form-control" id="university1Input" onkeyup="searchAndUpdateChart2(this.value)" placeholder="Search for University 1...">
-          <input type="text" class="form-control" id="university2Input" onkeyup="searchAndUpdateChart2(this.value)" placeholder="Search for University 2...">
-          <input type="text" class="form-control" id="university3Input" placeholder="Search for University 3...">
+          
+
 
           <!-- ------------------------ -->
         <tr>

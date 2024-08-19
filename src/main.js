@@ -200,303 +200,232 @@
 
 
 
-function fetchUniversityData(searchTerm) {
-  if (!searchTerm.trim()) {
-      return; // Don't proceed if the search term is empty
-  }
+// function fetchUniversityData(searchTerm) {
+//   if (!searchTerm.trim()) {
+//       return; // Don't proceed if the search term is empty
+//   }
 
-  // Create a new XMLHttpRequest
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "./fetch_uni_name.php", true);
-  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//   // Create a new XMLHttpRequest
+//   var xhr = new XMLHttpRequest();
+//   xhr.open("POST", "./fetch_uni_name.php", true);
+//   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-  // Define what happens on successful data submission
-  xhr.onload = function () {
-      if (xhr.status == 200) {
-          try {
-              var data = JSON.parse(xhr.responseText);
-              if (data) {
-                  document.getElementById('univ2').innerHTML = data.nama_univ;
-                  document.getElementById('lokasi2').innerHTML = data.lokasi;
-                  document.getElementById('wrld_rank2').innerHTML = data.wrld_rank;
-                  document.getElementById('teaching2').innerHTML = data.teaching;
-                  document.getElementById('point2').innerHTML = data.teaching_points_needed;
-                  document.getElementById('research2').innerHTML = data.research;
-                  document.getElementById('citation2').innerHTML = data.citation;
-                  document.getElementById('outlook2').innerHTML = data.int_outlook;
-              }
-          } catch (e) {
-              console.error("Error parsing JSON:", e);
-          }
-      }
-  };
+//   // Define what happens on successful data submission
+//   xhr.onload = function () {
+//       if (xhr.status == 200) {
+//           try {
+//               var data = JSON.parse(xhr.responseText);
+//               if (data) {
+//                   document.getElementById('univ2').innerHTML = data.nama_univ;
+//                   document.getElementById('lokasi2').innerHTML = data.lokasi;
+//                   document.getElementById('wrld_rank2').innerHTML = data.wrld_rank;
+//                   document.getElementById('teaching2').innerHTML = data.teaching;
+//                   document.getElementById('point2').innerHTML = data.teaching_points_needed;
+//                   document.getElementById('research2').innerHTML = data.research;
+//                   document.getElementById('citation2').innerHTML = data.citation;
+//                   document.getElementById('outlook2').innerHTML = data.int_outlook;
+//               }
+//           } catch (e) {
+//               console.error("Error parsing JSON:", e);
+//           }
+//       }
+//   };
 
-  // Send the request with the search term
-  xhr.send("search_term=" + encodeURIComponent(searchTerm));
-}
+//   // Send the request with the search term
+//   xhr.send("search_term=" + encodeURIComponent(searchTerm));
+// }
 
-function fetchUniversityData2(searchTerm) {
-  if (!searchTerm.trim()) {
-      return; // Don't proceed if the search term is empty
-  }
+// function fetchUniversityData2(searchTerm) {
+//   if (!searchTerm.trim()) {
+//       return; // Don't proceed if the search term is empty
+//   }
 
-  // Create a new XMLHttpRequest
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "./fetch_uni_name.php", true);
-  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//   // Create a new XMLHttpRequest
+//   var xhr = new XMLHttpRequest();
+//   xhr.open("POST", "./fetch_uni_name.php", true);
+//   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-  // Define what happens on successful data submission
-  xhr.onload = function () {
-      if (xhr.status == 200) {
-          try {
-              var data = JSON.parse(xhr.responseText);
-              if (data) {
-                  document.getElementById('univ3').innerHTML = data.nama_univ;
-                  document.getElementById('lokasi3').innerHTML = data.lokasi;
-                  document.getElementById('wrld_rank3').innerHTML = data.wrld_rank;
-                  document.getElementById('teaching3').innerHTML = data.teaching;
-                  document.getElementById('point3').innerHTML = data.teaching_points_needed;
-                  document.getElementById('research3').innerHTML = data.research;
-                  document.getElementById('citation3').innerHTML = data.citation;
-                  document.getElementById('outlook3').innerHTML = data.int_outlook;
-              }
-          } catch (e) {
-              console.error("Error parsing JSON:", e);
-          }
-      }
-  };
+//   // Define what happens on successful data submission
+//   xhr.onload = function () {
+//       if (xhr.status == 200) {
+//           try {
+//               var data = JSON.parse(xhr.responseText);
+//               if (data) {
+//                   document.getElementById('univ3').innerHTML = data.nama_univ;
+//                   document.getElementById('lokasi3').innerHTML = data.lokasi;
+//                   document.getElementById('wrld_rank3').innerHTML = data.wrld_rank;
+//                   document.getElementById('teaching3').innerHTML = data.teaching;
+//                   document.getElementById('point3').innerHTML = data.teaching_points_needed;
+//                   document.getElementById('research3').innerHTML = data.research;
+//                   document.getElementById('citation3').innerHTML = data.citation;
+//                   document.getElementById('outlook3').innerHTML = data.int_outlook;
+//               }
+//           } catch (e) {
+//               console.error("Error parsing JSON:", e);
+//           }
+//       }
+//   };
 
-  // Send the request with the search term
-  xhr.send("search_term=" + encodeURIComponent(searchTerm));
-}
+//   // Send the request with the search term
+//   xhr.send("search_term=" + encodeURIComponent(searchTerm));
+// }
 
 
-/////////////////////////////////////////
-// CHART FIXED
-function searchUniversities() {
-  var searchTerm = document.getElementById("searchInput").value.toLowerCase();
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var data = JSON.parse(this.responseText);
-      var resultHTML = "";
-      for (var i = 0; i < data.id_ova.length; i++) {
-        if (data.nama_univ[i].toLowerCase().includes(searchTerm)) {
-          resultHTML += "<div>";
-          resultHTML += "<h3>" + data.nama_univ[i] + "</h3>";
-          resultHTML += "<p>Teaching: " + data.teaching[i] + "</p>";
-          resultHTML += "<p>Research: " + data.research[i] + "</p>";
-          resultHTML += "<p>International Outlook: " + data.int_outlook[i] + "</p>";
-          resultHTML += "<p>Citation: " + data.citation[i] + "</p>";
-          resultHTML += "<p>Income: " + data.income[i] + "</p>";
-          resultHTML += "</div>";
-        }
-      }
-      document.getElementById("searchResults").innerHTML = resultHTML;
-    }
-  };
-  xhr.open("GET", "search.php?q=" + searchTerm, true);
-  xhr.send();
-}
-// Create a bar chart for Teaching parameter
-// Fetch the data from the server
-function searchAndUpdateChart(searchTerm) {
-  if (searchTerm === '') return;
+// /////////////////////////////////////////
+// // CHART FIXED
+// function searchUniversities() {
+//   var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+//   var xhr = new XMLHttpRequest();
+//   xhr.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//       var data = JSON.parse(this.responseText);
+//       var resultHTML = "";
+//       for (var i = 0; i < data.id_ova.length; i++) {
+//         if (data.nama_univ[i].toLowerCase().includes(searchTerm)) {
+//           resultHTML += "<div>";
+//           resultHTML += "<h3>" + data.nama_univ[i] + "</h3>";
+//           resultHTML += "<p>Teaching: " + data.teaching[i] + "</p>";
+//           resultHTML += "<p>Research: " + data.research[i] + "</p>";
+//           resultHTML += "<p>International Outlook: " + data.int_outlook[i] + "</p>";
+//           resultHTML += "<p>Citation: " + data.citation[i] + "</p>";
+//           resultHTML += "<p>Income: " + data.income[i] + "</p>";
+//           resultHTML += "</div>";
+//         }
+//       }
+//       document.getElementById("searchResults").innerHTML = resultHTML;
+//     }
+//   };
+//   xhr.open("GET", "search.php?q=" + searchTerm, true);
+//   xhr.send();
+// }
+// // Create a bar chart for Teaching parameter
+// // Fetch the data from the server
+// function searchAndUpdateChart(searchTerm) {
+//   if (searchTerm === '') return;
 
-  // Fetch university data based on the search term
-  fetch(`./fetch_uni_name.php?q=${searchTerm}`)
-      .then(response => response.json())
-      .then(data => {
-          if (data.length > 0) {
-              // Update university details in the HTML
-              document.getElementById('univ2').innerHTML = data[0].nama_univ || 'N/A';
-              document.getElementById('lokasi2').innerHTML = data[0].lokasi || 'N/A';
-              document.getElementById('wrld_rank2').innerHTML = data[0].wrld_rank || 'N/A';
-              document.getElementById('teaching2').innerHTML = data[0].teaching || 'N/A';
-              document.getElementById('point2').innerHTML = data[0].teaching_points_needed || 'N/A';
-              document.getElementById('research2').innerHTML = data[0].research || 'N/A';
-              document.getElementById('citation2').innerHTML = data[0].citation || 'N/A';
-              document.getElementById('outlook2').innerHTML = data[0].int_outlook || 'N/A';
+//   // Fetch university data based on the search term
+//   fetch(`./fetch_uni_name.php?q=${searchTerm}`)
+//       .then(response => response.json())
+//       .then(data => {
+//           if (data.length > 0) {
+//               // Update university details in the HTML
+//               document.getElementById('univ2').innerHTML = data[0].nama_univ || 'N/A';
+//               document.getElementById('lokasi2').innerHTML = data[0].lokasi || 'N/A';
+//               document.getElementById('wrld_rank2').innerHTML = data[0].wrld_rank || 'N/A';
+//               document.getElementById('teaching2').innerHTML = data[0].teaching || 'N/A';
+//               document.getElementById('point2').innerHTML = data[0].teaching_points_needed || 'N/A';
+//               document.getElementById('research2').innerHTML = data[0].research || 'N/A';
+//               document.getElementById('citation2').innerHTML = data[0].citation || 'N/A';
+//               document.getElementById('outlook2').innerHTML = data[0].int_outlook || 'N/A';
 
-              // Update Chart.js labels and data dynamically
-              const ctxTeaching = document.getElementById('chartTeaching').getContext('2d');
-              const chartData = {
-                  labels: [data[0].nama_univ],  // Use the university name from the data
-                  datasets: [
-                      {
-                          label: 'Teaching',
-                          data: [data[0].teaching],
-                          backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                          borderColor: 'rgba(75, 192, 192, 1)',
-                          borderWidth: 1
-                      },
-                      {
-                          label: 'Research',
-                          data: [data[0].research],
-                          backgroundColor: 'rgba(255, 159, 64, 0.6)',
-                          borderColor: 'rgba(255, 159, 64, 1)',
-                          borderWidth: 1
-                      },
-                      {
-                          label: 'International Outlook',
-                          data: [data[0].int_outlook],
-                          backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                          borderColor: 'rgba(54, 162, 235, 1)',
-                          borderWidth: 1
-                      },
-                      {
-                          label: 'Citations',
-                          data: [data[0].citation],
-                          backgroundColor: 'rgba(153, 102, 255, 0.6)',
-                          borderColor: 'rgba(153, 102, 255, 1)',
-                          borderWidth: 1
-                      },
-                      {
-                          label: 'Income',
-                          data: [data[0].income],
-                          backgroundColor: 'rgba(255, 206, 86, 0.6)',
-                          borderColor: 'rgba(255, 206, 86, 1)',
-                          borderWidth: 1
-                      }
-                  ]
-              };
-              // Destroy the old chart instance if it exists and create a new one
-              if (window.teachingChart) {
-                  window.teachingChart.destroy();
-              }
-              window.teachingChart = new Chart(ctxTeaching, {
-                  type: 'bar',
-                  data: chartData,
-                  options: {
-                      responsive: true,
-                      scales: {
-                          y: {
-                              beginAtZero: true
-                          }
-                      }
-                  }
-              });
-          } else {
-              console.log("No data found");
-          }
-      })
-      .catch(error => console.error('Error fetching data:', error));
-}
+//               // Update Chart.js labels and data dynamically
+//               const ctxTeaching = document.getElementById('chartTeaching').getContext('2d');
+//               const chartData = {
+//                   labels: [data[0].nama_univ],  // Use the university name from the data
+//                   datasets: [
+//                       {
+//                           label: 'Teaching',
+//                           data: [data[0].teaching],
+//                           backgroundColor: 'rgba(75, 192, 192, 0.6)',
+//                           borderColor: 'rgba(75, 192, 192, 1)',
+//                           borderWidth: 1
+//                       },
+//                       {
+//                           label: 'Research',
+//                           data: [data[0].research],
+//                           backgroundColor: 'rgba(255, 159, 64, 0.6)',
+//                           borderColor: 'rgba(255, 159, 64, 1)',
+//                           borderWidth: 1
+//                       },
+//                       {
+//                           label: 'International Outlook',
+//                           data: [data[0].int_outlook],
+//                           backgroundColor: 'rgba(54, 162, 235, 0.6)',
+//                           borderColor: 'rgba(54, 162, 235, 1)',
+//                           borderWidth: 1
+//                       },
+//                       {
+//                           label: 'Citations',
+//                           data: [data[0].citation],
+//                           backgroundColor: 'rgba(153, 102, 255, 0.6)',
+//                           borderColor: 'rgba(153, 102, 255, 1)',
+//                           borderWidth: 1
+//                       },
+//                       {
+//                           label: 'Income',
+//                           data: [data[0].income],
+//                           backgroundColor: 'rgba(255, 206, 86, 0.6)',
+//                           borderColor: 'rgba(255, 206, 86, 1)',
+//                           borderWidth: 1
+//                       }
+//                   ]
+//               };
+//               // Destroy the old chart instance if it exists and create a new one
+//               if (window.teachingChart) {
+//                   window.teachingChart.destroy();
+//               }
+//               window.teachingChart = new Chart(ctxTeaching, {
+//                   type: 'bar',
+//                   data: chartData,
+//                   options: {
+//                       responsive: true,
+//                       scales: {
+//                           y: {
+//                               beginAtZero: true
+//                           }
+//                       }
+//                   }
+//               });
+//           } else {
+//               console.log("No data found");
+//           }
+//       })
+//       .catch(error => console.error('Error fetching data:', error));
+// }
 
 
   // ----line chart----
-  function searchAndUpdateChart2(searchTerm) {
+  // Global chart variables
+let myBarChart;
+let myLineChart;
+
+function fetchUniversityData(searchTerm, universityIndex) {
     if (searchTerm === '') return;
-  
+
     // Fetch university data based on the search term
-    fetch(`./fetch_uni_name.php?q=${searchTerm}`)
+    fetch(`./fetch_uni_name.php?q=${encodeURIComponent(searchTerm)}`)
         .then(response => response.json())
         .then(data => {
             if (data.length > 0) {
-                // Update university details in the HTML
-                document.getElementById('univ3').innerHTML = data[0].nama_univ || 'N/A';
-                document.getElementById('lokasi3').innerHTML = data[0].lokasi || 'N/A';
-                document.getElementById('wrld_rank3').innerHTML = data[0].wrld_rank || 'N/A';
-                document.getElementById('teaching3').innerHTML = data[0].teaching || 'N/A';
-                document.getElementById('point3').innerHTML = data[0].teaching_points_needed || 'N/A';
-                document.getElementById('research3').innerHTML = data[0].research || 'N/A';
-                document.getElementById('citation3').innerHTML = data[0].citation || 'N/A';
-                document.getElementById('outlook3').innerHTML = data[0].int_outlook || 'N/A';
-  
-                // Update Chart.js labels and data dynamically
-                const ctxTeaching = document.getElementById('lineChart').getContext('2d');
-                const chartData = {
-                    labels: [data[0].nama_univ],  // Use the university name from the data
-                    datasets: [
-                        {
-                            label: 'Teaching',
-                            data: [data[0].teaching],
-                            backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'Research',
-                            data: [data[0].research],
-                            backgroundColor: 'rgba(255, 159, 64, 0.6)',
-                            borderColor: 'rgba(255, 159, 64, 1)',
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'International Outlook',
-                            data: [data[0].int_outlook],
-                            backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                            borderColor: 'rgba(54, 162, 235, 1)',
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'Citations',
-                            data: [data[0].citation],
-                            backgroundColor: 'rgba(153, 102, 255, 0.6)',
-                            borderColor: 'rgba(153, 102, 255, 1)',
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'Income',
-                            data: [data[0].income],
-                            backgroundColor: 'rgba(255, 206, 86, 0.6)',
-                            borderColor: 'rgba(255, 206, 86, 1)',
-                            borderWidth: 1
-                        }
-                    ]
-                };
-                // Destroy the old chart instance if it exists and create a new one
-                if (window.teachingChart) {
-                    window.teachingChart.destroy();
-                }
-                window.teachingChart = new Chart(ctxTeaching, {
-                    type: 'line',
-                    data: chartData,
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                });
+                // Assuming the data contains only one university per search
+                const university = data[0];
+
+                // Update the university details in the HTML
+                updateUniversityDetails(university, universityIndex);
+
+                // Update the charts with the university data
+                updateChart(university, universityIndex, 'bar');
+                updateChart(university, universityIndex, 'line');
             } else {
                 console.log("No data found");
             }
         })
         .catch(error => console.error('Error fetching data:', error));
-  }
-  // global chart========================================
-
-
-  // Declare the chart variable globally
-let myChart;
-
-function fetchUniversityData(searchTerm, universityIndex) {
-    // Create a new XMLHttpRequest
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "./fetch_uni_name.php?q=" + encodeURIComponent(searchTerm), true);
-
-    // Define what happens on successful data submission
-    xhr.onload = function () {
-        if (xhr.status == 200) {
-            var data = JSON.parse(xhr.responseText);
-            if (data && data.length > 0) {
-                // Assuming the data contains only one university per search
-                const university = data[0];
-
-                // Update the labels and data for the specific university
-                updateChart(university, universityIndex);
-            }
-        }
-    };
-
-    // Send the request with the search term
-    xhr.send();
 }
 
-function updateChart(university, index) {
+function updateUniversityDetails(university, index) {
+    // Update the HTML elements with the university details
+    document.getElementById(`univ${index}`).innerHTML = university.nama_univ || 'N/A';
+    document.getElementById(`lokasi${index}`).innerHTML = university.lokasi || 'N/A';
+    document.getElementById(`wrld_rank${index}`).innerHTML = university.wrld_rank || 'N/A';
+    document.getElementById(`teaching${index}`).innerHTML = university.teaching || 'N/A';
+    document.getElementById(`point${index}`).innerHTML = university.teaching_points_needed || 'N/A';
+    document.getElementById(`research${index}`).innerHTML = university.research || 'N/A';
+    document.getElementById(`citation${index}`).innerHTML = university.citation || 'N/A';
+    document.getElementById(`outlook${index}`).innerHTML = university.int_outlook || 'N/A';
+}
+
+function updateChart(university, index, chartType) {
     const labels = ["Teaching", "Research", "International Outlook", "Citations", "Income"];
     const newData = [
         university.teaching,
@@ -506,19 +435,30 @@ function updateChart(university, index) {
         university.income
     ];
 
+    let chart, chartElement;
+
+    if (chartType === 'bar') {
+        chart = myBarChart;
+        chartElement = 'chartTeaching';
+    } else if (chartType === 'line') {
+        chart = myLineChart;
+        chartElement = 'lineChart';
+    }
+
     // If the chart is not yet initialized, create it
-    if (!myChart) {
-        const ctx = document.getElementById('chartTeaching').getContext('2d');
-        myChart = new Chart(ctx, {
-            type: 'bar', 
+    if (!chart) {
+        const ctx = document.getElementById(chartElement).getContext('2d');
+        chart = new Chart(ctx, {
+            type: chartType,
             data: {
                 labels: labels,
                 datasets: [{
-                    label: 'University ' + index,
+                    label: university.nama_univ,
                     data: newData,
-                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
+                    backgroundColor: chartType === 'bar' ? 'rgba(75, 192, 192, 0.6)' : 'rgba(24, 162, 235, 0.6)',
+                    borderColor: chartType === 'bar' ? 'rgba(75, 192, 192, 1)' : 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
+                    fill: chartType === 'line'
                 }]
             },
             options: {
@@ -530,28 +470,35 @@ function updateChart(university, index) {
                 }
             }
         });
+
+        if (chartType === 'bar') {
+            myBarChart = chart;
+        } else if (chartType === 'line') {
+            myLineChart = chart;
+        }
     } 
     else {
         // If the chart exists, update the datasets and labels
 
         // Check if the dataset for the university index already exists
-        if (myChart.data.datasets[index - 1]) {
+        if (chart.data.datasets[index - 1]) {
             // Update the existing dataset
-            myChart.data.datasets[index - 1].data = newData;
-            myChart.data.datasets[index - 1].label = 'University ' + index;
+            chart.data.datasets[index - 1].data = newData;
+            chart.data.datasets[index - 1].label = university.nama_univ;
         } else {
             // Add a new dataset if it doesn't exist
-            myChart.data.datasets.push({
-                label: 'University ' + index,
+            chart.data.datasets.push({
+                label: university.nama_univ,
                 data: newData,
-                backgroundColor: `rgba(${75 + index * 30}, 192, 192, 0.6)`,
-                borderColor: `rgba(${75 + index * 30}, 192, 192, 1)`,
-                borderWidth: 1
+                backgroundColor: chartType === 'bar' ? `rgba(${75 + index * 30}, 192, 192, 0.6)` : `rgba(${54 + index * 30}, 162, 235, 0.6)`,
+                borderColor: chartType === 'bar' ? `rgba(${75 + index * 30}, 192, 192, 1)` : `rgba(${54 + index * 30}, 162, 235, 1)`,
+                borderWidth: 1,
+                fill: chartType === 'line'
             });
         }
 
         // Update the chart with new data
-        myChart.update();
+        chart.update();
     }
 }
 
@@ -567,6 +514,7 @@ document.getElementById("university2Input").addEventListener("keyup", function()
 document.getElementById("university3Input").addEventListener("keyup", function() {
     fetchUniversityData(this.value, 3);
 });
+
 
 
 
