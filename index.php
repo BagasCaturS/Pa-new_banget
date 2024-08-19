@@ -13,17 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js "></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js "></script>
   <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-  <?php
-  // include '1koneksidb.php';
-  // include 'src/charts-data.php';
-  ?>
-  <!-- <style>
-    td>img {
-      width: 100%;
-      height: 250px;
-      object-fit: contain;
-    }
-  </style> -->
+  
   <title>Ranking Bossss</title>
 
 </head>
@@ -59,10 +49,10 @@
           <th>Pilih Universitas</th>
           <th width="300px">
 
-          <input type="text" class="form-control" id="university1Input" onkeyup="searchAndUpdateChart2(this.value)" placeholder="Search for University 1...">
+          <input type="text" class="form-control" id="university1Input" placeholder="Search for University 1...">
           </th>
           <th width="300px">
-          <input type="text" class="form-control" id="university2Input" onkeyup="searchAndUpdateChart2(this.value)" placeholder="Search for University 2...">
+          <input type="text" class="form-control" id="university2Input" placeholder="Search for University 2...">
 
 
           </th>
@@ -70,11 +60,6 @@
           <input type="text" class="form-control" id="university3Input" placeholder="Search for University 3...">
 
           </th>
-          <!-- ------------------------ -->
-          
-
-
-          <!-- ------------------------ -->
         <tr>
           <th>Nama Universitas</th>
           <td id="univ1">N/A</td>
@@ -99,12 +84,12 @@
           <td id="teaching2">N/A</td>
           <td id="teaching3">N/A</td>
         </tr>
-        <tr>
+        <!-- <tr>
             <th>Teaching Points Needed to next rank</th>
             <td id="point1">N/A</td>
             <td id="point2">N/A</td>
             <td id="point3">N/A</td>
-        </tr>
+        </tr> -->
         <tr>
           <th>Research</th>
           <td id="research1">N/A</td>
