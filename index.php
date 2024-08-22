@@ -13,33 +13,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js "></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js "></script>
   <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   
   <title>Ranking Bossss</title>
 
 </head>
 
 <body>
-  <nav class="navbar sticky-top navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">My Logo</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="landing.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">Compare</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.php">About us</a>
-          </li>
-        </ul>
+<nav class="bg-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+            </div>
+            <div class="hidden md:-my-px md:ml-10 md:flex md:items-center md:grow-0">
+              <a href="landing.php" class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white  focus:outline-none focus:text-white focus:bg-indigo-700">Home</a>
+              <a href="index.php" class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 bg-indigo-900 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Compare</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
   <h1 class="display-5 my-5 text-center">Membandingkan Universitas</h1>
   <div class="container">
@@ -50,13 +44,16 @@
           <th width="300px">
 
           <input type="text" class="form-control" id="university1Input" placeholder="Search for University 1...">
+
           </th>
           <th width="300px">
+
           <input type="text" class="form-control" id="university2Input" placeholder="Search for University 2...">
 
 
           </th>
           <th width="300px">
+            
           <input type="text" class="form-control" id="university3Input" placeholder="Search for University 3...">
 
           </th>

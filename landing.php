@@ -64,10 +64,10 @@
                 Compare
               </a>
               <a
-                href="index.php"
+                href="filter.php"
                 class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700"
               >
-                About us
+                Filter
               </a>
             </div>
           </div>
@@ -91,7 +91,7 @@
         }
         ?> 
           <div class="flex justify-center items-center">
-            <form action="landing.php" method="POST" class="w-1/2">
+            <form action="" method="POST" class="w-1/2">
               <select name="parameter" class="w-full mt-2 border border-gray-300 rounded-lg p-2">
                 <option value="research" name="research">Research</option>
                 <option value="citation" name="citation">Citation</option>
@@ -100,8 +100,8 @@
                 <option value="international_outlook" name="international_outlook">International Outlook</option>
                 <option value="ova" name="ova">Overall Score</option>
                 <option value="campus_info" name="campus_info">Campus Info</option>
+                <input type="submit" value="Submit" name="submit" class="pointer mt-4 px-4 py-2 bg-indigo-800 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700">
               </select>
-              <input type="submit" value="Submit" name="submit" class="pointer mt-4 px-4 py-2 bg-indigo-800 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700">
             </form>
             
           </div>   
@@ -316,7 +316,6 @@
                         echo "<th>Rank Industry Income</th>";
                         echo "<th>Research</th>";
                         echo "<th>Rank Research</th>";
-                        echo "<th>Rank Citation</th>";
                         echo "<th>Tanggal</th>";
                         echo "</tr>";
         
@@ -336,7 +335,6 @@
                             echo "<td>" . $row["rank_inc"] . "</td>";
                             echo "<td>" . $row["research"] . "</td>";
                             echo "<td>" . $row["rank_rsc"] . "</td>";
-                            echo "<td>" . $row["rank_ctn"] . "</td>";
                             echo "<td>" . $row["tanggal"] . "</td>";
                             echo "</tr>";
                         }

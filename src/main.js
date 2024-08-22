@@ -62,7 +62,7 @@ function updateChart(university, index, chartType) {
     } else if (chartType === 'line') {
         chart = myLineChart;
         chartElement = 'lineChart';
-        // backgroundColors = ['rgba(255, 159, 64, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(104, 132, 245, 0.6)', 'rgba(75, 192, 192, 0.6)', 'rgba(255, 99, 132, 0.6)'];
+        backgroundColors = ['rgba(255, 159, 64, 0)', 'rgba(54, 162, 235, 0)', 'rgba(104, 132, 245, 0)', 'rgba(75, 192, 192, 0)', 'rgba(255, 99, 132, 0)'];
 
         borderColors = ['rgba(255, 159, 64, 1)', 'rgba(54, 162, 235, 1)', 'rgba(104, 132, 245, 1)', 'rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)'];
         
