@@ -9,6 +9,29 @@
 
     <title>Index</title>
     <style>
+      .suggestion {
+      padding: 5px 10px;
+      cursor: pointer;
+      background-color: #fff;
+      transition: background-color 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .suggestion:hover {
+      background-color: #f1f1f1;
+    }
+
+    #suggestion-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 99999;
+      max-height: 200px;
+      overflow-y: auto;
+    }
       table {
         border-collapse: collapse;
         width: 100%;
@@ -133,6 +156,7 @@
               <div class="mt-4">
                 <label for="search" class="block text-gray-700 font-bold mb-2">Search University</label>
                 <input type="text" name="search" id="search" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Enter university name">
+                <ul id="suggestion-list"></ul>
                 
               </div>
             </div>
@@ -395,5 +419,6 @@
             $conn->close();
         }
         ?>
+  <script src="search.js"></script>
   </body>
 </html>
