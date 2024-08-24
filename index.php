@@ -110,7 +110,7 @@
     </div>
   </div>
   <div class="chartContainer">
-    <canvas id="chartTeaching"></canvas>
+    <canvas id="barChart"></canvas>
     <canvas id="lineChart"></canvas>
   </div>
   

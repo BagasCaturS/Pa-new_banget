@@ -54,7 +54,7 @@ function updateChart(university, index, chartType) {
 
     if (chartType === 'bar') {
         chart = myBarChart;
-        chartElement = 'chartTeaching';
+        chartElement = 'barChart';
         backgroundColors = ['rgba(75, 192, 192, 0.6)', 'rgba(255, 99, 132, 0.6)', 'rgba(255, 206, 86, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(153, 102, 255, 0.6)'];
 
         borderColors = ['rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 206, 86, 1)', 'rgba(54, 162, 235, 1)', 'rgba(153, 102, 255, 1)'];
@@ -138,3 +138,29 @@ document.getElementById("university2Input").addEventListener("keyup", function()
 document.getElementById("university3Input").addEventListener("keyup", function() {
     fetchUniversityData(this.value, 3);
 });
+
+
+// sort header
+
+function goToUniversity() {
+    const universityName = prompt("Enter the name of the university:");
+    if (universityName) {
+        const rows = document.querySelectorAll("table tr");
+        let found = false;
+        
+        rows.forEach(row => {
+            const cells = row.getElementsByTagName("td");
+            if (cells.length > 0 && cells[2].innerText.toLowerCase() === universityName.toLowerCase()) {
+                row.scrollIntoView({ behavior: "smooth", block: "center" });
+                row.style.backgroundColor = "yellow";
+                found = true;
+            } else {
+                row.style.backgroundColor = "";
+            }
+        });
+
+        if (!found) {
+            alert("University not found.");
+        }
+    }
+}

@@ -1,32 +1,31 @@
 <?php
+// search_suggestions.php
+
 header('Content-Type: application/json');
 
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "the_pa";
+// Get the query from the URL parameter
+$query = $_GET['q'] ?? '';
 
-$conn = new mysqli($host, $user, $password, $database);
+// Connect to the database
+include '1koneksidb.php';
 
-if ($conn->connect_error) {
-    die(json_encode(['error' => 'Failed to connect to the database']));
-}
+// Prepare and execute the query
+$stmt = $conn->prepare("SELECT nama_univ FROM campus_info WHERE nama_univ LIKE ? LIMIT 10");
+$searchTerm = "%{$query}%";
+$stmt->bind_param("s", $searchTerm);
+$stmt->execute();
+$result = $stmt->get_result();
 
-$searchTerm = isset($_GET['q']) ? $_GET['q'] : '';
-
-$query = $conn->prepare("SELECT id_ova, nama_univ FROM overall WHERE nama_univ LIKE ?");
-$searchTermLike = "%$searchTerm%";
-$query->bind_param('s', $searchTermLike);
-
-$query->execute();
-$result = $query->get_result();
-
-$data = [];
+// Fetch suggestions
+$suggestions = [];
 while ($row = $result->fetch_assoc()) {
-    $data[] = $row;
+    $suggestions[] = $row['nama_univ'];
 }
 
-echo json_encode($data);
-
+// Close the connection
+$stmt->close();
 $conn->close();
+
+// Return suggestions as JSON
+echo json_encode($suggestions);
 ?>
