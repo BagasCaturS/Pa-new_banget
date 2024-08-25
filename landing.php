@@ -27,7 +27,7 @@
       padding: 0;
       margin: 0;
       position: absolute;
-      width: 100%;
+      width: 30rem;
       z-index: 99999;
       max-height: 200px;
       overflow-y: auto;
@@ -125,7 +125,7 @@
               <option value="international_outlook" name="international_outlook" <?php echo (isset($_POST['parameter']) && $_POST['parameter'] == 'international_outlook') ? 'selected' : ''; ?>>International Outlook</option> -->
               <!-- <option value="campus_info" name="campus_info" <?php echo (isset($_POST['parameter']) && $_POST['parameter'] == 'campus_info') ? 'selected' : ''; ?>>Campus Info</option> -->
               <option value="ova" name="ova" <?php echo (isset($_POST['parameter']) && $_POST['parameter'] == 'ova') ? 'selected' : ''; ?>>Overall Score</option>
-                <input type="submit" value="Submit" name="submit" class="pointer mt-4 px-4 py-2 bg-indigo-800 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700">
+                <input/>
                 <div>
                   <label for="tanggal" class="block text-gray-700 font-bold mb-2">Year</label>
                   <select name="tanggal" id="tanggal" class="w-full p-2 border border-gray-300 rounded-md">
@@ -159,6 +159,7 @@
                 <ul id="suggestion-list"></ul>
                 
               </div>
+              <input type="submit" value="Submit" name="submit" class="pointer mt-4 px-4 py-2 bg-indigo-800 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700">
             </div>
             </form>
             

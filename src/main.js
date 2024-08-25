@@ -1,5 +1,9 @@
 let myBarChart;
-let myLineChart;
+const universityColors = {
+    1: { backgroundColor: 'rgba(255, 99, 132, 0.6)', borderColor: 'rgba(255, 99, 132, 1)' },
+    2: { backgroundColor: 'rgba(54, 162, 235, 0.6)', borderColor: 'rgba(54, 162, 235, 1)' },
+    3: { backgroundColor: 'rgba(104, 132, 245, 0.6)', borderColor: 'rgba(104, 132, 245, 1)' }
+};
 
 function fetchUniversityData(searchTerm, universityIndex) {
     if (searchTerm === '') return;
@@ -17,7 +21,6 @@ function fetchUniversityData(searchTerm, universityIndex) {
 
                 // Update the charts with the university data
                 updateChart(university, universityIndex, 'bar');
-                updateChart(university, universityIndex, 'line');
             } else {
                 console.log("No data found");
             }
@@ -47,31 +50,13 @@ function updateChart(university, index, chartType) {
         university.income
     ];
     
-    const counT = university.teaching + university.research;
-    console.log(counT);
-
-    let chart, chartElement, backgroundColors, borderColors;
-
-    if (chartType === 'bar') {
-        chart = myBarChart;
-        chartElement = 'barChart';
-        backgroundColors = ['rgba(75, 192, 192, 0.6)', 'rgba(255, 99, 132, 0.6)', 'rgba(255, 206, 86, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(153, 102, 255, 0.6)'];
-
-        borderColors = ['rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 206, 86, 1)', 'rgba(54, 162, 235, 1)', 'rgba(153, 102, 255, 1)'];
-
-    } else if (chartType === 'line') {
-        chart = myLineChart;
-        chartElement = 'lineChart';
-        backgroundColors = ['rgba(255, 159, 64, 0)', 'rgba(54, 162, 235, 0)', 'rgba(104, 132, 245, 0)', 'rgba(75, 192, 192, 0)', 'rgba(255, 99, 132, 0)'];
-
-        borderColors = ['rgba(255, 159, 64, 1)', 'rgba(54, 162, 235, 1)', 'rgba(104, 132, 245, 1)', 'rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)'];
-        
-    }
+    const backgroundColors = universityColors[index].backgroundColor;
+    const borderColors = universityColors[index].borderColor;
 
     // If the chart is not yet initialized, create it
-    if (!chart) {
-        const ctx = document.getElementById(chartElement).getContext('2d');
-        chart = new Chart(ctx, {
+    if (!myBarChart) {
+        const ctx = document.getElementById('barChart').getContext('2d');
+        myBarChart = new Chart(ctx, {
             type: chartType,
             data: {
                 labels: labels,
@@ -80,8 +65,7 @@ function updateChart(university, index, chartType) {
                     data: newData,
                     backgroundColor: backgroundColors,
                     borderColor: borderColors,
-                    borderWidth: 1,
-                    fill: chartType === 'line'
+                    borderWidth: 1
                 }]
             },
             options: {
@@ -93,36 +77,29 @@ function updateChart(university, index, chartType) {
                 }
             }
         });
-
-        if (chartType === 'bar') {
-            myBarChart = chart;
-        } else if (chartType === 'line') {
-            myLineChart = chart;
-        }
     } else {
         // If the chart exists, update the datasets and labels
 
         // Check if the dataset for the university index already exists
-        if (chart.data.datasets[index - 1]) {
+        if (myBarChart.data.datasets[index - 1]) {
             // Update the existing dataset
-            chart.data.datasets[index - 1].data = newData;
-            chart.data.datasets[index - 1].label = university.nama_univ;
-            chart.data.datasets[index - 1].backgroundColor = backgroundColors;
-            chart.data.datasets[index - 1].borderColor = borderColors;
+            myBarChart.data.datasets[index - 1].data = newData;
+            myBarChart.data.datasets[index - 1].label = university.nama_univ;
+            myBarChart.data.datasets[index - 1].backgroundColor = backgroundColors;
+            myBarChart.data.datasets[index - 1].borderColor = borderColors;
         } else {
             // Add a new dataset if it doesn't exist
-            chart.data.datasets.push({
+            myBarChart.data.datasets.push({
                 label: university.nama_univ,
                 data: newData,
                 backgroundColor: backgroundColors,
                 borderColor: borderColors,
-                borderWidth: 1,
-                fill: chartType === 'line'
+                borderWidth: 1
             });
         }
 
         // Update the chart with new data
-        chart.update();
+        myBarChart.update();
     }
 }
 

@@ -107,24 +107,45 @@ if (isset($_POST['search'])) {
     $lokasi = $_POST['Lokasi'];
     $year = $_POST['tanggal'];
 
+    // Query to fetch university data based on selected parameters
     $query = "SELECT nama_univ, lokasi, IFNULL($parameter, 0) as $parameter FROM overall WHERE $domicile = ? AND tanggal = ? ORDER BY $parameter DESC";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("si", $lokasi, $year);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
+    // Fetch Telkom University data separately
+    $telkomQuery = "SELECT nama_univ, lokasi, IFNULL($parameter, 0) as $parameter FROM overall WHERE nama_univ = 'Telkom University' AND tanggal = ?";
+    $telkomStmt = $conn->prepare($telkomQuery);
+    $telkomStmt->bind_param("i", $year);
+    $telkomStmt->execute();
+    $telkomResult = $telkomStmt->get_result();
+    $telkomData = $telkomResult->fetch_assoc();
+
+    if ($result->num_rows > 0 || $telkomData) {
         echo "<div class='overflow-x-auto'>";
         echo "<table class='w-full text-sm text-left text-gray-500'>";
         echo "<thead class='bg-gray-800 text-white'><tr><th>No</th><th>University Name</th><th>Location</th><th>Rank</th><th>$parameter</th></tr></thead>";
         echo "<tbody>";
 
         $counter = 1;
+        $telkomInserted = false;
+
         while ($row = $result->fetch_assoc()) {
-            // Apply highlight class if the university name is "Telkom University"
-            $highlightClass = ($row['nama_univ'] === 'Telkom University') ? 'highlight' : '';
-            echo "<tr class='border-b hover:bg-gray-100 $highlightClass'><td>{$counter}</td><td>{$row['nama_univ']}</td><td>{$row['lokasi']}</td><td>{$counter}</td><td>{$row[$parameter]}</td></tr>";
-            $counter++;
+            if (!$telkomInserted && $telkomData && $row['nama_univ'] === 'Telkom University') {
+                echo "<tr class='border-b hover:bg-gray-100 highlight'><td>{$counter}</td><td>{$telkomData['nama_univ']}</td><td>{$telkomData['lokasi']}</td><td>{$counter}</td><td>{$telkomData[$parameter]}</td></tr>";
+                $telkomInserted = true;
+                $counter++;
+            }
+
+            if ($row['nama_univ'] !== 'Telkom University') {
+                echo "<tr class='border-b hover:bg-gray-100'><td>{$counter}</td><td>{$row['nama_univ']}</td><td>{$row['lokasi']}</td><td>{$counter}</td><td>{$row[$parameter]}</td></tr>";
+                $counter++;
+            }
+        }
+
+        if ($telkomData && !$telkomInserted) {
+            echo "<tr class='border-b hover:bg-gray-100 highlight'><td>{$counter}</td><td>{$telkomData['nama_univ']}</td><td>{$telkomData['lokasi']}</td><td>{$counter}</td><td>{$telkomData[$parameter]}</td></tr>";
         }
 
         echo "</tbody></table>";
@@ -134,6 +155,7 @@ if (isset($_POST['search'])) {
     }
 
     $stmt->close();
+    $telkomStmt->close();
 }
 
 $conn->close();
