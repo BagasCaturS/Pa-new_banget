@@ -34,14 +34,13 @@
 
   <h1 class="text-3xl font-bold my-5 text-center">Membandingkan Universitas</h1>
   
-  <div class="container mx-auto rounded-md">
-    <div class="max-w-3xl mx-auto">
+  <div class="container mx-auto bg-slate-200 p-4 rounded-md">
+    <div class="w-fit mx-auto">
       <table class="w-full bg-white shadow-md rounded-md my-5">
         <tr class="bg-gray-200 border border-black">
           <th class="py-2 px-4 border border-black">Pilih Universitas</th>
           <th class="py-2 px-4 border border-black">
-            <input type="text" class="w-full p-2 border border-black rounded" id="university1Input" placeholder="Search for University 1...">
-            <ul id="suggestion-list"></ul>
+            <p>Telkom University</p>
           </th>
           <th class="py-2 px-4 border border-black">
             <input type="text" class="w-full p-2 border border-black rounded" id="university2Input" placeholder="Search for University 2...">
@@ -50,7 +49,35 @@
           <th class="py-2 px-4 border border-black">
             <input type="text" class="w-full p-2 border border-black rounded" id="university3Input" placeholder="Search for University 3...">
             <ul id="suggestion-list"></ul>
-          </th>      
+          </th>   
+          <!-- Tambahkan untuk memilih tangggal -->
+          <!-- <th> <form action="index.php" method="post">
+          <label for="tanggal" class="block text-gray-700 font-bold mb-2">Year</label>
+                <select name="tanggal" id="tanggal" class="w-full p-2 border border-gray-300 rounded-md">
+                    <option value="">Select Year</option>
+                    <?php
+                    // Database connection
+                    include '1koneksidb.php';
+
+                    // Fetch distinct years from the database
+                    $query = "SELECT DISTINCT tanggal FROM overall ORDER BY tanggal DESC";
+                    $result = $conn->query($query);
+
+                    // Check if query was successful
+                    if ($result && $result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $selected = (isset($_POST['tanggal']) && $_POST['tanggal'] == $row['tanggal']) ? 'selected' : '';
+                            echo "<option value=\"{$row['tanggal']}\" $selected>{$row['tanggal']}</option>";
+                        }
+                    } else {
+                        echo "<option value=\"\">No years available</option>";
+                    }
+
+                    // Close the connection
+                    $conn->close();
+                    ?>
+                </select>
+          </form></th>    -->
         </tr>
         <tr class="border border-black">
           <th class="py-2 px-4 border border-black">Nama Universitas</th>
@@ -98,14 +125,14 @@
     </div>
 
     <div class="grid grid-cols-2 ">
-      
+
       <div class="chartContainer max-w-3xl h-fit mx-auto shadow-md rounded-md flex flex-col font-bold">
         <h2 class="flex  justify-start w-full border-b-2">Grafik Parameter</h2>
         <canvas id="barChart" class="w-4/5"></canvas>
       </div>
       <div class="chartContainer max-w-3xl h-fit mx-auto shadow-md rounded-md flex flex-col font-bold">
-        <h2 class="flex  justify-start w-full border-b-2">Grafik Parameter</h2>
-        <canvas id="barChart" class="w-4/5"></canvas>
+        <h2 class="flex  justify-start w-full border-b-2">Grafik Ranking</h2>
+        <canvas id="radarChart" class="w-4/5"></canvas>
       </div>
     </div>
   </div>

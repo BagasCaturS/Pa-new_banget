@@ -1,8 +1,9 @@
 let myBarChart;
+let myRadarChart;
 const universityColors = {
-    1: { backgroundColor: 'rgba(255, 99, 132, 0.6)', borderColor: 'rgba(255, 99, 132, 1)' },
-    2: { backgroundColor: 'rgba(54, 162, 235, 0.6)', borderColor: 'rgba(54, 162, 235, 1)' },
-    3: { backgroundColor: 'rgba(104, 132, 245, 0.6)', borderColor: 'rgba(104, 132, 245, 1)' }
+    1: { backgroundColor: 'rgba(255, 99, 132, 0.3)', borderColor: 'rgba(255, 99, 132, 1)' },
+    2: { backgroundColor: 'rgba(54, 162, 235, 0.3)', borderColor: 'rgba(54, 162, 235, 1)' },
+    3: { backgroundColor: 'rgba(0, 255, 47, 0.3)', borderColor: 'rgba(27, 170, 53, 1)' }
 };
 
 function fetchUniversityData(searchTerm, universityIndex) {
@@ -34,7 +35,6 @@ function updateUniversityDetails(university, index) {
     document.getElementById(`lokasi${index}`).innerHTML = university.lokasi || 'N/A';
     document.getElementById(`wrld_rank${index}`).innerHTML = university.wrld_rank || 'N/A';
     document.getElementById(`teaching${index}`).innerHTML = university.teaching || 'N/A';
-    // document.getElementById(`point${index}`).innerHTML = university.teaching_points_needed || 'N/A';
     document.getElementById(`research${index}`).innerHTML = university.research || 'N/A';
     document.getElementById(`citation${index}`).innerHTML = university.citation || 'N/A';
     document.getElementById(`outlook${index}`).innerHTML = university.int_outlook || 'N/A';
@@ -47,7 +47,16 @@ function updateChart(university, index, chartType) {
         university.research,
         university.int_outlook,
         university.citation,
-        university.income
+        university.income,
+    ];
+    const labelsRanking = ["Rank Income", " Rank Citation", "Rank Research", "Rank International Outlook", " Rank Teaching", "World Rank"];
+    const ranking =[
+        university.rank_inc,
+        university.rank_ctn,
+        university.rank_rsc,
+        university.rank_int_outlook,
+        university.rank_teaching,
+        university.wrld_rank,
     ];
     
     const backgroundColors = universityColors[index].backgroundColor;
@@ -77,7 +86,36 @@ function updateChart(university, index, chartType) {
                 }
             }
         });
-    } else {
+    } 
+    if (!myRadarChart) {
+        const ctxRadar = document.getElementById('radarChart').getContext('2d');
+        myRadarChart = new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: labelsRanking,
+                datasets: [
+                    {
+                        label: university.nama_univ,
+                        data: ranking,
+                        backgroundColor: backgroundColors,
+                        borderColor: borderColors,
+                        borderWidth: 1,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        beginAtZero: false,
+                        min: 1,
+                        reverse: true,
+                    }
+                }
+            },
+        });
+    }
+    else {
         // If the chart exists, update the datasets and labels
 
         // Check if the dataset for the university index already exists
@@ -97,16 +135,35 @@ function updateChart(university, index, chartType) {
                 borderWidth: 1
             });
         }
+        if (myRadarChart.data.datasets[index - 1]) {
+            // Update the existing dataset
+            myRadarChart.data.datasets[index - 1].data = ranking;
+            myRadarChart.data.datasets[index - 1].label = university.nama_univ;
+            myRadarChart.data.datasets[index - 1].backgroundColor = backgroundColors;
+            myRadarChart.data.datasets[index - 1].borderColor = borderColors;
+        } else {
+            // Add a new dataset if it doesn't exist
+            myRadarChart.data.datasets.push({
+                label: university.nama_univ,
+                data: ranking,
+                backgroundColor: backgroundColors,
+                borderColor: borderColors,
+                borderWidth: 1
+            });
+        }
 
         // Update the chart with new data
+        myRadarChart.update();
         myBarChart.update();
     }
 }
 
+// Fetch Telkom University data by default
+fetchUniversityData('Telkom University', 1);
 // Example usage: assuming the input for universities 1, 2, and 3
-document.getElementById("university1Input").addEventListener("keyup", function() {
-    fetchUniversityData(this.value, 1);
-});
+// document.getElementById("university1Input").addEventListener("keyup", function() {
+//     fetchUniversityData(this.value, 1);
+// });
 
 document.getElementById("university2Input").addEventListener("keyup", function() {
     fetchUniversityData(this.value, 2);
@@ -119,25 +176,25 @@ document.getElementById("university3Input").addEventListener("keyup", function()
 
 // sort header
 
-function goToUniversity() {
-    const universityName = prompt("Enter the name of the university:");
-    if (universityName) {
-        const rows = document.querySelectorAll("table tr");
-        let found = false;
+// function goToUniversity() {
+//     const universityName = prompt("Enter the name of the university:");
+//     if (universityName) {
+//         const rows = document.querySelectorAll("table tr");
+//         let found = false;
         
-        rows.forEach(row => {
-            const cells = row.getElementsByTagName("td");
-            if (cells.length > 0 && cells[2].innerText.toLowerCase() === universityName.toLowerCase()) {
-                row.scrollIntoView({ behavior: "smooth", block: "center" });
-                row.style.backgroundColor = "yellow";
-                found = true;
-            } else {
-                row.style.backgroundColor = "";
-            }
-        });
+//         rows.forEach(row => {
+//             const cells = row.getElementsByTagName("td");
+//             if (cells.length > 0 && cells[2].innerText.toLowerCase() === universityName.toLowerCase()) {
+//                 row.scrollIntoView({ behavior: "smooth", block: "center" });
+//                 row.style.backgroundColor = "yellow";
+//                 found = true;
+//             } else {
+//                 row.style.backgroundColor = "";
+//             }
+//         });
 
-        if (!found) {
-            alert("University not found.");
-        }
-    }
-}
+//         if (!found) {
+//             alert("University not found.");
+//         }
+//     }
+// }

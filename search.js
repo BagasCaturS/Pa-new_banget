@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
   const searchInputs = [
-    document.getElementById('university1Input'),
+    // document.getElementById('university1Input'),
     document.getElementById('university2Input'),
     document.getElementById('university3Input'),
   ];
-  const searchInputs2 = [
-    document.getElementById('search')
-  ];
+  // const searchInputs2 = [
+  //   document.getElementById('search')
+  // ];
 
   searchInputs.forEach(input => {
     input.addEventListener('input', function() {
@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
       fetchUniversities(searchTerm, suggestionList, input);
     });
   });
-  searchInputs2.forEach(input => {
-    input.addEventListener('input', function() {
-      const searchTerm = this.value.toLowerCase();
-      const suggestionList = this.nextElementSibling; // Find the suggestion list that corresponds to the current input
-      fetchUniversities(searchTerm, suggestionList, input);
-    });
-  });
+  // searchInputs2.forEach(input => {
+  //   input.addEventListener('input', function() {
+  //     const searchTerm = this.value.toLowerCase();
+  //     const suggestionList = this.nextElementSibling; // Find the suggestion list that corresponds to the current input
+  //     fetchUniversities(searchTerm, suggestionList, input);
+  //   });
+  // });
 
   function fetchUniversities(searchTerm, suggestionList, inputElement) {
     fetch('univ.json')
