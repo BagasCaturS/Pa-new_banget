@@ -21,6 +21,33 @@
 
     <form action="filter.php" method="post" class="mb-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div>
+                <label for="tanggal" class="block text-gray-700 font-bold mb-2">Year</label>
+                <select name="tanggal" id="tanggal" class="w-full p-2 border border-gray-300 rounded-md">
+                    <option value="">Select Year</option>
+                    <?php
+                    // Database connection
+                    include '1koneksidb.php';
+
+                    // Fetch distinct years from the database
+                    $query = "SELECT DISTINCT tanggal FROM overall ORDER BY tanggal DESC";
+                    $result = $conn->query($query);
+
+                    // Check if query was successful
+                    if ($result && $result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $selected = (isset($_POST['tanggal']) && $_POST['tanggal'] == $row['tanggal']) ? 'selected' : '';
+                            echo "<option value=\"{$row['tanggal']}\" $selected>{$row['tanggal']}</option>";
+                        }
+                    } else {
+                        echo "<option value=\"\">No years available</option>";
+                    }
+
+                    // Close the connection
+                    $conn->close();
+                    ?>
+                </select>
+            </div>
             <div>
                 <label for="parameter" class="block text-gray-700 font-bold mb-2">Parameter</label>
                 <select id="parameter" name="parameter" class="w-full p-2 border border-gray-300 rounded-md">
@@ -63,33 +90,6 @@
                     $conn->close();
                     ?>
                     </optgroup>
-                </select>
-            </div>
-            <div>
-                <label for="tanggal" class="block text-gray-700 font-bold mb-2">Year</label>
-                <select name="tanggal" id="tanggal" class="w-full p-2 border border-gray-300 rounded-md">
-                    <option value="">Select Year</option>
-                    <?php
-                    // Database connection
-                    include '1koneksidb.php';
-
-                    // Fetch distinct years from the database
-                    $query = "SELECT DISTINCT tanggal FROM overall ORDER BY tanggal DESC";
-                    $result = $conn->query($query);
-
-                    // Check if query was successful
-                    if ($result && $result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            $selected = (isset($_POST['tanggal']) && $_POST['tanggal'] == $row['tanggal']) ? 'selected' : '';
-                            echo "<option value=\"{$row['tanggal']}\" $selected>{$row['tanggal']}</option>";
-                        }
-                    } else {
-                        echo "<option value=\"\">No years available</option>";
-                    }
-
-                    // Close the connection
-                    $conn->close();
-                    ?>
                 </select>
             </div>
         </div>
