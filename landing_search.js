@@ -29,3 +29,5 @@ function insertSuggestionIntoInput(suggestion) {
     const suggestionsList = document.getElementById('suggestions');
     suggestionsList.innerHTML = '';
 }
+
+///////////////////////////////////////////////

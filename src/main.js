@@ -6,31 +6,60 @@ const universityColors = {
     3: { backgroundColor: 'rgba(0, 255, 47, 0.3)', borderColor: 'rgba(27, 170, 53, 1)' }
 };
 
-function fetchUniversityData(searchTerm, universityIndex) {
-    if (searchTerm === '') return;
+// Function to sanitize data by removing special characters
+function sanitizeData(data) {
+    const sanitizedData = JSON.parse(JSON.stringify(data)); // Deep clone the data
 
-    // Fetch university data based on the search term
-    fetch(`./fetch_uni_name.php?q=${encodeURIComponent(searchTerm)}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.length > 0) {
-                // Assuming the data contains only one university per search
-                const university = data[0];
+    // Regular expression to match special characters you want to remove
+    const specialCharRegex = /[+\-]/g;
 
-                // Update the university details in the HTML
-                updateUniversityDetails(university, universityIndex);
+    // Iterate through each property in the data and sanitize it
+    for (let key in sanitizedData) {
+        if (sanitizedData[key] && typeof sanitizedData[key] === 'string') {
+            sanitizedData[key] = sanitizedData[key].replace(specialCharRegex, '');
+        }
+    }
 
-                // Update the charts with the university data
-                updateChart(university, universityIndex, 'bar');
-            } else {
-                console.log("No data found");
-            }
-        })
-        .catch(error => console.error('Error fetching data:', error));
+    // Apply the function to get the first four digits of the world ranking
+    if (sanitizedData.wrld_rank) {
+        sanitizedData.wrld_rank = getFirstFourDigits(sanitizedData.wrld_rank);
+    }
+
+    return sanitizedData;
 }
 
+// Function to get the first four digits of a string unless it contains "reporter"
+function getFirstFourDigits(value) {
+    // Check if the value contains "reporter"
+    if (value.toLowerCase().includes("reporter")) {
+        return value; // Return the original value if it contains "reporter"
+    }
+
+    return value.toString().slice(0, 4);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (universityData[0]) {
+        const sanitizedData = sanitizeData(universityData[0]);
+        updateUniversityDetails(sanitizedData, 1);
+        updateChart(sanitizedData, 1, 'bar');
+    }
+
+    if (universityData[1]) {
+        const sanitizedData = sanitizeData(universityData[1]);
+        updateUniversityDetails(sanitizedData, 2);
+        updateChart(sanitizedData, 2, 'bar');
+    }
+
+    if (universityData[2]) {
+        const sanitizedData = sanitizeData(universityData[2]);
+        updateUniversityDetails(sanitizedData, 3);
+        updateChart(sanitizedData, 3, 'bar');
+    }
+});
+
+// Function to update university details in the HTML
 function updateUniversityDetails(university, index) {
-    // Update the HTML elements with the university details
     document.getElementById(`univ${index}`).innerHTML = university.nama_univ || 'N/A';
     document.getElementById(`lokasi${index}`).innerHTML = university.lokasi || 'N/A';
     document.getElementById(`wrld_rank${index}`).innerHTML = university.wrld_rank || 'N/A';
@@ -41,6 +70,7 @@ function updateUniversityDetails(university, index) {
     document.getElementById(`tanggal${index}`).innerHTML = university.tanggal || 'N/A';
 }
 
+// Function to update the charts with university data
 function updateChart(university, index, chartType) {
     const labels = ["Teaching", "Research", "International Outlook", "Citations", "Income"];
     const newData = [
@@ -50,13 +80,9 @@ function updateChart(university, index, chartType) {
         university.citation,
         university.income,
     ];
-    
-    const tanggal = [
-        university.tanggal,
-    ] 
 
     const labelsRanking = ["Rank Income", " Rank Citation", "Rank Research", "Rank International Outlook", " Rank Teaching", "World Rank"];
-    const ranking =[
+    const ranking = [
         university.rank_inc,
         university.rank_ctn,
         university.rank_rsc,
@@ -64,11 +90,10 @@ function updateChart(university, index, chartType) {
         university.rank_teaching,
         university.wrld_rank,
     ];
-    
+
     const backgroundColors = universityColors[index].backgroundColor;
     const borderColors = universityColors[index].borderColor;
 
-    // If the chart is not yet initialized, create it
     if (!myBarChart) {
         const ctx = document.getElementById('barChart').getContext('2d');
         myBarChart = new Chart(ctx, {
@@ -92,7 +117,24 @@ function updateChart(university, index, chartType) {
                 }
             }
         });
-    } 
+    } else {
+        if (myBarChart.data.datasets[index - 1]) {
+            myBarChart.data.datasets[index - 1].data = newData;
+            myBarChart.data.datasets[index - 1].label = university.nama_univ;
+            myBarChart.data.datasets[index - 1].backgroundColor = backgroundColors;
+            myBarChart.data.datasets[index - 1].borderColor = borderColors;
+        } else {
+            myBarChart.data.datasets.push({
+                label: university.nama_univ,
+                data: newData,
+                backgroundColor: backgroundColors,
+                borderColor: borderColors,
+                borderWidth: 1
+            });
+        }
+        myBarChart.update();
+    }
+
     if (!myRadarChart) {
         const ctxRadar = document.getElementById('radarChart').getContext('2d');
         myRadarChart = new Chart(ctxRadar, {
@@ -120,35 +162,13 @@ function updateChart(university, index, chartType) {
                 }
             },
         });
-    }
-    else {
-        // If the chart exists, update the datasets and labels
-
-        // Check if the dataset for the university index already exists
-        if (myBarChart.data.datasets[index - 1]) {
-            // Update the existing dataset
-            myBarChart.data.datasets[index - 1].data = newData;
-            myBarChart.data.datasets[index - 1].label = university.nama_univ;
-            myBarChart.data.datasets[index - 1].backgroundColor = backgroundColors;
-            myBarChart.data.datasets[index - 1].borderColor = borderColors;
-        } else {
-            // Add a new dataset if it doesn't exist
-            myBarChart.data.datasets.push({
-                label: university.nama_univ,
-                data: newData,
-                backgroundColor: backgroundColors,
-                borderColor: borderColors,
-                borderWidth: 1
-            });
-        }
+    } else {
         if (myRadarChart.data.datasets[index - 1]) {
-            // Update the existing dataset
             myRadarChart.data.datasets[index - 1].data = ranking;
             myRadarChart.data.datasets[index - 1].label = university.nama_univ;
             myRadarChart.data.datasets[index - 1].backgroundColor = backgroundColors;
             myRadarChart.data.datasets[index - 1].borderColor = borderColors;
         } else {
-            // Add a new dataset if it doesn't exist
             myRadarChart.data.datasets.push({
                 label: university.nama_univ,
                 data: ranking,
@@ -157,25 +177,9 @@ function updateChart(university, index, chartType) {
                 borderWidth: 1
             });
         }
-
-        // Update the chart with new data
         myRadarChart.update();
-        myBarChart.update();
     }
 }
-
-// Fetch Telkom University data by default
-fetchUniversityData('Telkom University', 1);
-
-
-document.getElementById("university2Input").addEventListener("keyup", function() {
-    fetchUniversityData(this.value, 2);
-});
-
-document.getElementById("university3Input").addEventListener("keyup", function() {
-    fetchUniversityData(this.value, 3);
-});
-
 
 // sort header
 
