@@ -18,19 +18,36 @@
 </head>
 
 <body class="bg-gray-100">
-  <nav class="bg-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-center h-16">
-        <div class="flex items-center">
-          <div class="flex-shrink-0"></div>
-          <div class="hidden md:flex md:items-center md:ml-10">
-            <a href="landing.php" class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-indigo-700">Home</a>
-            <a href="index.php" class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 bg-indigo-900 hover:text-white hover:bg-indigo-700">Compare</a>
+<nav class="bg-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center h-16">
+          <div class="flex items-center">
+            <div
+            class="hidden md:-my-px md:ml-10 md:flex md:items-center md:grow-0"
+            >
+              <a
+                href="landing.php"
+                class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white focus:outline-none focus:text-white focus:bg-indigo-700"
+                >
+                Home
+              </a>
+              <a
+              href="index.php"
+              class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 bg-indigo-900 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700"
+              >
+              Compare
+              </a>
+              <a
+              href="filter.php"
+              class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700"
+              >
+              Filter
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
   <h1 class="text-3xl font-bold my-5 text-center">Membandingkan Universitas</h1>
   
@@ -51,7 +68,7 @@
             <ul id="suggestion-list"></ul>
           </th>   
           <!-- Tambahkan untuk memilih tangggal -->
-          <!-- <th> <form action="index.php" method="post">
+          <th> <form action="index.php" method="post">
           <label for="tanggal" class="block text-gray-700 font-bold mb-2">Year</label>
                 <select name="tanggal" id="tanggal" class="w-full p-2 border border-gray-300 rounded-md">
                     <option value="">Select Year</option>
@@ -77,7 +94,8 @@
                     $conn->close();
                     ?>
                 </select>
-          </form></th>    -->
+          </form>
+          </th>   
         </tr>
         <tr class="border border-black">
           <th class="py-2 px-4 border border-black">Nama Universitas</th>
@@ -120,6 +138,12 @@
           <td class="py-2 px-4 border border-black" id="outlook1">N/A</td>
           <td class="py-2 px-4 border border-black" id="outlook2">N/A</td>
           <td class="py-2 px-4 border border-black" id="outlook3">N/A</td>
+        </tr>
+        <tr class="border border-black">
+          <th class="py-2 px-4 border border-black">Tanggal</th>
+          <td class="py-2 px-4 border border-black" id="tanggal1">N/A</td>
+          <td class="py-2 px-4 border border-black" id="tanggal2">N/A</td>
+          <td class="py-2 px-4 border border-black" id="tanggal3">N/A</td>
         </tr>
       </table>
     </div>

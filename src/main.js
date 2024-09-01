@@ -38,6 +38,7 @@ function updateUniversityDetails(university, index) {
     document.getElementById(`research${index}`).innerHTML = university.research || 'N/A';
     document.getElementById(`citation${index}`).innerHTML = university.citation || 'N/A';
     document.getElementById(`outlook${index}`).innerHTML = university.int_outlook || 'N/A';
+    document.getElementById(`tanggal${index}`).innerHTML = university.tanggal || 'N/A';
 }
 
 function updateChart(university, index, chartType) {
@@ -49,6 +50,11 @@ function updateChart(university, index, chartType) {
         university.citation,
         university.income,
     ];
+    
+    const tanggal = [
+        university.tanggal,
+    ] 
+
     const labelsRanking = ["Rank Income", " Rank Citation", "Rank Research", "Rank International Outlook", " Rank Teaching", "World Rank"];
     const ranking =[
         university.rank_inc,
@@ -160,10 +166,7 @@ function updateChart(university, index, chartType) {
 
 // Fetch Telkom University data by default
 fetchUniversityData('Telkom University', 1);
-// Example usage: assuming the input for universities 1, 2, and 3
-// document.getElementById("university1Input").addEventListener("keyup", function() {
-//     fetchUniversityData(this.value, 1);
-// });
+
 
 document.getElementById("university2Input").addEventListener("keyup", function() {
     fetchUniversityData(this.value, 2);

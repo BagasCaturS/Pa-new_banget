@@ -28,5 +28,4 @@ if (!empty($searchTerm)) {
 
 // Close the database connection
 $conn->close();
-
 ?>

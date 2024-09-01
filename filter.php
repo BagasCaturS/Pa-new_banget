@@ -12,6 +12,36 @@
             font-weight: bold; /* Bold text */
         }
     </style>
+    <nav class="bg-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center h-16">
+          <div class="flex items-center">
+            <div
+            class="hidden md:-my-px md:ml-10 md:flex md:items-center md:grow-0"
+            >
+              <a
+                href="landing.php"
+                class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white  focus:outline-none focus:text-white focus:bg-indigo-700"
+                >
+                Home
+              </a>
+              <a
+              href="index.php"
+              class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700"
+              >
+              Compare
+              </a>
+              <a
+              href="filter.php"
+              class="ml-4 px-3 py-2 rounded-md bg-indigo-900 text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700"
+              >
+              Filter
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
 </head>
 <body>
 
@@ -115,7 +145,7 @@ if (isset($_POST['search'])) {
     $result = $stmt->get_result();
 
     // Fetch Telkom University data separately
-    $telkomQuery = "SELECT nama_univ, lokasi, IFNULL($parameter, 0) as $parameter FROM overall WHERE nama_univ = 'Telkom University' AND tanggal = ?";
+    $telkomQuery = "SELECT nama_univ, lokasi, IFNULL($parameter, 0) as $parameter FROM overall WHERE nama_univ = 'Telkom University' AND tanggal = ? ";
     $telkomStmt = $conn->prepare($telkomQuery);
     $telkomStmt->bind_param("i", $year);
     $telkomStmt->execute();

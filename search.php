@@ -1,31 +1,25 @@
 <?php
-// search_suggestions.php
-
-header('Content-Type: application/json');
-
-// Get the query from the URL parameter
-$query = $_GET['q'] ?? '';
-
-// Connect to the database
 include '1koneksidb.php';
 
-// Prepare and execute the query
-$stmt = $conn->prepare("SELECT nama_univ FROM campus_info WHERE nama_univ LIKE ? LIMIT 10");
-$searchTerm = "%{$query}%";
-$stmt->bind_param("s", $searchTerm);
-$stmt->execute();
-$result = $stmt->get_result();
+if (isset($_GET['query'])) {
+    $searchTerm = $_GET['query'];
 
-// Fetch suggestions
-$suggestions = [];
-while ($row = $result->fetch_assoc()) {
-    $suggestions[] = $row['nama_univ'];
+    // Prepare and execute the SQL query to fetch suggestions
+    $stmt = $conn->prepare("SELECT DISTINCT nama_univ FROM overall WHERE nama_univ LIKE ? LIMIT 4");
+    $searchTerm = "%$searchTerm%";
+    $stmt->bind_param("s", $searchTerm);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Fetch results and store them in an array
+    $suggestions = [];
+    while ($row = $result->fetch_assoc()) {
+        $suggestions[] = $row['nama_univ'];
+    }
+
+    // Return the array as JSON
+    echo json_encode($suggestions);
 }
 
-// Close the connection
-$stmt->close();
 $conn->close();
-
-// Return suggestions as JSON
-echo json_encode($suggestions);
 ?>

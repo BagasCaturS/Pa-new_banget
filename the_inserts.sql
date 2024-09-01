@@ -39819,3 +39819,2916 @@ INSERT INTO research(id_rsc,nama_univ,research,rank_rsc,tanggal,id_info) VALUES
 ,(7938,'Ziane Achour University of Djelfa','data tidak ditemukan pada sumber','data tidak ditemukan pada sumber',2024,7938)
 ,(7939,'Ziauddin University','data tidak ditemukan pada sumber','data tidak ditemukan pada sumber',2024,7939);
 
+
+
+
+
+-- Nama univ distinct
+
++----------------------------------------------------------------------------------------------------+
+| nama_univ                                                                                          |
++----------------------------------------------------------------------------------------------------+
+| University of Oxford                                                                               |
+| Harvard University                                                                                 |
+| University of Cambridge                                                                            |
+| Stanford University                                                                                |
+| Massachusetts Institute of Technology                                                              |
+| California Institute of Technology                                                                 |
+| Princeton University                                                                               |
+| University of California, Berkeley                                                                 |
+| Yale University                                                                                    |
+| Imperial College London                                                                            |
+| Columbia University                                                                                |
+| ETH Zurich                                                                                         |
+| The University of Chicago                                                                          |
+| University of Pennsylvania                                                                         |
+| Johns Hopkins University                                                                           |
+| Tsinghua University                                                                                |
+| Peking University                                                                                  |
+| University of Toronto                                                                              |
+| National University of Singapore                                                                   |
+| Cornell University                                                                                 |
+| University of California, Los Angeles                                                              |
+| UCL                                                                                                |
+| University of Michigan-Ann Arbor                                                                   |
+| New York University                                                                                |
+| Duke University                                                                                    |
+| Northwestern University                                                                            |
+| University of Washington                                                                           |
+| Carnegie Mellon University                                                                         |
+| University of Edinburgh                                                                            |
+| Technical University of Munich                                                                     |
+| University of Hong Kong                                                                            |
+| University of California, San Diego                                                                |
+| LMU Munich                                                                                         |
+| University of Melbourne                                                                            |
+| King?s College London                                                                              |
+| Nanyang Technological University, Singapore                                                        |
+| London School of Economics and Political Science                                                   |
+| Georgia Institute of Technology                                                                    |
+| The University of Tokyo                                                                            |
+| University of British Columbia                                                                     |
+| ?cole Polytechnique F?d?rale de Lausanne                                                           |
+| KU Leuven                                                                                          |
+| Universit?t Heidelberg                                                                             |
+| Monash University                                                                                  |
+| The Chinese University of Hong Kong                                                                |
+| McGill University                                                                                  |
+| Paris Sciences et Lettres - PSL Research University Paris                                          |
+| University of Illinois at Urbana-Champaign                                                         |
+| Karolinska Institute                                                                               |
+| University of Texas at Austin                                                                      |
+| Fudan University                                                                                   |
+| Shanghai Jiao Tong University                                                                      |
+| The University of Queensland                                                                       |
+| University of Manchester                                                                           |
+| The University of Sydney                                                                           |
+| Seoul National University                                                                          |
+| Washington University in St Louis                                                                  |
+| The Hong Kong University of Science and Technology                                                 |
+| Wageningen University & Research                                                                   |
+| University of Amsterdam                                                                            |
+| Brown University                                                                                   |
+| Australian National University                                                                     |
+| University of California, Davis                                                                    |
+| University of California, Santa Barbara                                                            |
+| University of Southern California                                                                  |
+| Utrecht University                                                                                 |
+| Zhejiang University                                                                                |
+| Kyoto University                                                                                   |
+| University of North Carolina at Chapel Hill                                                        |
+| Delft University of Technology                                                                     |
+| Boston University                                                                                  |
+| UNSW Sydney                                                                                        |
+| Charit? - Universit?tsmedizin Berlin                                                               |
+| University of Science and Technology of China                                                      |
+| University of Groningen                                                                            |
+| University of Bristol                                                                              |
+| Leiden University                                                                                  |
+| Yonsei University (Seoul campus)                                                                   |
+| The Hong Kong Polytechnic University                                                               |
+| Erasmus University Rotterdam                                                                       |
+| University of Wisconsin-Madison                                                                    |
+| Emory University                                                                                   |
+| University of Glasgow                                                                              |
+| University of Zurich                                                                               |
+| McMaster University                                                                                |
+| Humboldt University of Berlin                                                                      |
+| University of T?bingen                                                                             |
+| University of Adelaide                                                                             |
+| University of Bonn                                                                                 |
+| Sorbonne University                                                                                |
+| Free University of Berlin                                                                          |
+| Korea Advanced Institute of Science and Technology (KAIST)                                         |
+| Universit? Paris-Saclay                                                                            |
+| University of Bern                                                                                 |
+| University of California, Irvine                                                                   |
+| Institut Polytechnique de Paris                                                                    |
+| Nanjing University                                                                                 |
+| Vanderbilt University                                                                              |
+| City University of Hong Kong                                                                       |
+| RWTH Aachen University                                                                             |
+| University of Basel                                                                                |
+| King Abdulaziz University                                                                          |
+| University of Minnesota                                                                            |
+| University of Maryland, College Park                                                               |
+| University of Warwick                                                                              |
+| Michigan State University                                                                          |
+| Ghent University                                                                                   |
+| University of Birmingham                                                                           |
+| University of Southampton                                                                          |
+| University of Helsinki                                                                             |
+| Universit? de Montr?al                                                                             |
+| Ohio State University (Main campus)                                                                |
+| University of Freiburg                                                                             |
+| University of Copenhagen                                                                           |
+| Universit? Paris Cit?                                                                              |
+| University of Sheffield                                                                            |
+| Aarhus University                                                                                  |
+| University of Alberta                                                                              |
+| University of G?ttingen                                                                            |
+| Lund University                                                                                    |
+| Vrije Universiteit Amsterdam                                                                       |
+| Lancaster University                                                                               |
+| Dartmouth College                                                                                  |
+| Queen Mary University of London                                                                    |
+| University of Vienna                                                                               |
+| University of Oslo                                                                                 |
+| Purdue University West Lafayette                                                                   |
+| University of Hamburg                                                                              |
+| University of Leeds                                                                                |
+| University of Nottingham                                                                           |
+| University of Antwerp                                                                              |
+| The University of Western Australia                                                                |
+| University of Technology Sydney                                                                    |
+| Case Western Reserve University                                                                    |
+| University of Lausanne                                                                             |
+| Georgetown University                                                                              |
+| University of Exeter                                                                               |
+| University of Ottawa                                                                               |
+| University of Auckland                                                                             |
+| Newcastle University                                                                               |
+| Radboud University Nijmegen                                                                        |
+| University of W?rzburg                                                                             |
+| University of York                                                                                 |
+| University of Pittsburgh-Pittsburgh campus                                                         |
+| Maastricht University                                                                              |
+| University of Cologne                                                                              |
+| Rice University                                                                                    |
+| University of Colorado Boulder                                                                     |
+| Ulm University                                                                                     |
+| Uppsala University                                                                                 |
+| University of Florida                                                                              |
+| Penn State (Main campus)                                                                           |
+| Tufts University                                                                                   |
+| University of Rochester                                                                            |
+| KTH Royal Institute of Technology                                                                  |
+| Arizona State University (Tempe)                                                                   |
+| Technical University of Berlin                                                                     |
+| TU Dresden                                                                                         |
+| University of Virginia (Main campus)                                                               |
+| University of Cape Town                                                                            |
+| University of Bologna                                                                              |
+| Trinity College Dublin                                                                             |
+| University of Leicester                                                                            |
+| Lomonosov Moscow State University                                                                  |
+| Pohang University of Science and Technology (POSTECH)                                              |
+| Southern University of Science and Technology (SUSTech)                                            |
+| Technical University of Denmark                                                                    |
+| Medical University of Graz                                                                         |
+| Northeastern University, US                                                                        |
+| Indiana University                                                                                 |
+| Universit? Catholique de Louvain                                                                   |
+| Sungkyunkwan University (SKKU)                                                                     |
+| Wuhan University                                                                                   |
+| Ulsan National Institute of Science and Technology (UNIST)                                         |
+| Macquarie University                                                                               |
+| Huazhong University of Science and Technology                                                      |
+| University of Liverpool                                                                            |
+| Stockholm University                                                                               |
+| University of Mannheim                                                                             |
+| University of Arizona                                                                              |
+| Texas A&M University                                                                               |
+| University of Barcelona                                                                            |
+| Autonomous University of Barcelona                                                                 |
+| Scuola Normale Superiore di Pisa                                                                   |
+| University of M?nster                                                                              |
+| Pompeu Fabra University                                                                            |
+| Cardiff University                                                                                 |
+| National Taiwan University (NTU)                                                                   |
+| Friedrich Schiller University Jena                                                                 |
+| Karlsruhe Institute of Technology                                                                  |
+| University of Massachusetts                                                                        |
+| University of Aberdeen                                                                             |
+| University of California, Santa Cruz                                                               |
+| Medical University of Vienna                                                                       |
+| University of Miami                                                                                |
+| University of Erlangen-Nuremberg                                                                   |
+| Sichuan University                                                                                 |
+| Durham University                                                                                  |
+| Queen?s University Belfast                                                                         |
+| University of Reading                                                                              |
+| Aalto University                                                                                   |
+| University of Bergen                                                                               |
+| Bielefeld University                                                                               |
+| University of Calgary                                                                              |
+| Curtin University                                                                                  |
+| University of Dundee                                                                               |
+| University of East Anglia                                                                          |
+| Eindhoven University of Technology                                                                 |
+| University of Geneva                                                                               |
+| George Washington University                                                                       |
+| University of Gothenburg                                                                           |
+| University of Hohenheim                                                                            |
+| Humanitas University                                                                               |
+| King Fahd University of Petroleum and Minerals                                                     |
+| University of Konstanz                                                                             |
+| Korea University                                                                                   |
+| Universit? Libre de Bruxelles                                                                      |
+| University of Luxembourg                                                                           |
+| University of Macau                                                                                |
+| Macau University of Science and Technology                                                         |
+| Medical University of Innsbruck                                                                    |
+| Moscow Institute of Physics and Technology (MIPT)                                                  |
+| University of Newcastle                                                                            |
+| University of Notre Dame                                                                           |
+| University of Padua                                                                                |
+| University of Potsdam                                                                              |
+| Qatar University                                                                                   |
+| Queensland University of Technology                                                                |
+| RCSI University of Medicine and Health Sciences                                                    |
+| Rutgers University - New Brunswick                                                                 |
+| St George?s, University of London                                                                  |
+| Sant?Anna School of Advanced Studies - Pisa                                                        |
+| University of S?o Paulo                                                                            |
+| Sapienza University of Rome                                                                        |
+| Semmelweis University                                                                              |
+| University of South Florida                                                                        |
+| University of St Andrews                                                                           |
+| University of Surrey                                                                               |
+| University of Sussex                                                                               |
+| Universit? della Svizzera italiana                                                                 |
+| University of Tartu                                                                                |
+| Tel Aviv University                                                                                |
+| Tohoku University                                                                                  |
+| University College Dublin                                                                          |
+| Vita-Salute San Raffaele University                                                                |
+| Vrije Universiteit Brussel                                                                         |
+| University of Waterloo                                                                             |
+| Western University                                                                                 |
+| Western Sydney University                                                                          |
+| University of Wollongong                                                                           |
+| Aalborg University                                                                                 |
+| Auckland University of Technology                                                                  |
+| Australian Catholic University                                                                     |
+| University of Bath                                                                                 |
+| Beijing Normal University                                                                          |
+| Bond University                                                                                    |
+| Boston College                                                                                     |
+| Bournemouth University                                                                             |
+| Brighton and Sussex Medical School                                                                 |
+| University of California, Riverside                                                                |
+| University of Canberra                                                                             |
+| Chalmers University of Technology                                                                  |
+| China Medical University, Taiwan                                                                   |
+| Copenhagen Business School                                                                         |
+| Deakin University                                                                                  |
+| University of Duisburg-Essen                                                                       |
+| Heinrich Heine University D?sseldorf                                                               |
+| ?cole des Ponts ParisTech                                                                          |
+| Goethe University Frankfurt                                                                        |
+| Griffith University                                                                                |
+| University of Hawai?i at M?noa                                                                     |
+| Hebrew University of Jerusalem                                                                     |
+| University of Illinois Chicago                                                                     |
+| Indian Institute of Science                                                                        |
+| Johannes Gutenberg University of Mainz                                                             |
+| University of Kiel                                                                                 |
+| King Saud University                                                                               |
+| Kyung Hee University                                                                               |
+| La Trobe University                                                                                |
+| Universit? Laval                                                                                   |
+| Link?ping University                                                                               |
+| University of Navarra                                                                              |
+| Oregon Health and Science University                                                               |
+| Osaka University                                                                                   |
+| University of Pavia                                                                                |
+| Queen?s University                                                                                 |
+| Ruhr University Bochum                                                                             |
+| Sejong University                                                                                  |
+| University of Sharjah                                                                              |
+| Simon Fraser University                                                                            |
+| University of Southern Denmark                                                                     |
+| Stellenbosch University                                                                            |
+| Sun Yat-sen University                                                                             |
+| Swansea University                                                                                 |
+| Tilburg University                                                                                 |
+| Tongji University                                                                                  |
+| University of Twente                                                                               |
+| United Arab Emirates University                                                                    |
+| University of Utah                                                                                 |
+| Virginia Polytechnic Institute and State University                                                |
+| University of the Witwatersrand                                                                    |
+| Abu Dhabi University                                                                               |
+| Aix-Marseille University                                                                           |
+| Alfaisal University                                                                                |
+| Anglia Ruskin University (ARU)                                                                     |
+| Autonomous University of Madrid                                                                    |
+| University of Bordeaux                                                                             |
+| Brandeis University                                                                                |
+| Universiti Brunei Darussalam                                                                       |
+| University at Buffalo                                                                              |
+| University of California, Merced                                                                   |
+| University of Colorado Denver/Anschutz Medical Campus                                              |
+| Dalhousie University                                                                               |
+| Drexel University                                                                                  |
+| ?cole Normale Sup?rieure de Lyon                                                                   |
+| University of Essex                                                                                |
+| Flinders University                                                                                |
+| Florida State University                                                                           |
+| University of Galway                                                                               |
+| George Mason University                                                                            |
+| Hasselt University                                                                                 |
+| University of Iowa                                                                                 |
+| Lappeenranta-Lahti University of Technology LUT                                                    |
+| University of Milan                                                                                |
+| University of Milan-Bicocca                                                                        |
+| Montpellier University                                                                             |
+| Nagoya University                                                                                  |
+| Nankai University                                                                                  |
+| University of Otago                                                                                |
+| University of Oulu                                                                                 |
+| Peter the Great St Petersburg Polytechnic University                                               |
+| Politecnico di Milano                                                                              |
+| Reykjav?k University                                                                               |
+| RMIT University                                                                                    |
+| University of St Gallen                                                                            |
+| Saint Louis University                                                                             |
+| University of South Australia                                                                      |
+| University of Southern Queensland                                                                  |
+| Stony Brook University                                                                             |
+| University of Stuttgart                                                                            |
+| Swinburne University of Technology                                                                 |
+| Taipei Medical University                                                                          |
+| Tampere University                                                                                 |
+| University of Tasmania                                                                             |
+| Technical University of Darmstadt                                                                  |
+| Temple University                                                                                  |
+| The University of Tennessee-Knoxville                                                              |
+| Tokyo Institute of Technology                                                                      |
+| University College Cork                                                                            |
+| University of Victoria                                                                             |
+| American University of Beirut                                                                      |
+| Asia University, Taiwan                                                                            |
+| Ateneo de Manila University                                                                        |
+| Birkbeck, University of London                                                                     |
+| University of Bremen                                                                               |
+| University of Brescia                                                                              |
+| University of Cape Coast                                                                           |
+| Catholic University of Portugal                                                                    |
+| Central South University                                                                           |
+| Charles Darwin University                                                                          |
+| City, University of London                                                                         |
+| University of Delaware                                                                             |
+| East China Normal University                                                                       |
+| Edith Cowan University                                                                             |
+| Golestan University of Medical Sciences                                                            |
+| University of Greifswald                                                                           |
+| University of Hai'l                                                                                |
+| Harbin Institute of Technology                                                                     |
+| Howard University                                                                                  |
+| Imam Mohammad Ibn Saud Islamic University                                                          |
+| IMT Atlantique                                                                                     |
+| James Cook University                                                                              |
+| JSS Academy of Higher Education and Research                                                       |
+| University of Kent                                                                                 |
+| Khalifa University                                                                                 |
+| Kurdistan University of Medical Sciences                                                           |
+| Leuphana University of L?neburg                                                                    |
+| University of Li?ge                                                                                |
+| Loughborough University                                                                            |
+| University of Malaya                                                                               |
+| University of Manitoba                                                                             |
+| Mazandaran University of Medical Sciences                                                          |
+| University of Naples Federico II                                                                   |
+| University of New Mexico (Main campus)                                                             |
+| North Carolina State University                                                                    |
+| University of Rome II - Tor Vergata                                                                |
+| Royal Holloway, University of London                                                               |
+| Royal Veterinary College                                                                           |
+| Rush University                                                                                    |
+| Shoolini University of Biotechnology and Management Sciences                                       |
+| University of Stirling                                                                             |
+| Swedish University of Agricultural Sciences                                                        |
+| University of Texas at Dallas                                                                      |
+| Tulane University                                                                                  |
+| University of Turku                                                                                |
+| University of Vaasa                                                                                |
+| Verona University                                                                                  |
+| Wake Forest University                                                                             |
+| Washington State University                                                                        |
+| Wroclaw Medical University                                                                         |
+| Alagappa University                                                                                |
+| University of Alaska Fairbanks                                                                     |
+| Arak University of Medical Sciences                                                                |
+| Aston University                                                                                   |
+| Aswan University                                                                                   |
+| Babol University of Medical Sciences                                                               |
+| Babol Noshirvani University of Technology                                                          |
+| Bangor University                                                                                  |
+| University of Bayreuth                                                                             |
+| Brunel University London                                                                           |
+| University of Campinas                                                                             |
+| Cankaya University                                                                                 |
+| University of Catania                                                                              |
+| Claude Bernard University Lyon 1                                                                   |
+| Colorado School of Mines                                                                           |
+| Colorado State University, Fort Collins                                                            |
+| Complutense University of Madrid                                                                   |
+| University of Connecticut                                                                          |
+| University of Crete                                                                                |
+| University of Cyprus                                                                               |
+| University of Denver                                                                               |
+| Dublin City University                                                                             |
+| Duy Tan University                                                                                 |
+| Edinburgh Napier University                                                                        |
+| University of Electronic Science and Technology of China                                           |
+| Ferhat Abbas S?tif University 1                                                                    |
+| University of Ferrara                                                                              |
+| University of Florence                                                                             |
+| Free University of Bozen-Bolzano                                                                   |
+| University of Genoa                                                                                |
+| Georgia State University                                                                           |
+| Universit? Grenoble Alpes                                                                          |
+| Hanyang University                                                                                 |
+| HSE University                                                                                     |
+| Hunan University                                                                                   |
+| University of Ibadan                                                                               |
+| Illinois Institute of Technology                                                                   |
+| University of Innsbruck                                                                            |
+| Institut Agro                                                                                      |
+| University of International Business and Economics                                                 |
+| Iowa State University                                                                              |
+| Jazan University                                                                                   |
+| Justus Liebig University Giessen                                                                   |
+| University of Jyv?skyl?                                                                            |
+| University of Kansas                                                                               |
+| University of Klagenfurt                                                                           |
+| Ko? University                                                                                     |
+| University of KwaZulu-Natal                                                                        |
+| University of Lagos                                                                                |
+| Leibniz University Hannover                                                                        |
+| University of Lincoln                                                                              |
+| Lincoln University (New Zealand)                                                                   |
+| Liverpool John Moores University                                                                   |
+| Mahatma Gandhi University                                                                          |
+| University of Marburg                                                                              |
+| Maynooth University                                                                                |
+| Middlesex University                                                                               |
+| University of Modena and Reggio Emilia                                                             |
+| Muhimbili University of Health and Allied Sciences                                                 |
+| Murdoch University                                                                                 |
+| National and Kapodistrian University of Athens                                                     |
+| National Research Nuclear University MEPhI                                                         |
+| University of Nebraska-Lincoln                                                                     |
+| University of Nebraska Medical Center                                                              |
+| Norwegian University of Science and Technology                                                     |
+| Nova Southeastern University                                                                       |
+| ?rebro University                                                                                  |
+| University of Passau                                                                               |
+| University of Pisa                                                                                 |
+| University of Plymouth                                                                             |
+| Pontificia Universidad Cat?lica de Chile                                                           |
+| University of Porto                                                                                |
+| University of Portsmouth                                                                           |
+| Qazvin University of Medical Sciences                                                              |
+| Qom University of Medical Sciences                                                                 |
+| Quaid-i-Azam University                                                                            |
+| Sabanc? University                                                                                 |
+| Sharif University of Technology                                                                    |
+| Shenzhen University                                                                                |
+| University of Siena                                                                                |
+| South China University of Technology                                                               |
+| Southeast University                                                                               |
+| Southern Medical University                                                                        |
+| SRUC (Scotland?s Rural College)                                                                    |
+| University of Strathclyde                                                                          |
+| Sumy State University                                                                              |
+| Syracuse University                                                                                |
+| Universiti Teknologi Petronas                                                                      |
+| Tianjin University                                                                                 |
+| Ton Duc Thang University                                                                           |
+| University of Trento                                                                               |
+| The University of Tulsa                                                                            |
+| University of Turin                                                                                |
+| TU Wien                                                                                            |
+| Ume? University                                                                                    |
+| Urmia University of Medical Sciences                                                               |
+| Universiti Utara Malaysia                                                                          |
+| Victoria University of Wellington                                                                  |
+| University of Waikato                                                                              |
+| University of the West of England                                                                  |
+| William & Mary                                                                                     |
+| Xiamen University                                                                                  |
+| York University                                                                                    |
+| Aberystwyth University                                                                             |
+| An-Najah National University                                                                       |
+| University of L?Aquila                                                                             |
+| Bauman Moscow State Technical University                                                           |
+| Beihang University                                                                                 |
+| Beijing Institute of Technology                                                                    |
+| Birmingham City University                                                                         |
+| University of Bradford                                                                             |
+| Bucharest University of Economic Studies                                                           |
+| Centrale Nantes                                                                                    |
+| Changsha University of Science and Technology                                                      |
+| Charles University                                                                                 |
+| Universit? C?te d'Azur                                                                             |
+| Damietta University                                                                                |
+| Durban University of Technology                                                                    |
+| Eastern Mediterranean University                                                                   |
+| ?cole des Mines de Saint-?tienne                                                                   |
+| University of Toulouse                                                                             |
+| Florida International University                                                                   |
+| University of Fribourg                                                                             |
+| Goldsmiths, University of London                                                                   |
+| Government College University Faisalabad                                                           |
+| University of Greenwich                                                                            |
+| University of Guelph                                                                               |
+| Gwangju Institute of Science and Technology (GIST)                                                 |
+| Harokopio University of Athens                                                                     |
+| Heriot-Watt University                                                                             |
+| Hokkaido University                                                                                |
+| Hong Kong Baptist University                                                                       |
+| University of Hull                                                                                 |
+| University of Iceland                                                                              |
+| Indian Institute of Technology Ropar                                                               |
+| University of Insubria                                                                             |
+| International Institute of Information Technology, Hyderabad                                       |
+| Iran University of Science and Technology                                                          |
+| Islamic Azad University, Najafabad Branch (IAUN)                                                   |
+| Constructor University                                                                             |
+| Jamia Millia Islamia                                                                               |
+| Jimma University                                                                                   |
+| Johannes Kepler University of Linz                                                                 |
+| Jordan University of Science and Technology                                                        |
+| Kafrelsheikh University                                                                            |
+| Kashan University of Medical Sciences and Health Services                                          |
+| Keele University                                                                                   |
+| University of Kentucky                                                                             |
+| Kermanshah University of Medical Sciences                                                          |
+| University of Kragujevac                                                                           |
+| Kyushu University                                                                                  |
+| Lebanese American University                                                                       |
+| University of Lille                                                                                |
+| University of Lisbon                                                                               |
+| University of Management and Technology                                                            |
+| University of Messina                                                                              |
+| Middle East Technical University                                                                   |
+| Missouri University of Science and Technology                                                      |
+| University of Mons                                                                                 |
+| National Tsing Hua University                                                                      |
+| National Yang Ming Chiao Tung University                                                           |
+| University of Neuch?tel                                                                            |
+| University of Nicosia                                                                              |
+| Northumbria University                                                                             |
+| Northwestern Polytechnical University                                                              |
+| Nottingham Trent University                                                                        |
+| Open University of Catalonia                                                                       |
+| University of Peradeniya                                                                           |
+| Universitat Ramon Llull                                                                            |
+| Empress Catherine II Saint Petersburg Mining University                                            |
+| University of Salerno                                                                              |
+| University of Saskatchewan                                                                         |
+| University of Sassari                                                                              |
+| Saveetha Institute of Medical and Technical Sciences                                               |
+| Sciences Po                                                                                        |
+| Shiraz University of Technology                                                                    |
+| SOAS University of London                                                                          |
+| University of South Carolina-Columbia                                                              |
+| Southwestern University of Finance and Economics                                                   |
+| University of Stavanger                                                                            |
+| Stevens Institute of Technology                                                                    |
+| SUNY University at Albany                                                                          |
+| University of Tabuk                                                                                |
+| Technion Israel Institute of Technology                                                            |
+| Tokyo Medical and Dental University (TMDU)                                                         |
+| University of Trieste                                                                              |
+| University of Tsukuba                                                                              |
+| TU Dortmund University                                                                             |
+| University of Tuscia                                                                               |
+| University of Udine                                                                                |
+| UiT The Arctic University of Norway                                                                |
+| University of Valencia                                                                             |
+| University of Vic - Central University of Catalonia                                                |
+| Victoria University                                                                                |
+| Virginia Commonwealth University                                                                   |
+| Wayne State University                                                                             |
+| The University of the West Indies                                                                  |
+| Xi?an Jiaotong University                                                                          |
+| University of Zambia                                                                               |
+| Zayed University                                                                                   |
+| Zhejiang Normal University                                                                         |
+| Abdul Wali Khan University Mardan                                                                  |
+| ?bo Akademi University                                                                             |
+| Addis Ababa University                                                                             |
+| Ahvaz Jundishapur University of Medical Sciences (AJUMS)                                           |
+| Ajou University                                                                                    |
+| Amedeo Avogadro University of Eastern Piedmont                                                     |
+| American University                                                                                |
+| American University of Sharjah                                                                     |
+| Amirkabir University of Technology                                                                 |
+| University of Antofagasta                                                                          |
+| University of Arkansas                                                                             |
+| Auburn University                                                                                  |
+| Azarbaijan Shahid Madani University                                                                |
+| University of Babylon                                                                              |
+| Bah?e?ehir University                                                                              |
+| Bahria University                                                                                  |
+| Banaras Hindu University                                                                           |
+| University of Bari Aldo Moro                                                                       |
+| Bar-Ilan University                                                                                |
+| Baylor University                                                                                  |
+| Beirut Arab University                                                                             |
+| Ben-Gurion University of the Negev                                                                 |
+| Benha University                                                                                   |
+| Universit? Bourgogne Franche-Comt? (UBFC)                                                          |
+| Ca? Foscari University of Venice                                                                   |
+| University of Camerino (Unicam)                                                                    |
+| University of Canterbury                                                                           |
+| Capital Medical University                                                                         |
+| Carleton University                                                                                |
+| University of Central Florida                                                                      |
+| Central Queensland University                                                                      |
+| Chongqing University                                                                               |
+| Chung-Ang University                                                                               |
+| Clark University                                                                                   |
+| University of Coimbra                                                                              |
+| University of Colombo                                                                              |
+| COMSATS University Islamabad                                                                       |
+| Concordia University                                                                               |
+| University of C?rdoba                                                                              |
+| University of Costa Rica                                                                           |
+| Covenant University                                                                                |
+| Cyprus University of Technology                                                                    |
+| Dalian University of Technology                                                                    |
+| Delhi Technological University                                                                     |
+| De Montfort University                                                                             |
+| University of Derby                                                                                |
+| Universidad del Desarrollo                                                                         |
+| University of Dhaka                                                                                |
+| Dow University of Health Sciences                                                                  |
+| University of Eastern Finland                                                                      |
+| Universidade Eduardo Mondlane                                                                      |
+| University of Engineering and Technology, Taxila                                                   |
+| ENSTA Bretagne                                                                                     |
+| E?tv?s Lor?nd University                                                                           |
+| Fayoum University                                                                                  |
+| Universidade Federal do Rio Grande do Sul                                                          |
+| Universidade Federal de S?o Paulo (UNIFESP)                                                        |
+| Federation University Australia                                                                    |
+| Financial University under the Government of the Russian Federation                                |
+| Gabriele d?Annunzio University                                                                     |
+| University of Georgia (USA)                                                                        |
+| Glasgow Caledonian University                                                                      |
+| University of Granada                                                                              |
+| Graphic Era University                                                                             |
+| University of Graz                                                                                 |
+| Graz University of Technology                                                                      |
+| Guangzhou University                                                                               |
+| Guangzhou Medical University                                                                       |
+| Hacettepe University                                                                               |
+| University of Haifa                                                                                |
+| Hamburg University of Technology                                                                   |
+| Hazara University Mansehra                                                                         |
+| University of Hertfordshire                                                                        |
+| University of Houston                                                                              |
+| University of Huddersfield                                                                         |
+| Icesi University                                                                                   |
+| Ilam University of Medical Sciences                                                                |
+| Imam Abdulrahman Bin Faisal University                                                             |
+| Indian Institute of Technology Indore                                                              |
+| Indraprastha Institute of Information Technology Delhi                                             |
+| International Islamic University, Islamabad                                                        |
+| Iran University of Medical Sciences                                                                |
+| Istanbul Technical University                                                                      |
+| Jagiellonian University                                                                            |
+| Jamia Hamdard University                                                                           |
+| Jawaharlal Nehru University                                                                        |
+| Jiangsu University                                                                                 |
+| Jinan University (China)                                                                           |
+| University of Johannesburg                                                                         |
+| J?nk?ping University                                                                               |
+| The University of Jordan                                                                           |
+| Jouf University                                                                                    |
+| University of Kaiserslautern                                                                       |
+| Kalasalingam Academy of Research and Education                                                     |
+| Kansai Medical University                                                                          |
+| University of Kashan                                                                               |
+| Universiti Kebangsaan Malaysia                                                                     |
+| KIIT University                                                                                    |
+| King Saud bin Abdulaziz University for Health Sciences                                             |
+| Konkuk University                                                                                  |
+| Kore University of Enna                                                                            |
+| University of Kurdistan                                                                            |
+| Lahore University of Management Sciences                                                           |
+| Lehigh University                                                                                  |
+| University of Limerick                                                                             |
+| London South Bank University                                                                       |
+| University of Lorraine                                                                             |
+| Louisiana State University                                                                         |
+| Lviv Polytechnic National University                                                               |
+| Maharishi Markandeshwar University (MMU)                                                           |
+| Majmaah University                                                                                 |
+| University of Malakand                                                                             |
+| Manchester Metropolitan University                                                                 |
+| Mansoura University                                                                                |
+| Marche Polytechnic University                                                                      |
+| University of Maryland, Baltimore County                                                           |
+| Mashhad University of Medical Sciences                                                             |
+| Massey University                                                                                  |
+| Medical University of Lodz                                                                         |
+| Memorial University of Newfoundland                                                                |
+| Minia University                                                                                   |
+| Mizzou - University of Missouri                                                                    |
+| University of Mohaghegh Ardabili                                                                   |
+| University of Nairobi                                                                              |
+| University of Namibia                                                                              |
+| Nanjing Agricultural University                                                                    |
+| Nantes Universit?                                                                                  |
+| National Cheng Kung University (NCKU)                                                              |
+| National University of Science and Technology (MISiS)                                              |
+| National Taiwan University of Science and Technology (Taiwan Tech)                                 |
+| National Institute of Technology Silchar                                                           |
+| National Yunlin University of Science and Technology                                               |
+| Near East University                                                                               |
+| University of Nevada, Las Vegas                                                                    |
+| University of New Brunswick UNB                                                                    |
+| New Jersey Institute of Technology                                                                 |
+| University of North Carolina at Charlotte                                                          |
+| North South University                                                                             |
+| North-West University                                                                              |
+| Norwegian University of Life Sciences                                                              |
+| NOVA University of Lisbon                                                                          |
+| University of Occupational and Environmental Health, Japan                                         |
+| Oklahoma State University                                                                          |
+| Ontario Tech University                                                                            |
+| The Open University                                                                                |
+| Oxford Brookes University                                                                          |
+| University of Parma                                                                                |
+| Universidad Peruana Cayetano Heredia                                                               |
+| University of Perugia                                                                              |
+| Plekhanov Russian University of Economics                                                          |
+| Polytechnic University of Bari                                                                     |
+| Polytechnic University of Turin                                                                    |
+| Prince Sattam Bin Abdulaziz University                                                             |
+| Universiti Putra Malaysia                                                                          |
+| Qingdao University                                                                                 |
+| Universit? du Qu?bec                                                                               |
+| University of Regina                                                                               |
+| Rensselaer Polytechnic Institute                                                                   |
+| Riga Stradi?? University                                                                           |
+| Riphah International University                                                                    |
+| Rovira i Virgili University                                                                        |
+| RUDN University                                                                                    |
+| Universiti Sains Malaysia                                                                          |
+| San Diego State University                                                                         |
+| University of Sannio                                                                               |
+| University of Santiago de Compostela                                                               |
+| Savitribai Phule Pune University                                                                   |
+| University of Campania Luigi Vanvitelli                                                            |
+| Shanghai University                                                                                |
+| Soochow University, China                                                                          |
+| Southern Cross University                                                                          |
+| University of Strasbourg                                                                           |
+| Sultan Qaboos University                                                                           |
+| University of the Sunshine Coast                                                                   |
+| SUNY Binghamton University                                                                         |
+| University of Tabriz                                                                               |
+| Tabriz University of Medical Sciences                                                              |
+| Taif University                                                                                    |
+| Tallinn University of Technology                                                                   |
+| University of Tehran                                                                               |
+| Tehran University of Medical Sciences                                                              |
+| Universiti Teknologi Malaysia                                                                      |
+| University of Texas at Arlington                                                                   |
+| The University of Texas at San Antonio                                                             |
+| Thapar Institute of Engineering and Technology                                                     |
+| University of Toledo                                                                               |
+| Tomsk State University                                                                             |
+| TU Braunschweig                                                                                    |
+| University of Ulsan                                                                                |
+| Ulster University                                                                                  |
+| Umm Al-Qura University                                                                             |
+| Paris Lodron Universit?t Salzburg                                                                  |
+| Wenzhou University                                                                                 |
+| University of the Western Cape                                                                     |
+| University of the West of Scotland                                                                 |
+| University of Windsor                                                                              |
+| University of Wolverhampton                                                                        |
+| University of Wuppertal                                                                            |
+| Xi?an Jiaotong-Liverpool University                                                                |
+| Yokohama City University                                                                           |
+| Zhengzhou University                                                                               |
+| University of the Aegean                                                                           |
+| University of Agriculture, Faisalabad                                                              |
+| The University of Aizu                                                                             |
+| The University of Alabama                                                                          |
+| Al-Azhar University                                                                                |
+| Al-Balqa Applied University                                                                        |
+| University of Alcal?                                                                               |
+| Alexandria University                                                                              |
+| Aligarh Muslim University                                                                          |
+| American University in Cairo                                                                       |
+| Anna University                                                                                    |
+| University of Applied Sciences and Arts of Western Switzerland                                     |
+| Aristotle University of Thessaloniki                                                               |
+| Athens University of Economics and Business                                                        |
+| Universidad Aut?noma de Chile                                                                      |
+| University of Aveiro                                                                               |
+| University of the Balearic Islands                                                                 |
+| University of the Basque Country                                                                   |
+| University of Bedfordshire                                                                         |
+| University of Beira Interior                                                                       |
+| University of Belgrade                                                                             |
+| Beni-Suef University                                                                               |
+| University of Bergamo                                                                              |
+| Bharathiar University                                                                              |
+| Bilkent University                                                                                 |
+| Birla Institute of Technology and Science, Pilani                                                  |
+| Bo?azi?i University                                                                                |
+| University of Brighton                                                                             |
+| Cairo University                                                                                   |
+| University of Calabria                                                                             |
+| Chapman University                                                                                 |
+| Institute of Chemical Technology                                                                   |
+| Chengdu University                                                                                 |
+| China University of Petroleum, Beijing                                                             |
+| Chulalongkorn University                                                                           |
+| Clemson University                                                                                 |
+| University of Clermont Auvergne                                                                    |
+| Coventry University                                                                                |
+| CY Cergy Paris University                                                                          |
+| University of Dayton                                                                               |
+| University of Deusto                                                                               |
+| Diego Portales University                                                                          |
+| Donghua University                                                                                 |
+| Duzce University                                                                                   |
+| Edge Hill University                                                                               |
+| University of Engineering and Technology, Peshawar                                                 |
+| Ewha Womans University                                                                             |
+| Federal University of Minas Gerais                                                                 |
+| Universidade Federal de Sergipe                                                                    |
+| Firat University                                                                                   |
+| Florida Agricultural and Mechanical University                                                     |
+| Florida Atlantic University                                                                        |
+| University of Foggia                                                                               |
+| University of the Free State                                                                       |
+| Fujita Health University                                                                           |
+| Fuzhou University                                                                                  |
+| University of Girona                                                                               |
+| Guangdong University of Technology                                                                 |
+| Hiroshima University                                                                               |
+| Indian Institute of Technology Patna                                                               |
+| Indian Institute of Technology Gandhinagar                                                         |
+| Universitat Internacional de Catalunya                                                             |
+| University of Ioannina                                                                             |
+| ISCTE-University Institute of Lisbon                                                               |
+| The Islamia University of Bahawalpur                                                               |
+| Istanbul Medeniyet University                                                                      |
+| ITMO University                                                                                    |
+| Iuliu Ha?ieganu University of Medicine and Pharmacy Cluj-Napoca                                    |
+| University of Ja?n                                                                                 |
+| Juntendo University                                                                                |
+| Kansas State University                                                                            |
+| Karlstad University                                                                                |
+| Kazan Federal University                                                                           |
+| Keio University                                                                                    |
+| Kerman University of Medical Sciences                                                              |
+| Kindai University                                                                                  |
+| King Faisal University                                                                             |
+| King Khalid University                                                                             |
+| King Mongkut?s University of Technology Thonburi                                                   |
+| Kingston University                                                                                |
+| KL University                                                                                      |
+| Kobe University                                                                                    |
+| Kurume University                                                                                  |
+| Kuwait University                                                                                  |
+| Kyungpook National University (KNU)                                                                |
+| University of Lahore                                                                               |
+| Lakehead University                                                                                |
+| University of La Laguna                                                                            |
+| University of Latvia                                                                               |
+| Leeds Beckett University                                                                           |
+| Lithuanian University of Health Sciences                                                           |
+| University of Ljubljana                                                                            |
+| University of Lleida                                                                               |
+| Lovely Professional University                                                                     |
+| Mae Fah Luang University                                                                           |
+| Mahidol University                                                                                 |
+| Makerere University                                                                                |
+| Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)                                              |
+| University of Malta                                                                                |
+| Manipal Academy of Higher Education                                                                |
+| Marquette University                                                                               |
+| Masaryk University                                                                                 |
+| Medical University of Gda?sk                                                                       |
+| University of Memphis                                                                              |
+| University of Minho                                                                                |
+| Mississippi State University                                                                       |
+| University of Missouri-St Louis                                                                    |
+| Montana State University                                                                           |
+| Tecnol?gico de Monterrey                                                                           |
+| University of Namur                                                                                |
+| Nanjing Forestry University                                                                        |
+| Nanjing University of Information Science and Technology                                           |
+| Nanjing Normal University                                                                          |
+| Nanjing Tech University                                                                            |
+| National Institute of Applied Sciences of Lyon (INSA Lyon)                                         |
+| ?cole Nationale des Travaux Publics de l'?tat (ENTPE)                                              |
+| National University of Sciences and Technology                                                     |
+| National Sun Yat-Sen University                                                                    |
+| National Taiwan Normal University                                                                  |
+| National Technical University of Athens                                                            |
+| National Institute of Technology Hamirpur                                                          |
+| National Institute of Technology, Tiruchirappalli                                                  |
+| The New School                                                                                     |
+| New Mexico State University (Main campus)                                                          |
+| Nippon Medical School                                                                              |
+| University of North Carolina at Greensboro                                                         |
+| Northeastern University, China                                                                     |
+| Northeast Normal University                                                                        |
+| University of Northern British Columbia (UNBC)                                                     |
+| Northern Illinois University                                                                       |
+| Novosibirsk State University                                                                       |
+| Ohio University (Main campus)                                                                      |
+| Old Dominion University                                                                            |
+| Ozyegin University                                                                                 |
+| Pablo de Olavide University                                                                        |
+| University of Palermo                                                                              |
+| Panjab University                                                                                  |
+| Panth?on-Sorbonne University - Paris 1                                                             |
+| Parthenope University of Naples                                                                    |
+| Universiti Pendidikan Sultan Idris                                                                 |
+| University of Peshawar                                                                             |
+| University of the Philippines                                                                      |
+| Universitat Polit?cnica de Catalunya                                                               |
+| Polytechnic University of Valencia                                                                 |
+| Pontifical Catholic University of Rio de Janeiro (PUC-Rio)                                         |
+| Pontifical Catholic University of Rio Grande do Sul (PUCRS)                                        |
+| Pontifical Javeriana University                                                                    |
+| University of Pretoria                                                                             |
+| Princess Nourah bint Abdulrahman University                                                        |
+| University of the Punjab                                                                           |
+| University of Rennes 1                                                                             |
+| University of Rhode Island                                                                         |
+| Rhodes University                                                                                  |
+| University of Roehampton                                                                           |
+| University of Rome III                                                                             |
+| Roskilde University                                                                                |
+| Saint Petersburg State University                                                                  |
+| University of Salamanca                                                                            |
+| University of Salento                                                                              |
+| University of Salford                                                                              |
+| University of Science and Technology Beijing                                                       |
+| Sechenov University                                                                                |
+| University of La Serena                                                                            |
+| Shahid Beheshti University                                                                         |
+| Shantou University                                                                                 |
+| Sheffield Hallam University                                                                        |
+| Shiraz University                                                                                  |
+| Shiraz University of Medical Sciences                                                              |
+| University of Siegen                                                                               |
+| University of South Bohemia in ?esk? Bud?jovice                                                    |
+| South China Normal University                                                                      |
+| Southern Illinois University Carbondale                                                            |
+| South Ural State University                                                                        |
+| Suez Canal University                                                                              |
+| Sunway University                                                                                  |
+| Symbiosis International University                                                                 |
+| Taibah University                                                                                  |
+| Tanta University                                                                                   |
+| University of Technology, Iraq                                                                     |
+| Universiti Tenaga Nasional (UNITEN)                                                                |
+| University of Texas at El Paso                                                                     |
+| Texas Tech University                                                                              |
+| University of Thessaly                                                                             |
+| Toronto Metropolitan University                                                                    |
+| Tribhuvan University                                                                               |
+| University of Urbino Carlo Bo                                                                      |
+| Vilnius University                                                                                 |
+| VIT University                                                                                     |
+| University of Warsaw                                                                               |
+| Wenzhou Medical University                                                                         |
+| University of Winchester                                                                           |
+| University of Wisconsin-Milwaukee                                                                  |
+| Worcester Polytechnic Institute                                                                    |
+| University of Wyoming                                                                              |
+| Yangzhou University                                                                                |
+| Yeungnam University                                                                                |
+| Zagazig University                                                                                 |
+| Zewail City of Science and Technology                                                              |
+| Zhejiang University of Finance and Economics                                                       |
+| University of A Coru?a                                                                             |
+| Adam Mickiewicz University, Pozna?                                                                 |
+| Ain Shams University                                                                               |
+| Al-Farabi Kazakh National University                                                               |
+| University of Algarve                                                                              |
+| University of Almer?a                                                                              |
+| Amity University, Noida                                                                            |
+| University of Anbar                                                                                |
+| University of the Andes, Colombia                                                                  |
+| Arts et M?tiers                                                                                    |
+| Assiut University                                                                                  |
+| At?l?m University                                                                                  |
+| Autonomous University of Sinaloa                                                                   |
+| Babe?-Bolyai University                                                                            |
+| Bahauddin Zakariya University                                                                      |
+| Bayero University                                                                                  |
+| Beijing Jiaotong University                                                                        |
+| University of Botswana                                                                             |
+| Bowling Green State University                                                                     |
+| Instituto Polit?cnico de Bragan?a                                                                  |
+| University of Burgos                                                                               |
+| University of Calcutta                                                                             |
+| Cardiff Metropolitan University                                                                    |
+| Carlos III University of Madrid                                                                    |
+| Technical University of Cartagena                                                                  |
+| University of Castilla-La Mancha                                                                   |
+| Universidad Cat?lica San Antonio de Murcia (UCAM)                                                  |
+| University of Central Lancashire                                                                   |
+| Chang Gung University                                                                              |
+| Charles Sturt University                                                                           |
+| Chiang Mai University                                                                              |
+| Chiba University                                                                                   |
+| University of Chile                                                                                |
+| China University of Geosciences, Beijing                                                           |
+| China Pharmaceutical University                                                                    |
+| Chonnam National University                                                                        |
+| Clarkson University                                                                                |
+| Comenius University in Bratislava                                                                  |
+| Creighton University                                                                               |
+| Czech University of Life Sciences Prague (CZU)                                                     |
+| University of Debrecen                                                                             |
+| University of Delhi                                                                                |
+| Don State Technical University                                                                     |
+| Dr B.R. Ambedkar National Institute of Technology Jalandhar                                        |
+| East China University of Science and Technology                                                    |
+| University of East London                                                                          |
+| ?cole Centrale de Lyon                                                                             |
+| University of Engineering & Technology (UET) Lahore                                                |
+| Universidade Estadual Paulista (Unesp)                                                             |
+| European University of Madrid                                                                      |
+| University of Extremadura                                                                          |
+| Federal University of Rio de Janeiro                                                               |
+| Universidade Federal de Santa Catarina                                                             |
+| Federal University of Technology Akure                                                             |
+| Ferdowsi University of Mashhad                                                                     |
+| Florida Institute of Technology                                                                    |
+| University of Fortaleza (UNIFOR)                                                                   |
+| Fu Jen Catholic University                                                                         |
+| Fujian Agriculture and Forestry University                                                         |
+| University of Ghana                                                                                |
+| Guangxi University                                                                                 |
+| University of Gujrat                                                                               |
+| Guru Jambheshwar University of Science and Technology                                              |
+| Hakim Sabzevari University                                                                         |
+| Hamamatsu University School of Medicine                                                            |
+| Huaqiao University                                                                                 |
+| Hyogo College of Medicine                                                                          |
+| Ibn Tofa?l University                                                                              |
+| Ilia State University                                                                              |
+| Technische Universit?t Ilmenau                                                                     |
+| IMT Nord Europe                                                                                    |
+| Indian Institute of Science Education and Research, Pune                                           |
+| Indian Institute of Science Education and Research Kolkata                                         |
+| Indian Institute of Technology Bhubaneswar                                                         |
+| Indian Institute of Technology Guwahati                                                            |
+| Indian Institute of Technology (Indian School of Mines) Dhanbad                                    |
+| Indian Institute of Technology Mandi                                                               |
+| University of Indonesia                                                                            |
+| Inha University                                                                                    |
+| Isfahan University of Medical Sciences                                                             |
+| Isfahan University of Technology                                                                   |
+| Istanbul University                                                                                |
+| Istanbul University-Cerrahpa?a                                                                     |
+| Jadavpur University                                                                                |
+| Jaume I University                                                                                 |
+| University of Jeddah                                                                               |
+| Jeonbuk National University                                                                        |
+| Jiangnan University                                                                                |
+| Jiangsu Normal University                                                                          |
+| Jiangxi University of Finance and Economics                                                        |
+| The Jikei University School of Medicine                                                            |
+| Kanazawa University                                                                                |
+| Kaohsiung Medical University                                                                       |
+| Kharkiv National University of Radio Electronics                                                   |
+| K.N. Toosi University of Technology                                                                |
+| Kumamoto University                                                                                |
+| Kwame Nkrumah University of Science and Technology                                                 |
+| Kyoto Prefectural University of Medicine                                                           |
+| University of Las Palmas de Gran Canaria                                                           |
+| Lebanese University                                                                                |
+| Montanuniversit?t Leoben                                                                           |
+| University of Le?n                                                                                 |
+| Lorestan University                                                                                |
+| Lusophone University of Humanities and Technologies                                                |
+| Universiti Malaysia Perlis                                                                         |
+| University of Manouba                                                                              |
+| University of Maragheh                                                                             |
+| University of Marrakech Cadi Ayyad                                                                 |
+| University of Mauritius                                                                            |
+| University of Mazandaran                                                                           |
+| Medical University of Bialystok                                                                    |
+| Menoufia University                                                                                |
+| Miguel Hern?ndez University of Elche                                                               |
+| Morgan State University                                                                            |
+| University of Murcia                                                                               |
+| Nanjing University of Aeronautics and Astronautics                                                 |
+| Nanjing Medical University                                                                         |
+| National Autonomous University of Mexico                                                           |
+| National Central University                                                                        |
+| National University of Colombia                                                                    |
+| National Taipei University of Technology                                                           |
+| National Taiwan Ocean University                                                                   |
+| National Institute of Technology Rourkela                                                          |
+| Necmettin Erbakan University                                                                       |
+| Niigata University                                                                                 |
+| Northwest University (China)                                                                       |
+| Oakland University                                                                                 |
+| ?buda University                                                                                   |
+| Okayama University                                                                                 |
+| University of Oviedo                                                                               |
+| Palack? University Olomouc                                                                         |
+| University of Patras                                                                               |
+| Pavol Jozef ?af?rik University in Ko?ice                                                           |
+| University of P?cs                                                                                 |
+| PMAS Arid Agriculture University Rawalpindi                                                        |
+| Polytechnic Institute of Porto                                                                     |
+| Pondicherry University                                                                             |
+| Portland State University                                                                          |
+| Port Said University                                                                               |
+| Public University of Navarre                                                                       |
+| University of Puerto Rico                                                                          |
+| Pusan National University                                                                          |
+| Reichman University                                                                                |
+| University Rey Juan Carlos                                                                         |
+| Rikkyo University                                                                                  |
+| Robert Gordon University                                                                           |
+| Rochester Institute of Technology                                                                  |
+| Rowan University                                                                                   |
+| Sahand University of Technology                                                                    |
+| Sakarya University                                                                                 |
+| Universidad San Francisco de Quito                                                                 |
+| University of Sargodha                                                                             |
+| Semnan University of Medical Sciences and Health Services                                          |
+| University of Seville                                                                              |
+| Shahid Beheshti University of Medical Sciences                                                     |
+| Shahrekord University                                                                              |
+| Shahrood University of Technology                                                                  |
+| Shanghai Maritime University                                                                       |
+| Sidi Mohamed Ben Abdellah University                                                               |
+| Siksha ?O? Anusandhan                                                                              |
+| University of Social Welfare and Rehabilitation Sciences                                           |
+| Sogang University                                                                                  |
+| Sohag University                                                                                   |
+| University of South Africa                                                                         |
+| University of South Dakota                                                                         |
+| University of the South Pacific                                                                    |
+| South Valley University  (Egypt)                                                                   |
+| University of South Wales                                                                          |
+| University of Split                                                                                |
+| ?tefan cel Mare University of Suceava                                                              |
+| St Marianna University School of Medicine                                                          |
+| University of Sunderland                                                                           |
+| SWPS University                                                                                    |
+| University of Szeged                                                                               |
+| Tallinn University                                                                                 |
+| Technical University of Crete                                                                      |
+| Technical University of Madrid                                                                     |
+| Technological University Dublin                                                                    |
+| Teesside University                                                                                |
+| University of Texas Rio Grande Valley                                                              |
+| Tokyo Medical University                                                                           |
+| Tokyo Metropolitan University                                                                      |
+| Tomsk Polytechnic University                                                                       |
+| Toyota Technological Institute                                                                     |
+| University of Tr?s-os-Montes and Alto Douro                                                        |
+| Universiti Tunku Abdul Rahman (UTAR)                                                               |
+| Ufa State Petroleum Technological University                                                       |
+| Urmia University                                                                                   |
+| University of Veterinary and Animal Sciences, Lahore                                               |
+| Vietnam National University, Hanoi                                                                 |
+| University of Vigo                                                                                 |
+| Waseda University                                                                                  |
+| University of Westminster                                                                          |
+| Wuhan University of Technology                                                                     |
+| Xidian University                                                                                  |
+| Yarmouk University                                                                                 |
+| Yasouj University                                                                                  |
+| Y?ld?z Technical University                                                                        |
+| University of Zaragoza                                                                             |
+| Zhejiang Gongshang University                                                                      |
+| Zhejiang University of Technology                                                                  |
+| University of ?ilina                                                                               |
+| University of Zimbabwe                                                                             |
+| Universit? 8 Mai 1945 Guelma                                                                       |
+| Abdelmalek Essa?di University                                                                      |
+| Acharya Nagarjuna University                                                                       |
+| Ac?badem University                                                                                |
+| Adolfo Ib??ez University                                                                           |
+| AGH University of Krakow                                                                           |
+| Aichi Medical University                                                                           |
+| Universitas Airlangga                                                                              |
+| Akdeniz University                                                                                 |
+| University of Alicante                                                                             |
+| Altai State University                                                                             |
+| Anadolu University                                                                                 |
+| University of the Andes, Chile                                                                     |
+| Andhra University                                                                                  |
+| Universidad Andr?s Bello (UNAB)                                                                    |
+| Ankara University                                                                                  |
+| University of Antioquia                                                                            |
+| Arab Academy for Science, Technology and Maritime Transport                                        |
+| Arak University                                                                                    |
+| Ariel University                                                                                   |
+| Atat?rk University                                                                                 |
+| Austral University of Chile                                                                        |
+| Banasthali University                                                                              |
+| Bandung Institute of Technology (ITB)                                                              |
+| Bangladesh Agricultural University (BAU)                                                           |
+| Bangladesh University of Engineering and Technology                                                |
+| University of Benin                                                                                |
+| Bezmi?lem Vakif University                                                                         |
+| BINUS University                                                                                   |
+| Bozok University                                                                                   |
+| University of Bras?lia                                                                             |
+| The British University in Egypt                                                                    |
+| Brno University of Technology                                                                      |
+| Bu-Ali Sina University                                                                             |
+| University of Bucharest                                                                            |
+| Budapest University of Technology and Economics                                                    |
+| University of Cadiz                                                                                |
+| Canterbury Christ Church University                                                                |
+| University of Carthage                                                                             |
+| The Catholic University of Korea                                                                   |
+| Catholic University of the North                                                                   |
+| Chang Gung University of Science and Technology                                                    |
+| University of Chemistry and Technology, Prague                                                     |
+| University of Chester                                                                              |
+| Chosun University                                                                                  |
+| Chungbuk National University                                                                       |
+| Chungnam National University                                                                       |
+| Chung Yuan Christian University                                                                    |
+| Cochin University of Science and Technology                                                        |
+| University of Colorado Colorado Springs                                                            |
+| University of Concepci?n                                                                           |
+| Corvinus University of Budapest                                                                    |
+| Czech Technical University in Prague                                                               |
+| Damghan University                                                                                 |
+| De La Salle University                                                                             |
+| Del Rosario University                                                                             |
+| Democritus University of Thrace                                                                    |
+| Dokuz Eyl?l University                                                                             |
+| Ege University                                                                                     |
+| Ehime University                                                                                   |
+| El Bosque University                                                                               |
+| The University of Electro-Communications                                                           |
+| Erciyes University                                                                                 |
+| Escuela Superior Polit?cnica del Litoral                                                           |
+| Universidade do Estado do Rio de Janeiro (UERJ)                                                    |
+| Far Eastern Federal University                                                                     |
+| Universidade Federal do ABC (UFABC)                                                                |
+| Universidade Federal da Bahia                                                                      |
+| Federal University of Esp?rito Santo                                                               |
+| Federal University of Goi?s                                                                        |
+| Federal University of Lavras                                                                       |
+| Universidade Federal do Paran? (UFPR)                                                              |
+| Federal University of Rio Grande do Norte (UFRN)                                                   |
+| Federal University of Santa Maria                                                                  |
+| Federal University of S?o Carlos                                                                   |
+| Federal University of Uberl?ndia                                                                   |
+| Federal University of Vi?osa                                                                       |
+| Federico Santa Mar?a Technical University                                                          |
+| University of Fort Hare                                                                            |
+| University of La Frontera                                                                          |
+| Fujian Normal University                                                                           |
+| Universit? de Gab?s                                                                                |
+| Universitas Gadjah Mada                                                                            |
+| Gazi University                                                                                    |
+| University of Gda?sk                                                                               |
+| Gda?sk University of Technology                                                                    |
+| Gebze Technical University                                                                         |
+| Georgia Southern University                                                                        |
+| German University in Cairo                                                                         |
+| Gifu University                                                                                    |
+| Government College University Lahore                                                               |
+| Grand Valley State University                                                                      |
+| Gunma University                                                                                   |
+| Gyeongsang National University                                                                     |
+| Hallym University                                                                                  |
+| Harbin Engineering University                                                                      |
+| Hasanuddin University                                                                              |
+| The Hashemite University                                                                           |
+| Universit? Hassan II de Casablanca                                                                 |
+| Universit? Polytechnique Hauts-de-France                                                           |
+| Helwan University                                                                                  |
+| Hosei University                                                                                   |
+| University of Hradec Kr?lov?                                                                       |
+| Hungarian University of Agriculture and Life Sciences                                              |
+| University of Ilorin                                                                               |
+| Immanuel Kant Baltic Federal University                                                            |
+| Incheon National University                                                                        |
+| Indian Institute of Science Education and Research Bhopal                                          |
+| International Hellenic University                                                                  |
+| IPB University                                                                                     |
+| Irkutsk National Research Technical University                                                     |
+| University of Isfahan                                                                              |
+| Istanbul Medipol University                                                                        |
+| Ivan Franko National University of Lviv                                                            |
+| Jawaharlal Nehru Technological University Anantapur (JNTUA)                                        |
+| Jeju National University                                                                           |
+| Jianghan University                                                                                |
+| Kagawa University                                                                                  |
+| Kanazawa Medical University                                                                        |
+| Kangwon National University                                                                        |
+| Karab?k University                                                                                 |
+| Kaunas University of Technology                                                                    |
+| Kazan National Research Technical University                                                       |
+| Kazan National Research Technological University                                                   |
+| Kazan State Medical University                                                                     |
+| Kharazmi University                                                                                |
+| Khon Kaen University                                                                               |
+| Khulna University of Engineering and Technology (KUET)                                             |
+| King Mongkut's University of Technology North Bangkok                                              |
+| Kitasato University                                                                                |
+| Kochi University of Technology                                                                     |
+| Universiti Kuala Lumpur                                                                            |
+| Kyushu Institute of Technology (Kyutech)                                                           |
+| Lahore College for Women University (LCWU)                                                         |
+| University of Lethbridge                                                                           |
+| L.N. Gumilyov Eurasian National University                                                         |
+| Lobachevsky State University of Nizhni Novgorod                                                    |
+| Londrina State University                                                                          |
+| University of Lucknow                                                                              |
+| Lumi?re University, Lyon 2                                                                         |
+| University of Malaga                                                                               |
+| Universiti Malaysia Kelantan                                                                       |
+| Universiti Malaysia Sarawak (UNIMAS)                                                               |
+| University of Maribor                                                                              |
+| Marmara University                                                                                 |
+| Mendel University in Brno                                                                          |
+| Metropolitan Autonomous University                                                                 |
+| Mie University                                                                                     |
+| Ming Chi University of Technology                                                                  |
+| Mohammed V University of Rabat                                                                     |
+| University of Monastir                                                                             |
+| Moscow Aviation Institute                                                                          |
+| Moscow State University of Civil Engineering                                                       |
+| Multimedia University                                                                              |
+| University of Mumbai                                                                               |
+| University of Mysore                                                                               |
+| Nagaoka University of Technology                                                                   |
+| Nagasaki University                                                                                |
+| Nagoya City University                                                                             |
+| National Chengchi University                                                                       |
+| National Chin-Yi University of Technology                                                          |
+| National Chung Cheng University                                                                    |
+| National Chung Hsing University                                                                    |
+| National University of Distance Education (UNED)                                                   |
+| National Dong Hwa University                                                                       |
+| National Research University of Electronic Technology (MIET)                                       |
+| National Research Saratov State University                                                         |
+| National University of San Mart?n                                                                  |
+| National Technical University Kharkiv Polytechnic Institute                                        |
+| National Technical University of Ukraine - Igor Sikorsky Kyiv Polytechnic Institute                |
+| Nicolaus Copernicus University in Toru?                                                            |
+| University of Nigeria Nsukka                                                                       |
+| Slovak University of Agriculture in Nitra                                                          |
+| University of North Carolina Wilmington                                                            |
+| North China Electric Power University                                                              |
+| University of the North, Colombia                                                                  |
+| Obafemi Awolowo University                                                                         |
+| Oles Honchar Dnipro National University                                                            |
+| Opole University of Technology                                                                     |
+| Oran 1 University                                                                                  |
+| Osaka Metropolitan University                                                                      |
+| Osmania University                                                                                 |
+| University of Ostrava                                                                              |
+| University of Pannonia                                                                             |
+| Paris Nanterre University                                                                          |
+| University of Pau and Pays de l?Adour                                                              |
+| Universitas Pendidikan Indonesia                                                                   |
+| Persian Gulf University                                                                            |
+| Pirogov Russian National Research Medical University                                               |
+| Pontifical Catholic University of Peru                                                             |
+| Pontifical Catholic University of Valpara?so                                                       |
+| Pontif?cia Universidade Cat?lica do Paran?                                                         |
+| Poznan University of Medical Sciences                                                              |
+| Poznan University of Technology                                                                    |
+| University of Primorska                                                                            |
+| Prince of Songkla University                                                                       |
+| Qassim University                                                                                  |
+| Riga Technical University                                                                          |
+| Ritsumeikan University                                                                             |
+| University of the Ryukyus                                                                          |
+| Saga University                                                                                    |
+| Universit? Saint-Joseph de Beyrouth                                                                |
+| Saitama Medical University                                                                         |
+| Samara National Research University (Samara University)                                            |
+| University of Santiago, Chile (USACH)                                                              |
+| Sapporo Medical University                                                                         |
+| SASTRA University                                                                                  |
+| Sathyabama Institute of Science and Technology                                                     |
+| Universitas Sebelas Maret                                                                          |
+| Sel?uk University                                                                                  |
+| Semnan University                                                                                  |
+| University of Seoul                                                                                |
+| Seoul National University of Science and Technology (SeoulTech)                                    |
+| University of Sfax                                                                                 |
+| Shahed University                                                                                  |
+| Shahid Bahonar University of Kerman                                                                |
+| ?Shahid Chamran University of Ahvaz                                                                |
+| Shahid Rajaee Teacher Training University                                                          |
+| University of Shanghai for Science and Technology                                                  |
+| Shibaura Institute of Technology                                                                   |
+| Shiga University of Medical Science                                                                |
+| Shinshu University                                                                                 |
+| Showa University                                                                                   |
+| Siberian Federal University                                                                        |
+| Silesian University of Technology                                                                  |
+| Sofia University                                                                                   |
+| Soonchunhyang University                                                                           |
+| Soongsil University                                                                                |
+| Universit? Sorbonne Nouvelle                                                                       |
+| University of Sousse                                                                               |
+| Southern Federal University                                                                        |
+| Southwest Jiaotong University                                                                      |
+| Sri Venkateswara University                                                                        |
+| SRM Institute of Science and Technology                                                            |
+| Staffordshire University                                                                           |
+| State University of Malang                                                                         |
+| St Petersburg Electrotechnical University (LETI)                                                   |
+| Suranaree University of Technology                                                                 |
+| University of Talca                                                                                |
+| Tamkang University                                                                                 |
+| University of Tarapac?                                                                             |
+| Taras Shevchenko National University of Kyiv                                                       |
+| Technical University of Ko?ice                                                                     |
+| Technological University of Pereira                                                                |
+| University of Technology of Compi?gne                                                              |
+| University of Technology of Troyes                                                                 |
+| Teikyo University                                                                                  |
+| Universiti Teknikal Malaysia Melaka                                                                |
+| Institut Teknologi Sepuluh Nopember                                                                |
+| Texas State University                                                                             |
+| Tezpur University                                                                                  |
+| Thammasat University                                                                               |
+| The John Paul II Catholic University of Lublin                                                     |
+| TOBB University of Economics and Technology                                                        |
+| Toho University                                                                                    |
+| Tokai University                                                                                   |
+| Tokat Gaziosmanpa?a University                                                                     |
+| Tokushima University                                                                               |
+| Tokyo University of Agriculture and Technology                                                     |
+| Tokyo University of Marine Science and Technology                                                  |
+| Tokyo University of Science                                                                        |
+| Tomas Bata University in Zl?n                                                                      |
+| University of Toyama                                                                               |
+| Toyohashi University of Technology (TUT)                                                           |
+| Transilvania University of Bra?ov                                                                  |
+| Tshwane University of Technology                                                                   |
+| Tunghai University                                                                                 |
+| University of Tunis El Manar                                                                       |
+| Tzu Chi University                                                                                 |
+| UNIR - International University of La Rioja                                                        |
+| Unisinos University                                                                                |
+| Universit? Choua?b Doukkali                                                                        |
+| Universiti Malaysia Terengganu (UMT)                                                               |
+| Universiti Tun Hussein Onn Malaysia (UTHM)                                                         |
+| Ural Federal University                                                                            |
+| USAMV Cluj-Napoca                                                                                  |
+| University of Valladolid                                                                           |
+| Veltech University                                                                                 |
+| University of Venda                                                                                |
+| Vignan?s Foundation for Science, Technology and Research                                           |
+| Vilnius Gediminas Technical University (Vilnius Tech)                                              |
+| Visvesvaraya National Institute of Technology, Nagpur                                              |
+| V.N. Karazin Kharkiv National University                                                           |
+| Volgograd State Technical University                                                               |
+| Voronezh State Technical University                                                                |
+| Vytautas Magnus University                                                                         |
+| Warsaw University of Life Sciences - SGGW                                                          |
+| Warsaw University of Technology                                                                    |
+| University of West Bohemia                                                                         |
+| University of Western Macedonia                                                                    |
+| Western Michigan University                                                                        |
+| Wroc?aw University of Environmental and Life Sciences                                              |
+| University of Wroc?aw                                                                              |
+| Wuhan Textile University                                                                           |
+| Xiangtan University                                                                                |
+| Xuzhou Medical University                                                                          |
+| Yamagata University                                                                                |
+| University of Yamanashi                                                                            |
+| Yazd University                                                                                    |
+| Yokohama National University                                                                       |
+| Yuan Ze University                                                                                 |
+| Yuriy Fedkovych Chernivtsi National University                                                     |
+| University of Zagreb                                                                               |
+| University of Zanjan                                                                               |
+| Zanjan University of Medical Sciences                                                              |
+| University of Abou Bekr Belka?d Tlemcen                                                            |
+| Akita University                                                                                   |
+| Aksaray University                                                                                 |
+| Alexandru Ioan Cuza University                                                                     |
+| Alzahra University                                                                                 |
+| University of the Andes, Venezuela                                                                 |
+| Annamalai University                                                                               |
+| Aoyama Gakuin University                                                                           |
+| Universidad Aut?noma Chapingo                                                                      |
+| Universidad Aut?noma de Ciudad Ju?rez                                                              |
+| Universidad Aut?noma de Coahuila                                                                   |
+| Universidad Aut?noma del Estado de Hidalgo                                                         |
+| Universidad Aut?noma del Estado de Mexico (UAEMex)                                                 |
+| Universidad Aut?noma del Estado de Morelos                                                         |
+| Universidad Aut?noma de Nuevo Le?n (UANL)                                                          |
+| Universidad Aut?noma de Quer?taro                                                                  |
+| Universidad Aut?noma de Yucat?n                                                                    |
+| Autonomous University of Baja California                                                           |
+| Badji Mokhtar University - Annaba                                                                  |
+| University of Baghdad                                                                              |
+| Baku State University                                                                              |
+| Bashkir State University                                                                           |
+| Ba?kent University                                                                                 |
+| University of Basrah                                                                               |
+| University of B?ja?a                                                                               |
+| Belarusian State University                                                                        |
+| Belgorod State National Research University                                                        |
+| Benem?rita Universidad Aut?noma de Puebla                                                          |
+| Bialystok University of Technology                                                                 |
+| University of B?o-B?o                                                                              |
+| University of Biskra                                                                               |
+| Blida 1 University                                                                                 |
+| Bolu Abant Izzet Baysal University                                                                 |
+| University of Brawijaya                                                                            |
+| Burapha University                                                                                 |
+| Bursa Uluda? University                                                                            |
+| Catholic University of Bras?lia                                                                    |
+| University of Caxias do Sul                                                                        |
+| Cear? State University                                                                             |
+| Manisa Celal Bayar University                                                                      |
+| Chaoyang University of Technology                                                                  |
+| Chiba Institute of Technology                                                                      |
+| Chinese Culture University                                                                         |
+| Chubu University                                                                                   |
+| Chuo University                                                                                    |
+| University of Colima                                                                               |
+| Comillas Pontifical University                                                                     |
+| Communication University of China                                                                  |
+| Cracow University of Technology                                                                    |
+| University of Craiova                                                                              |
+| Cukurova University                                                                                |
+| University of Dar es Salaam                                                                        |
+| Dicle University                                                                                   |
+| Diponegoro University                                                                              |
+| Dokkyo Medical University                                                                          |
+| Doshisha University                                                                                |
+| Dumlupinar University                                                                              |
+| Dunarea de Jos University of Galati                                                                |
+| EAFIT University                                                                                   |
+| Erzincan Binali Y?ld?r?m University                                                                |
+| Escuela Polit?cnica Nacional                                                                       |
+| Eski?ehir Osmangazi University                                                                     |
+| Universidade do Estado de Santa Catarina                                                           |
+| Universidade Estadual do Norte Fluminense Darcy Ribeiro                                            |
+| Universidade Estadual de Maring?                                                                   |
+| Universidade Estadual do Oeste do Paran? (Unioeste)                                                |
+| Federal University of Agriculture, Abeokuta                                                        |
+| Universidade Federal do Cear? (UFC)                                                                |
+| Universidade Federal de Ci?ncias da Sa?de de Porto Alegre (UFCSPA)                                 |
+| Universidade Federal do Tri?ngulo Mineiro                                                          |
+| Universidade Federal do Vale do S?o Francisco                                                      |
+| Federal University of Itajub?                                                                      |
+| Universidade Federal de Juiz de Fora                                                               |
+| Universidade Federal do Maranh?o (UFMA)                                                            |
+| Federal University of Mato Grosso do Sul                                                           |
+| Universidade Federal de Ouro Preto (UFOP)                                                          |
+| Federal University of Par?                                                                         |
+| Federal University of Para??ba (UFPB)                                                              |
+| Federal University of Pelotas                                                                      |
+| Federal University of Pernambuco                                                                   |
+| Federal University of Piau?                                                                        |
+| Federal Rural University of Pernambuco                                                             |
+| Universidade Federal Rural do Semi-Arido                                                           |
+| Federal University of the State of Rio de Janeiro (UNIRIO)                                         |
+| Federal University of Vales do Jequitinhonha e Mucuri                                              |
+| Feng Chia University                                                                               |
+| Fluminense Federal University                                                                      |
+| Universit? Fr?res Mentouri Constantine 1                                                           |
+| Universidad de las Fuerzas Armadas - ESPE                                                          |
+| University of Fukui                                                                                |
+| Fukuoka University                                                                                 |
+| Gaziantep University                                                                               |
+| George Emil Palade University of Medicine, Pharmacy, Science, and Technology of Targu Mures        |
+| Gheorghe Asachi Technical University of Ia?i                                                       |
+| GITAM University                                                                                   |
+| Grigore T. Popa University of Medicine and Pharmacy                                                |
+| University of Guadalajara                                                                          |
+| University of Guanajuato                                                                           |
+| Gubkin Russian State University of Oil and Gas                                                     |
+| Hanoi University of Science and Technology                                                         |
+| Universit? Hassan 1er                                                                              |
+| University of Havana                                                                               |
+| Hellenic Open University                                                                           |
+| Hue University                                                                                     |
+| University of Hyogo                                                                                |
+| Ibaraki University                                                                                 |
+| Universidad Industrial de Santander (UIS)                                                          |
+| Industrial University of Tyumen                                                                    |
+| In?n? University                                                                                   |
+| Instituto Polit?cnico Nacional (IPN)                                                               |
+| Irkutsk State University                                                                           |
+| I-Shou University                                                                                  |
+| Islamic University of Indonesia                                                                    |
+| Ivane Javakhishvili Tbilisi State University                                                       |
+| Ivanovo State University of Chemistry and Technology                                               |
+| Iwate University                                                                                   |
+| Izmir Institute of Technology                                                                      |
+| Jan Evangelista Purkyn? University                                                                 |
+| Jean Moulin University - Lyon 3                                                                    |
+| Kagoshima University                                                                               |
+| Kanagawa University                                                                                |
+| Kansai University                                                                                  |
+| University of Karachi                                                                              |
+| Karadeniz Technical University                                                                     |
+| Kasetsart University                                                                               |
+| Kemerovo State University                                                                          |
+| King Mongkut?s Institute of Technology Ladkrabang                                                  |
+| Kirikkale University                                                                               |
+| Kocaeli University                                                                                 |
+| Kochi University                                                                                   |
+| Kogakuin University                                                                                |
+| Kookmin University                                                                                 |
+| University of Kufa                                                                                 |
+| Kwansei Gakuin University                                                                          |
+| Kyoto Sangyo University                                                                            |
+| Kyoto Institute of Technology                                                                      |
+| Ladoke Akintola University of Technology                                                           |
+| Latvia University of Life Sciences and Technologies                                                |
+| University of Lodz                                                                                 |
+| Lodz University of Technology                                                                      |
+| Lucian Blaga University of Sibiu                                                                   |
+| University of Macerata (UNIMC)                                                                     |
+| Mackenzie Presbyterian University                                                                  |
+| Mahasarakham University                                                                            |
+| Map?a University                                                                                   |
+| Maria Curie-Sk?odowska University (UMCS)                                                           |
+| Matej Bel University                                                                               |
+| Medical University of Silesia in Katowice                                                          |
+| Meiji University                                                                                   |
+| Meijo University                                                                                   |
+| Mendeleev University of Chemical Technology                                                        |
+| M?Hamed Bougara University of Boumerd?s                                                            |
+| Universidad Michoacana de San Nicol?s de Hidalgo                                                   |
+| Ming Chuan University                                                                              |
+| MIREA - Russian Technological University                                                           |
+| University of Miskolc                                                                              |
+| University of Miyazaki                                                                             |
+| University Mohamed Boudiaf of M?Sila                                                               |
+| University of Montenegro                                                                           |
+| Moscow Polytechnic University                                                                      |
+| Moscow Power Engineering Institute                                                                 |
+| University of Mosul                                                                                |
+| Universit? Mouloud Mammeri de Tizi-Ouzou                                                           |
+| Muroran Institute of Technology                                                                    |
+| Mustansiriyah University                                                                           |
+| Universidad Nacional del Litoral                                                                   |
+| Universidad Nacional Mayor de San Marcos                                                           |
+| Nagoya Institute of Technology                                                                     |
+| Naresuan University                                                                                |
+| National Changhua University of Education                                                          |
+| National Chiayi University                                                                         |
+| National Chi Nan University                                                                        |
+| National University of C?rdoba                                                                     |
+| National Formosa University                                                                        |
+| National Ilan University                                                                           |
+| National University of Kaohsiung                                                                   |
+| National Kaohsiung University of Science and Technology                                            |
+| National Taipei University                                                                         |
+| National United University                                                                         |
+| Nizhny Novgorod State Technical University n.a. R.E. Alekseev                                      |
+| Nnamdi Azikiwe University                                                                          |
+| North-Caucasus Federal University                                                                  |
+| North-Eastern Federal University                                                                   |
+| Northern (Arctic) Federal University named after M.V. Lomonosov                                    |
+| North-Western State Medical University named after I.I. Mechnikov                                  |
+| Nosov Magnitogorsk State Technical University                                                      |
+| Universidade Nove de Julho (Uninove)                                                               |
+| University of Novi Sad                                                                             |
+| Novosibirsk State Technical University                                                             |
+| Nueva Granada Military University                                                                  |
+| Ochanomizu University                                                                              |
+| Ogarev Mordovia State University                                                                   |
+| Oita University                                                                                    |
+| Omsk State Technical University                                                                    |
+| Ondokuz Mayis University                                                                           |
+| University of Oradea                                                                               |
+| Osaka Institute of Technology                                                                      |
+| Osaka Medical and Pharmaceutical University                                                        |
+| Ovidius University of Constan?a                                                                    |
+| Universitas Padjadjaran                                                                            |
+| Universidad Panamericana (UP)                                                                      |
+| University of Pardubice                                                                            |
+| University of Passo Fundo (UPF)                                                                    |
+| Pavlov First Saint Petersburg State Medical University                                             |
+| Payame Noor University                                                                             |
+| Universidad Pedagogica y Tecnologica de Colombia - UPTC                                            |
+| Penza State University                                                                             |
+| Perm National Research Polytechnic University                                                      |
+| Perm State University                                                                              |
+| University of Pernambuco                                                                           |
+| Platov South-Russian State Polytechnic University (NPI)                                            |
+| Universidad Polit?cnica Salesiana                                                                  |
+| Polytechnic University of Bucharest                                                                |
+| Polytechnic University of Timi?oara                                                                |
+| Pontifical Catholic University of Minas Gerais                                                     |
+| Universidad Pontificia Bolivariana (UPB)                                                           |
+| Pontificia Universidad Cat?lica del Ecuador                                                        |
+| Prague University of Economics and Business                                                        |
+| Privolzhsky Research Medical University                                                            |
+| PSG College of Technology                                                                          |
+| Recep Tayyip Erdo?an University                                                                    |
+| University of Rijeka                                                                               |
+| Russian Presidential Academy of National Economy and Public Administration                         |
+| R V College of Engineering                                                                         |
+| Ryukoku University                                                                                 |
+| Rzesz?w University of Technology                                                                   |
+| University of La Sabana                                                                            |
+| Saitama University                                                                                 |
+| Samara State Technical University                                                                  |
+| San Sebasti?n University                                                                           |
+| Satbayev University                                                                                |
+| University of Science and Technology of Oran Mohamed-Boudiaf                                       |
+| SGH Warsaw School of Economics                                                                     |
+| Shimane University                                                                                 |
+| Shizuoka University                                                                                |
+| University of Shizuoka                                                                             |
+| Siberian State Medical University                                                                  |
+| Sichuan University of Science and Engineering                                                      |
+| University of Silesia in Katowice                                                                  |
+| Silpakorn University                                                                               |
+| University of Sistan and Baluchestan                                                               |
+| Sivas Cumhuriyet University                                                                        |
+| Slovak University of Technology in Bratislava                                                      |
+| University of Sonora                                                                               |
+| Sophia University                                                                                  |
+| Southwest State University                                                                         |
+| Srinakharinwirot University                                                                        |
+| State University of Ponta Grossa                                                                   |
+| State University of Santa Cruz                                                                     |
+| S?leyman Demirel University                                                                        |
+| Universitas Sumatera Utara                                                                         |
+| Tamil Nadu Agricultural University                                                                 |
+| Technical University of Cluj-Napoca                                                                |
+| Technical University of Liberec                                                                    |
+| Universidad T?cnica Particular de Loja                                                             |
+| Technical University of Sofia                                                                      |
+| Universidade Tecnol?gica Federal do Paran? (UTFPR)                                                 |
+| Universiti Teknologi MARA                                                                          |
+| Telkom University                                                                                  |
+| Temuco Catholic University                                                                         |
+| Tokyo University of Agriculture                                                                    |
+| Tokyo City University                                                                              |
+| Tokyo Denki University                                                                             |
+| Tokyo University of Pharmacy and Life Sciences                                                     |
+| Tomsk State University of Control Systems and Radioelectronics                                     |
+| Tottori University                                                                                 |
+| Toyo University                                                                                    |
+| University of Tunis                                                                                |
+| University of Tyumen                                                                               |
+| Ufa State Aviation Technical University                                                            |
+| Universitas Andalas                                                                                |
+| Universiti Malaysia Sabah (UMS)                                                                    |
+| U?ak University                                                                                    |
+| Utsunomiya University                                                                              |
+| University of Valpara?so                                                                           |
+| Van Y?z?nc? Yil University                                                                         |
+| Vietnam National University (Ho Chi Minh City)                                                     |
+| V.I. Vernadsky Crimean Federal University (Vernadsky CFU)                                          |
+| Voronezh State University                                                                          |
+| VSB - Technical University of Ostrava                                                              |
+| Walailak University                                                                                |
+| University of Warmia and Mazury in Olsztyn                                                         |
+| University of West Attica                                                                          |
+| West University of Timi?oara                                                                       |
+| Wroc?aw University of Science and Technology                                                       |
+| Yamaguchi University                                                                               |
+| Yanshan University                                                                                 |
+| Yeditepe University                                                                                |
+| Yuri Gagarin State Technical University of Saratov (SSTU)                                          |
+| Zonguldak B?lent Ecevit University                                                                 |
+| University Abdelhamid Ibn Badis Mostaganem                                                         |
+| Abdullah G?l University                                                                            |
+| Abertay University                                                                                 |
+| Adamawa State University, Mubi                                                                     |
+| AECC University College                                                                            |
+| Afe Babalola University                                                                            |
+| Aga Khan University                                                                                |
+| Ahl Al Bayt University                                                                             |
+| Aichi Prefectural University                                                                       |
+| Air University                                                                                     |
+| Ajeenkya DY Patil University                                                                       |
+| Tashkent Metropolitan University                                                                   |
+| Ajman University                                                                                   |
+| Akita Prefectural University                                                                       |
+| Akwa Ibom State University                                                                         |
+| Al-Ayen University                                                                                 |
+| Alex Ekwueme Federal University Ndufu-Alike                                                        |
+| Al-Ahliyya Amman University                                                                        |
+| Al-Farabi University College                                                                       |
+| Al-Farahidi University                                                                             |
+| University of Al-Hamdaniya                                                                         |
+| Al-Esraa University College                                                                        |
+| Alisher Navo?i Tashkent State University of Uzbek Language and Literature                          |
+| Al-Kitab University                                                                                |
+| Al-Maarif University College                                                                       |
+| Al-Manara College for Medical Sciences                                                             |
+| Almazov National Medical Research Centre                                                           |
+| Al-Mustaqbal University                                                                            |
+| Al-Muthanna University                                                                             |
+| Al-Nahrain University                                                                              |
+| Al-Noor University                                                                                 |
+| Al-Quds University                                                                                 |
+| Alt?nba? University                                                                                |
+| American International University - Bangladesh                                                     |
+| American University of Madaba                                                                      |
+| American University of Nigeria                                                                     |
+| American University of Ras Al Khaimah                                                              |
+| Amity University, Gurugram                                                                         |
+| Amity University, Gwalior                                                                          |
+| Amity University Rajasthan, Jaipur                                                                 |
+| Amity University, Mumbai                                                                           |
+| Andijan State Medical Institute                                                                    |
+| Andr?s Bello Catholic University (UCAB)                                                            |
+| Anglo-American University                                                                          |
+| Ankara Science University                                                                          |
+| Arab American University                                                                           |
+| Arab Open University - Kuwait                                                                      |
+| Arab Open University Lebanon                                                                       |
+| Arts University Bournemouth                                                                        |
+| University of the Arts London                                                                      |
+| Antonio Nari?o University                                                                          |
+| Arts University Plymouth                                                                           |
+| Asahi University                                                                                   |
+| Ashikaga University                                                                                |
+| Ashur University                                                                                   |
+| Audencia                                                                                           |
+| Augustine University                                                                               |
+| Azerbaijan University of Architecture and Construction                                             |
+| Azerbaijan State University of Economics                                                           |
+| Babcock University                                                                                 |
+| Badr University in Cairo (BUC)                                                                     |
+| Bakrie University                                                                                  |
+| Balochistan University of Engineering and Technology, Khuzdar                                      |
+| Bamidele Olumilua University of Education, Science and Technology, Ikere-Ikiti                     |
+| Bandirma Onyedi Eyl?l University                                                                   |
+| Bangabandhu Sheikh Mujibur Rahman Agricultural University                                          |
+| Barawa International University                                                                    |
+| Bartin University                                                                                  |
+| Bashkir State Medical University                                                                   |
+| Basrah University College of Science and Technology                                                |
+| Bath Spa University                                                                                |
+| University of Batna 1                                                                              |
+| Baze University                                                                                    |
+| Belarusian State University of Informatics and Radioelectronics                                    |
+| Bells University of Technology                                                                     |
+| University of Benghazi                                                                             |
+| Benson Idahosa University                                                                          |
+| Bernardo O?Higgins University                                                                      |
+| Beykent University                                                                                 |
+| Bilecik ?eyh Edebali University                                                                    |
+| Biruni University                                                                                  |
+| Birzeit University                                                                                 |
+| University of Bisha                                                                                |
+| Bishop Grosseteste University                                                                      |
+| University of Bogot? Jorge Tadeo Lozano                                                            |
+| University of Bolton                                                                               |
+| Botswana International University of Science and Technology (BIUST)                                |
+| Bowen University                                                                                   |
+| Buckinghamshire New University                                                                     |
+| Buriram Rajabhat University                                                                        |
+| Canadian International College (CIC) - Cairo                                                       |
+| Catholic University in Erbil                                                                       |
+| Universidad Cat?lica de Colombia                                                                   |
+| Universidad Cat?lica de Cuenca                                                                     |
+| B. S. Abdur Rahman Crescent Institute of Science and Technology                                    |
+| Universidad Cat?lica San Pablo                                                                     |
+| Cebu Technological University                                                                      |
+| CECOS University of IT and Emerging Sciences                                                       |
+| University of Celaya                                                                               |
+| Central European University                                                                        |
+| University of Central Punjab                                                                       |
+| Centro Universit?rio de Jaguari?na                                                                 |
+| Centro Universit?rio Max Planck                                                                    |
+| CES University                                                                                     |
+| C?sar Ritz Colleges Switzerland                                                                    |
+| CETYS Universidad                                                                                  |
+| Chernihiv Polytechnic National University                                                          |
+| University of Chichester                                                                           |
+| Chitkara University                                                                                |
+| Christ University                                                                                  |
+| University of Civil Protection                                                                     |
+| Coal City University                                                                               |
+| Conservatoire for Dance and Drama                                                                  |
+| University of Constantine 3                                                                        |
+| Courtauld Institute of Art                                                                         |
+| Cranfield University                                                                               |
+| Cihan University - Erbil                                                                           |
+| University for the Creative Arts                                                                   |
+| City University of Science and Information Technology, Peshawar                                    |
+| University of Cross River State                                                                    |
+| University of Cumbria                                                                              |
+| C.V. Raman Global University                                                                       |
+| Cyprus Health and Social Sciences University                                                       |
+| Daffodil International University (DIU)                                                            |
+| Debre Tabor University                                                                             |
+| Universidad del Sin?                                                                               |
+| Delta University for Science and Technology                                                        |
+| Deraya University                                                                                  |
+| Derzhavin Tambov State University                                                                  |
+| University for Development Studies                                                                 |
+| Dhaka International University                                                                     |
+| Dhofar University                                                                                  |
+| Dhonburi Rajabhat University                                                                       |
+| Dijlah University                                                                                  |
+| University of Diyala                                                                               |
+| Do?u? University                                                                                   |
+| Denau Institute of Entrepreneurship and Pedagogy                                                   |
+| Donetsk National University of Economics and Trade named after Mykhailo Tuhan-Baranovsky (DonNUET) |
+| Dostoevsky Omsk State University                                                                   |
+| Dr. M.G.R. Educational and Research Institute                                                      |
+| University of Dubai                                                                                |
+| DHA Suffa University                                                                               |
+| University of Duhok                                                                                |
+| EAN University                                                                                     |
+| Ebonyi State University                                                                            |
+| University of El Oued                                                                              |
+| ?cole Nationale Polytechnique                                                                      |
+| ?cole Polytechnique d?Architecture et d?Urbanisme                                                  |
+| Academy of Economic Studies of Moldova                                                             |
+| Edo State University Uzairue                                                                       |
+| University of Education, Lahore                                                                    |
+| Effat University                                                                                   |
+| Egerton University                                                                                 |
+| Egyptian Russian University                                                                        |
+| Egypt-Japan University of Science and Technology (E-JUST)                                          |
+| University of Engineering and Technology, Mardan                                                   |
+| ESIC University                                                                                    |
+| Universidade Estadual de Goi?s                                                                     |
+| European University Cyprus                                                                         |
+| European University of Valencia                                                                    |
+| Evangel University, Akaeze                                                                         |
+| Externado University of Colombia                                                                   |
+| Falmouth University                                                                                |
+| Federal University Gashua                                                                          |
+| Federal University of Kashere                                                                      |
+| Federal University of Lafia                                                                        |
+| Federal University of Latin American Integration (UNILA)                                           |
+| Federal University of Petroleum Resources, Effurun                                                 |
+| Federal University of Technology, Minna                                                            |
+| Federal University of Technology, Owerri                                                           |
+| First Technical University                                                                         |
+| Fountain University                                                                                |
+| University of Franca                                                                               |
+| Fukui Prefectural University                                                                       |
+| Funda??o Oswaldo Cruz                                                                              |
+| Fundaci?n Universitaria del ?rea Andina                                                            |
+| Future University in Egypt                                                                         |
+| General Sir John Kotelawala Defence University                                                     |
+| Ghulam Ishaq Khan Institute of Engineering Sciences and Technology                                 |
+| GLA University                                                                                     |
+| Glasgow School of Art                                                                              |
+| Fergana Polytechnic Institute                                                                      |
+| University of Gloucestershire                                                                      |
+| Gomel State Medical University                                                                     |
+| Government College Women University Faisalabad                                                     |
+| Government College Women University, Sialkot                                                       |
+| The Graduate University for Advanced Studies, SOKENDAI                                             |
+| Greenwich University                                                                               |
+| Gregory University Uturu                                                                           |
+| Grodno State Medical University                                                                    |
+| Guildhall School of Music and Drama                                                                |
+| Gulf College                                                                                       |
+| Harper Adams University                                                                            |
+| Hartpury University                                                                                |
+| Hassiba Benbouali University of Chlef                                                              |
+| Hawler Medical University                                                                          |
+| University of Health and Allied Sciences                                                           |
+| University of Health Sciences, Turkey                                                              |
+| University of the Highlands and Islands                                                            |
+| Hindustan Institute of Technology and Science                                                      |
+| Hiroshima Shudo University                                                                         |
+| Hiroshima Institute of Technology                                                                  |
+| Hitotsubashi University                                                                            |
+| Huachiew Chalermprakiet University                                                                 |
+| University of Human Development                                                                    |
+| Hyogo University of Teacher Education                                                              |
+| IFHE Hyderabad                                                                                     |
+| Ignatius Ajuru University of Education                                                             |
+| Ilma University                                                                                    |
+| IMT Mines Al?s                                                                                     |
+| Indira Gandhi Delhi Technical University for Women                                                 |
+| Innopolis University                                                                               |
+| Institute of Cancer Research                                                                       |
+| International Christian University                                                                 |
+| International University of Rabat                                                                  |
+| Ionian University                                                                                  |
+| Ion Mincu University of Architecture and Urbanism                                                  |
+| Islamia College Peshawar                                                                           |
+| The Islamic University                                                                             |
+| Islamic University of Gaza                                                                         |
+| Islamic University of Madinah                                                                      |
+| Isra University (Jordan)                                                                           |
+| Israel Technological University                                                                    |
+| Istanbul Ayd?n University                                                                          |
+| Istanbul Geli?im University                                                                        |
+| IUBAT - International University of Business Agriculture and Technology                            |
+| Universita IULM                                                                                    |
+| Ivanovo State University                                                                           |
+| Jabir ibn Hayyan University for Medical and Pharmaceutical Sciences                                |
+| Japan Advanced Institute of Science and Technology (JAIST)                                         |
+| Jashore University of Science and Technology                                                       |
+| Jerash Private University                                                                          |
+| University of Jijel                                                                                |
+| University of Jos                                                                                  |
+| Kabardino-Balkarian State University                                                               |
+| Kamianets-Pod?lskyi Ivan Ohiienko National University                                              |
+| Kampala International University                                                                   |
+| Karaganda University of Kazpotrebsoyuz                                                             |
+| Karshi State University                                                                            |
+| Kastamonu University                                                                               |
+| Abai Kazakh National Pedagogical University                                                        |
+| Kazan State Power Engineering University                                                           |
+| University of Kelaniya                                                                             |
+| University of Kerbala                                                                              |
+| Kermanshah University of Technology                                                                |
+| Kharkiv University of Humanities ?People?s Ukrainian Academy?                                      |
+| Kadir Has University                                                                               |
+| Khazar University                                                                                  |
+| Khomein University of Medical Sciences                                                             |
+| Khulna University                                                                                  |
+| Khwaja Fareed University of Engineering and Information Technology                                 |
+| Khyber Medical University                                                                          |
+| Kings University                                                                                   |
+| University of Kirkuk                                                                               |
+| Kitami Institute of Technology                                                                     |
+| Kobe City University of Foreign Studies                                                            |
+| Kobe Gakuin University                                                                             |
+| Kocaeli Health and Technology University                                                           |
+| Kokshetau State University                                                                         |
+| Konan Women?s University                                                                           |
+| Konya Technical University                                                                         |
+| KTO Karatay University                                                                             |
+| Kyiv National Economic University                                                                  |
+| Kyoai Gakuen University                                                                            |
+| Kyrgyz-Turkish Manas University                                                                    |
+| University of Laghouat                                                                             |
+| Lagos State University                                                                             |
+| Knowledge University                                                                               |
+| University of Lampung                                                                              |
+| Landmark University                                                                                |
+| La Salle University (Colombia)                                                                     |
+| University of Las Am?ricas (UDLA)                                                                  |
+| Leeds Arts University                                                                              |
+| Leeds Conservatoire                                                                                |
+| Leeds Trinity University                                                                           |
+| Lesya Ukrainka Volyn National University                                                           |
+| Koya University                                                                                    |
+| University of Liberal Arts Bangladesh                                                              |
+| Liverpool Hope University                                                                          |
+| Liverpool Institute for Performing Arts                                                            |
+| Liverpool School of Tropical Medicine                                                              |
+| The LNM Institute of Information Technology                                                        |
+| Loei Rajabhat University                                                                           |
+| London Business School                                                                             |
+| London School of Hygiene and Tropical Medicine                                                     |
+| London Metropolitan University                                                                     |
+| University of Los Lagos                                                                            |
+| Universidad Loyola                                                                                 |
+| Malawi University of Science and Technology (MUST)                                                 |
+| Management Development Institute (MDI)                                                             |
+| Marian College Kuttikkanam (Autonomous)                                                            |
+| Maritime University of Szczecin                                                                    |
+| University of Mascara                                                                              |
+| Universidad Mayor                                                                                  |
+| University of Medell?n                                                                             |
+| Meikai University                                                                                  |
+| Michael and Cecilia Ibru University                                                                |
+| Michael Okpara University of Agriculture, Umudike                                                  |
+| Middle Technical University                                                                        |
+| Mindanao State University - Iligan Institute of Technology                                         |
+| MIOTI Tech and Business School                                                                     |
+| Mirpur University of Science and Technology                                                        |
+| University of Misan                                                                                |
+| Misr University for Science and Technology                                                         |
+| Mahatma Jyotiba Phule Rohilkhand University                                                        |
+| M. Kumarasamy College of Engineering                                                               |
+| MNS University of Agriculture, Multan                                                              |
+| Modern University for Business and Science                                                         |
+| Universit? Mohamed El Bachir El Ibrahimi de Bordj Bou Arr?ridj                                     |
+| Universidad Monte?vila                                                                             |
+| University of Monterrey                                                                            |
+| Moscow Pedagogical State University                                                                |
+| Russian Biotechnological University (BIOTECH)                                                      |
+| Moscow State Linguistic University                                                                 |
+| October University for Modern Sciences and Arts (MSA)                                              |
+| Muban Chombueng Rajabhat University                                                                |
+| Mukogawa Women?s University                                                                        |
+| Mulungushi University                                                                              |
+| Mutah University                                                                                   |
+| Universidad Nacional de Chimborazo                                                                 |
+| Universidad Nacional de Itap?a                                                                     |
+| Nagoya University of Commerce & Business                                                           |
+| Najran University                                                                                  |
+| Nakhchivan State University                                                                        |
+| Namangan Engineering Construction Institute                                                        |
+| Namangan Institute of Engineering and Technology                                                   |
+| Namangan State University                                                                          |
+| Nara Institute of Science and Technology                                                           |
+| Nara Women?s University                                                                            |
+| National Aviation University                                                                       |
+| National University of Computer and Emerging Sciences                                              |
+| National Film and Television School                                                                |
+| National University of Medical Sciences (NUMS)                                                     |
+| National University of Mongolia                                                                    |
+| National University Odessa Law Academy                                                             |
+| The National University of Ostroh Academy                                                          |
+| National Polytechnic University of Armenia                                                         |
+| National University of Quilmes                                                                     |
+| National University of Science and Technology, Oman                                                |
+| National University, Sudan                                                                         |
+| National Taichung University of Science and Technology                                             |
+| National Transport University                                                                      |
+| National University of Water and Environmental Engineering                                         |
+| National University ?Yuri Kondratyuk Poltava Polytechnic?                                          |
+| Navoi State Pedagogical Institute                                                                  |
+| Universitas Negeri Surabaya                                                                        |
+| Birmingham Newman University                                                                       |
+| Niger Delta University                                                                             |
+| Nigerian Police Academy, Wudil                                                                     |
+| Nihon Pharmaceutical University                                                                    |
+| Niigata University of Health and Welfare                                                           |
+| University of Niigata Prefecture                                                                   |
+| Nile University                                                                                    |
+| Ninevah University                                                                                 |
+| Nitte (Deemed to be University)                                                                    |
+| University of Northampton                                                                          |
+| Northeast Ohio Medical University                                                                  |
+| Northern Technical University                                                                      |
+| Norwich University of the Arts                                                                     |
+| University of Nova Gorica                                                                          |
+| Novena University                                                                                  |
+| Novosibirsk State University of Economics and Management                                           |
+| Nursing School of Coimbra                                                                          |
+| October 6 University                                                                               |
+| Oguz Han Engineering and Technology University of Turkmenistan                                     |
+| Olusegun Agagu University of Science and Technology                                                |
+| Omsk State Agrarian University                                                                     |
+| Orel State Agrarian University named after N.V. Parahin                                            |
+| Orel State University named after I.S. Turgenev                                                    |
+| ORT Uruguay University                                                                             |
+| Ostrogradsky National University of Kremenchuk                                                     |
+| Palestine Polytechnic University                                                                   |
+| Palestine Technical University - Kadoorie                                                          |
+| Panteion University of Social and Political Sciences                                               |
+| Paris University of International Education                                                        |
+| Pavlo Tychyna Uman State Pedagogical University                                                    |
+| University of Petra                                                                                |
+| Pharos University                                                                                  |
+| University of Phayao                                                                               |
+| Philadelphia University (Jordan)                                                                   |
+| Plymouth Marjon University                                                                         |
+| Polytechnic University of Tirana                                                                   |
+| Poltava V.G. Korolenko National Pedagogical University (PNPU)                                      |
+| Polytechnic Institute of Set?bal                                                                   |
+| Universidad Popular Aut?noma del Estado de Puebla                                                  |
+| Prefectural University of Hiroshima                                                                |
+| Prince Sultan University (PSU)                                                                     |
+| University of Professional Studies, Accra                                                          |
+| University of Puthisastra                                                                          |
+| Queen Margaret University                                                                          |
+| Rajamangala University of Technology Isan                                                          |
+| Ravensbourne                                                                                       |
+| Rawalpindi Medical University                                                                      |
+| Rennes School of Business                                                                          |
+| REVA University                                                                                    |
+| Rose Bruford College                                                                               |
+| Rostov State University of Economics                                                               |
+| Royal Agricultural University                                                                      |
+| Royal Central School of Speech and Drama, University of London                                     |
+| Royal College of Art                                                                               |
+| Royal Conservatoire of Scotland                                                                    |
+| Royal Academy of Music                                                                             |
+| Royal College of Music                                                                             |
+| Royal Northern College of Music                                                                    |
+| Russian State Agrarian University - Moscow Timiryazev Agricultural Academy                         |
+| Russian State University for the Humanities                                                        |
+| Russian University of State for Social (RUSS)                                                      |
+| Ryazan State Medical University                                                                    |
+| University of Sadat City                                                                           |
+| University of Saint Joseph                                                                         |
+| Saint Petersburg State Pediatric Medical University                                                |
+| Sakon Nakhon Rajabhat University                                                                   |
+| Salahaddin University-Erbil                                                                        |
+| Salem University                                                                                   |
+| Samara State University of Economics                                                               |
+| Samara State Medical University                                                                    |
+| Samarkand State University                                                                         |
+| Samarkand State Institute of Foreign Languages                                                     |
+| Glorious Vision University                                                                         |
+| Universidad San Ignacio de Loyola                                                                  |
+| University of San Mart?n de Porres                                                                 |
+| University of Santo Tomas                                                                          |
+| Satya Wacana Christian University                                                                  |
+| Saudi Electronic University                                                                        |
+| SBS Swiss Business School                                                                          |
+| University of Science and Technology of Southern Philippines (USTP)                                |
+| Sefako Makgatho Health Sciences University                                                         |
+| Senshu University                                                                                  |
+| Shaheed Benazir Bhutto Women University Peshawar                                                   |
+| Shaheed Zulfiqar Ali Bhutto Medical University                                                     |
+| The University of Shiga Prefecture                                                                 |
+| Shonan Institute of Technology                                                                     |
+| Shri Mata Vaishno Devi University                                                                  |
+| Samarkand State Medical University                                                                 |
+| Sikkim Manipal University                                                                          |
+| Silesian University in Opava                                                                       |
+| Sim?n Bol?var University                                                                           |
+| Sim?n Bol?var University (Colombia)                                                                |
+| Sir Syed University of Engineering and Technology                                                  |
+| Sokoto State University                                                                            |
+| Solent University, Southampton                                                                     |
+| University of Sopron                                                                               |
+| Soran University                                                                                   |
+| University of South Santa Catarina (Unisul)                                                        |
+| SR University                                                                                      |
+| Sri Balaji Vidyapeeth                                                                              |
+| University of Sri Jayewardenepura                                                                  |
+| Sri Lanka Institute of Information Technology                                                      |
+| Sri Padmavati Mahila Visvavidyalayam (Women's University)                                          |
+| State University of Bahia                                                                          |
+| State Energy Institute of Turkmenistan                                                             |
+| State University of Land Use Planning                                                              |
+| St Mary?s University College, Belfast                                                              |
+| St Mary?s University, Twickenham                                                                   |
+| Stranmillis University College                                                                     |
+| Suez University                                                                                    |
+| University of Suffolk                                                                              |
+| Sugiyama Jogakuen University                                                                       |
+| Sulaimani Polytechnic University                                                                   |
+| Suratthani Rajabhat University                                                                     |
+| Sz?chenyi Istv?n University                                                                        |
+| Tafila Technical University                                                                        |
+| University of Taipei                                                                               |
+| Tama Art University                                                                                |
+| Tarlac Agricultural University                                                                     |
+| Tarsus University                                                                                  |
+| Tashkent Institute of Finance                                                                      |
+| Tashkent University of Information Technologies                                                    |
+| Tashkent Institute of Irrigation and Agricultural Mechanisation                                    |
+| Tashkent Medical Academy                                                                           |
+| Tashkent Pediatric Medical Institute                                                               |
+| Tashkent Pharmaceutical Institute                                                                  |
+| Tashkent State Agrarian University                                                                 |
+| Tashkent State Dental Institute                                                                    |
+| Tashkent State University of Law                                                                   |
+| Universit? Sultan Moulay Slimane                                                                   |
+| Tashkent State University of Oriental Studies                                                      |
+| Tashkent State Technical University                                                                |
+| Tashkent State Transport University                                                                |
+| Tashkent Institute of Textile and Light Industry                                                   |
+| Tatung University                                                                                  |
+| Tecmilenio University                                                                              |
+| Tecnol?gico de Costa Rica                                                                          |
+| Instituto Tecnol?gico Metropolitano                                                                |
+| Institut Teknologi Nasional Bandung (ITENAS Bandung)                                               |
+| University of Telafer                                                                              |
+| Tenri University                                                                                   |
+| Termez State University                                                                            |
+| Termez Institute of Engineering and Technology                                                     |
+| Tikrit University                                                                                  |
+| Tokyo University of Foreign Studies                                                                |
+| Tashkent State University of Economics                                                             |
+| Tomsk State Pedagogical University                                                                 |
+| Toyama Prefectural University                                                                      |
+| Trinity Laban Conservatoire of Music and Dance                                                     |
+| Turin Polytechnic University in Tashkent                                                           |
+| Ubon Ratchathani University                                                                        |
+| UBT                                                                                                |
+| UIN Sulthan Thaha Saifuddin Jambi                                                                  |
+| Umaru Musa Yar?adua University                                                                     |
+| Unichristus                                                                                        |
+| United International University                                                                    |
+| Universidad del Pac?fico Ecuador                                                                   |
+| University College of Osteopathy                                                                   |
+| Institute of Telecommunications and Informatics of Turkmenistan                                    |
+| UNNOBA                                                                                             |
+| Ural State Medical University                                                                      |
+| Urgench State University                                                                           |
+| ?sk?dar University                                                                                 |
+| Usmanu Danfodiyo University, Sokoto                                                                |
+| Universidad UTE                                                                                    |
+| University of Uyo                                                                                  |
+| National University of Uzbekistan named after Mirzo Ulugbek                                        |
+| Valahia University of Targoviste                                                                   |
+| University of Vale do Itaja?                                                                       |
+| Varendra University                                                                                |
+| Varna University of Management                                                                     |
+| Veritas University, Abuja                                                                          |
+| University of Veterinary Medicine and Pharmacy in Ko?ice                                           |
+| Vila Velha University                                                                              |
+| Virtual University of Tunis                                                                        |
+| Visayas State University                                                                           |
+| Vitebsk State Medical University                                                                   |
+| Volgograd State University                                                                         |
+| University of Wales Trinity Saint David                                                            |
+| Wellspring University                                                                              |
+| Western Caspian University                                                                         |
+| University of West London                                                                          |
+| West Ukrainian National University                                                                 |
+| West Virginia University                                                                           |
+| WHU: Beisheim                                                                                      |
+| University of Worcester                                                                            |
+| Uzhhorod National University                                                                       |
+| The World Islamic Sciences and Education University (WISE)                                         |
+| Wrexham University                                                                                 |
+| Writtle University College                                                                         |
+| WSB Academy                                                                                        |
+| Yagshigeldi Kakayev International University of Oil and Gas                                        |
+| Yamaguchi Prefectural University                                                                   |
+| Yanka Kupala State University of Grodno                                                            |
+| Universitas Negeri Yogyakarta                                                                      |
+| York St John University                                                                            |
+| Yusuf Maitama Sule University, Kano                                                                |
+| Zhytomyr Polytechnic State University                                                              |
+| Ziauddin University                                                                                |
+| Zarqa University                                                                                   |
+| ?cole Polytechnique - Institut Polytechnique de Paris                                              |
+| University of Alabama at Birmingham                                                                |
+| T?l?com Paris - Institut Polytechnique de Paris                                                    |
+| Paris-Sud University                                                                               |
+| University of South Florida (Tampa)                                                                |
+| University of Cincinnati - Uptown                                                                  |
+| University of Oregon                                                                               |
+| Grenoble Alpes University                                                                          |
+| Hofstra University                                                                                 |
+| Oregon State University                                                                            |
+| Universit? de Versailles Saint-Quentin-en-Yvelines                                                 |
+| Indian Institute of Technology Bombay                                                              |
+| Indian Institute of Technology Delhi                                                               |
+| Indian Institute of Technology Kharagpur                                                           |
+| New Mexico Institute of Mining and Technology                                                      |
+| University of Alabama in Huntsville                                                                |
+| Universit? Cattolica del Sacro Cuore                                                               |
+| CentraleSup?lec                                                                                    |
+| University of Idaho                                                                                |
+| Indian Institute of Technology Roorkee                                                             |
+| National Chiao Tung University                                                                     |
+| National Yang-Ming University                                                                      |
+| Northern Arizona University                                                                        |
+| Renmin University of China                                                                         |
+| Amrita Vishwa Vidyapeetham                                                                         |
+| Chemnitz University of Technology                                                                  |
+| China Agricultural University                                                                      |
+| ?cole normale sup?rieure Paris-Saclay                                                              |
+| Huazhong Agricultural University                                                                   |
+| Imam Khomeini International University                                                             |
+| Indian Institute of Technology Hyderabad                                                           |
+| Indian Institute of Technology Kanpur                                                              |
+| Indian Institute of Technology Madras                                                              |
+| Kent State University                                                                              |
+| Shandong University                                                                                |
+| Universit? de Sherbrooke                                                                           |
+| University of Tours                                                                                |
+| Western Washington University                                                                      |
+| China University of Geosciences, Wuhan                                                             |
+| China University of Mining and Technology                                                          |
+| Embry-Riddle Aeronautical University                                                               |
+| University of ?vora                                                                                |
+| Jilin University                                                                                   |
+| Louisiana Tech University                                                                          |
+| Normandy University                                                                                |
+| NorthWest A&F University                                                                           |
+| Osaka City University                                                                              |
+| Shanghai University of Finance and Economics (SUFE)                                                |
+| Autonomous University of San Luis Potosi                                                           |
+| University of Birjand                                                                              |
+| California State University, Long Beach                                                            |
+| University of Cergy-Pontoise                                                                       |
+| Federal University of Alagoas                                                                      |
+| University of Guilan                                                                               |
+| Maharaja Sayajirao University of Baroda                                                            |
+| Nara Medical University                                                                            |
+| National University of Cuyo                                                                        |
+| National University of the South                                                                   |
+| University of North Florida                                                                        |
+| Ocean University of China                                                                          |
+| Osaka Medical College                                                                              |
+| Osaka Prefecture University                                                                        |
+| University of Sciences and Technology Houari Boumediene                                            |
+| University of South China                                                                          |
+| Szent Istv?n University                                                                            |
+| Paris-Saclay University                                                                            |
+| CEU Universities                                                                                   |
+| Beijing University of Chemical Technology                                                          |
+| University of Montana                                                                              |
+| T?l?com SudParis - Institut Polytechnique de Paris                                                 |
+| King George?s Medical University                                                                   |
+| Medical University of Warsaw                                                                       |
+| Miami University                                                                                   |
+| Beijing Forestry University                                                                        |
+| Beijing University of Technology                                                                   |
+| Central University of Finance and Economics                                                        |
+| East Carolina University                                                                           |
+| James Madison University                                                                           |
+| Kunming University of Science and Technology                                                       |
+| Razi University                                                                                    |
+| Daegu Gyeongbuk Institute of Science and Technology (DGIST)                                        |
+| Campus Bio-Medico University of Rome                                                               |
+| Nazarbayev University                                                                              |
+| Capital University of Science and Technology                                                       |
+| The Catholic University of America                                                                 |
+| Malaviya National Institute of Technology                                                          |
+| Otto von Guericke University of Magdeburg                                                          |
+| BRAC University                                                                                    |
+| Universit? de Bretagne Occidentale                                                                 |
+| China University of Petroleum (East China)                                                         |
+| University of la Costa                                                                             |
+| Gorgan University of Agricultural Sciences and Natural Resources                                   |
+| Guilan University of Medical Sciences                                                              |
+| Jahangirnagar University                                                                           |
+| Jaypee University of Information Technology                                                        |
+| University of Medicine and Pharmacy Carol Davila                                                   |
+| UPES                                                                                               |
+| Universit? de Poitiers                                                                             |
+| Shahrekord University of Medical Sciences                                                          |
+| Institute of Space Technology                                                                      |
+| ZHAW Zurich University of Applied Sciences                                                         |
+| Central Michigan University                                                                        |
+| Universit? Djillali Liab?s de Sidi Bel-Abb?s                                                       |
+| University of Franche-Comt?                                                                        |
+| Gauhati University                                                                                 |
+| Guru Ghasidas Vishwavidyalaya                                                                      |
+| Karnatak University Dharwad                                                                        |
+| Kohat University of Science and Technology                                                         |
+| Mehran University of Engineering and Technology, Jamshoro, Pakistan                                |
+| National Institute of Technology Warangal                                                          |
+| University of Rajshahi                                                                             |
+| Urmia University of Technology                                                                     |
+| Wakayama Medical University                                                                        |
+| The University of Agriculture, Peshawar                                                            |
+| Allameh Tabataba ?i University                                                                     |
+| University of Al-Qadisiyah                                                                         |
+| Universidad de Cartagena                                                                           |
+| Chung Shan Medical University                                                                      |
+| German Jordanian University                                                                        |
+| Halmstad University                                                                                |
+| University of Hormozgan                                                                            |
+| Hyogo Medical University                                                                           |
+| Ilam University                                                                                    |
+| Istanbul Bilgi University                                                                          |
+| Karunya Institute of Technology and Sciences                                                       |
+| Kharkiv Aviation Institute                                                                         |
+| Universidade Lus?fona                                                                              |
+| Manipal University Jaipur                                                                          |
+| Medical University of Lublin                                                                       |
+| Medical University of Sofia                                                                        |
+| University of Medicine and Pharmacy of Craiova                                                     |
+| National Institute of Technology Srinagar                                                          |
+| Pozna? University of Life Sciences                                                                 |
+| Pukyong National University                                                                        |
+| University of Qom                                                                                  |
+| Shahid Sadoughi University of Medical Sciences                                                     |
+| Shahjalal University of Science and Technology                                                     |
+| Universit? de Skikda                                                                               |
+| Southwest Petroleum University                                                                     |
+| Universiti Sultan Zainal Abidin                                                                    |
+| Universitas Syiah Kuala                                                                            |
+| Thiagarajar College of Engineering                                                                 |
+| Zhejiang Chinese Medical University                                                                |
+| Adelphi University                                                                                 |
+| Ankara Yildirim Beyazit University                                                                 |
+| University of Batna 2                                                                              |
+| Bharath Institute of Higher Education and Research                                                 |
+| Bharati Vidyapeeth University                                                                      |
+| Bursa Technical University                                                                         |
+| University of Caldas                                                                               |
+| ?ank?r? Karatekin University                                                                       |
+| Universidad Cat?lica del Maule                                                                     |
+| Universidad Cat?lica de la Sant?sima Concepci?n                                                    |
+| Centro Federal de Educa??o Tecnol?gica Celso Suckow da Fonseca (CEFET-RJ)                          |
+| College of Charleston                                                                              |
+| Chelyabinsk State University                                                                       |
+| Georgian Technical University                                                                      |
+| Goa University                                                                                     |
+| Herzen State Pedagogical University of Russia                                                      |
+| Hitit University                                                                                   |
+| Izmir University of Economics                                                                      |
+| Jan Kochanowski University in Kielce                                                               |
+| Jember University                                                                                  |
+| Universit? Kasdi Merbah Ouargla                                                                    |
+| K?r?ehir Ahi Evran University                                                                      |
+| University of Life Sciences in Lublin                                                              |
+| Universit? Mohammed Premier                                                                        |
+| Moulay Ismail University                                                                           |
+| National University of Costa Rica                                                                  |
+| National University of Life and Environmental Sciences of Ukraine                                  |
+| NED University of Engineering and Technology                                                       |
+| Ni?de ?mer Halisdemir University                                                                   |
+| Ordu University                                                                                    |
+| Pamukkale University                                                                               |
+| University of the Peloponnese                                                                      |
+| Universidad Peruana de Ciencias Aplicadas (UPC)                                                    |
+| University of Port Harcourt                                                                        |
+| University of Prishtina                                                                            |
+| University of Sarajevo                                                                             |
+| Saratov State Medical University                                                                   |
+| Reshetnev Siberian State University of Science and Technology                                      |
+| Universitas Sriwijaya                                                                              |
+| Saints Cyril and Methodius University in Skopje                                                    |
+| Tula State University                                                                              |
+| Ufa University of Science and Technology                                                           |
+| Universidad del Valle                                                                              |
+| Instituto Polit?cnico de Viana do Castelo                                                          |
+| Yerevan State University                                                                           |
+| Abbes Laghrour University of Khenchala                                                             |
+| Abbottabad University of Science and Technology                                                    |
+| Abdelhafid Boussouf University Center of Mila                                                      |
+| Abia State University                                                                              |
+| Abrar University                                                                                   |
+| Ada Kent University                                                                                |
+| Adventist University of Central Africa                                                             |
+| University Center of Aflou                                                                         |
+| University of Agronomic Sciences and Veterinary Medicine of Bucharest                              |
+| Universitas Ahmad Dahlan                                                                           |
+| University of Ahmed Draia                                                                          |
+| Universit? d?Ain T?mouchent                                                                        |
+| Akhmet Yassawi University                                                                          |
+| Akli Mohand Oulhadj Bouira University                                                              |
+| Al Ain University                                                                                  |
+| Al Akhawayn University                                                                             |
+| Al al-Bayt University                                                                              |
+| Al-Baha University                                                                                 |
+| Al-Bayan University                                                                                |
+| Albaydha University                                                                                |
+| Al-Furat Al-Awsat Technical University                                                             |
+| University of Algiers 1                                                                            |
+| Algiers 2 University                                                                               |
+| University of Algiers 3                                                                            |
+| Al-Hussein Bin Talal University                                                                    |
+| Al-Janad University for Science and Technology                                                     |
+| University of Alkafeel                                                                             |
+| Al-Karkh University of Science                                                                     |
+| AlMaarefa University                                                                               |
+| Almaty Technological University                                                                    |
+| Al-Nisour University College                                                                       |
+| Al-Qalam University College                                                                        |
+| Al-Qasim Green University                                                                          |
+| Al-Rafidain University College                                                                     |
+| Al Safwa University College                                                                        |
+| Altoosi University College T.U.C                                                                   |
+| Al Turath University                                                                               |
+| Al-Zaytoonah University of Jordan                                                                  |
+| American University in the Emirates (AUE)                                                          |
+| American University in Dubai                                                                       |
+| Amity University, Chhattisgarh                                                                     |
+| An?huac University                                                                                 |
+| Andijan Machine-Building Institute                                                                 |
+| Andijan State University                                                                           |
+| Andijan State Pedagogical Institute (ASPI)                                                         |
+| Applied Science Private University                                                                 |
+| Arabian Gulf University                                                                            |
+| Arab Open University                                                                               |
+| Arkin University of Creative Arts and Design (ARUCAD)                                              |
+| Armenian State Pedagogical University                                                              |
+| Arturo Prat University                                                                             |
+| Asfendiyarov Kazakh National Medical University                                                    |
+| Atyrau University                                                                                  |
+| Austral University                                                                                 |
+| Autonomous University of Chiapas                                                                   |
+| Bacha Khan University, Charsadda                                                                   |
+| University of Balochistan                                                                          |
+| Balochistan University of Information Technology, Engineering and Management Sciences (BUITEMS)    |
+| University of Baltistan, Skardu                                                                    |
+| Bayburt University                                                                                 |
+| Belarusian State Medical University                                                                |
+| Bilad Alrafidain University College                                                                |
+| Bohdan Khmelnytsky National University of Cherkasy                                                 |
+| The British University in Dubai                                                                    |
+| Bukhara Engineering Technological Institute                                                        |
+| Bukhara State University                                                                           |
+| Bukhara State Medical Institute                                                                    |
+| Bukkyo University                                                                                  |
+| ?a? University                                                                                     |
+| Universidad Camilo Jos? Cela                                                                       |
+| Universidad de Carabobo                                                                            |
+| Catholic University of ?vila                                                                       |
+| Caucasus International University                                                                  |
+| CBS International Business School                                                                  |
+| University Center Ali Kafi Tindouf                                                                 |
+| University Center of Illizi                                                                        |
+| University Center Morsli Abdellah of Tipaza                                                        |
+| University Center of Barika                                                                        |
+| Central Luzon State University                                                                     |
+| Centro de Estudios para la Calidad Educativa y la Investigaci?n Cient?fica (CECEIC)                |
+| Centro Universit?rio Cesuca                                                                        |
+| Centurion University of Technology and Management                                                  |
+| Universidad C?sar Vallejo                                                                          |
+| Charisma University                                                                                |
+| Chettinad Academy of Research and Education                                                        |
+| Chinhoyi University of Technology                                                                  |
+| Universidad Cient?fica del Sur                                                                     |
+| Cihan University Sulaimaniya                                                                       |
+| Civil Aviation Academy                                                                             |
+| University of Cyberjaya                                                                            |
+| Daneshpajoohan Pishro Higher Education Institute                                                   |
+| Dawood University of Engineering and Technology                                                    |
+| Delta State University, Abraka                                                                     |
+| Don Bosco University                                                                               |
+| Dovletmammet Azadi Turkmen National Institute of World Languages                                   |
+| Dr D. Y. Patil Vidyapeeth, Pune                                                                    |
+| D. Serikbayev East Kazakhstan Technical University                                                 |
+| Dulaty University                                                                                  |
+| EAE Business School                                                                                |
+| University of Eastern Philippines                                                                  |
+| ?cole Nationale Polytechnique d?Oran Maurice Audin                                                 |
+| ?cole Nationale Sup?rieure Agronomique                                                             |
+| ?cole Nationale Sup?rieure Agronomique, Algiers                                                    |
+| ?cole Nationale Sup?rieure de Biotechnologie Taoufik Khaznadar (ENSB)                              |
+| ?cole Nationale Sup?rieure d?Informatique (ESI)                                                    |
+| ?cole Nationale Sup?rieure de Management Kol?a                                                     |
+| ?cole Nationale Sup?rieure des Sciences de la Mer et de l?Am?nagement du Littoral (ENSSMAL)        |
+| ?cole Nationale Sup?rieure V?t?rinaire d?Alger                                                     |
+| ?cole National Polytechnique de Constantine                                                        |
+| ?cole Normale Sup?rieure de B?char                                                                 |
+| ?cole Normale Sup?rieure de Bouzar?ah                                                              |
+| ?cole Normale Sup?rieure El Katiba Assia Djebar Constantine (ENSC)                                 |
+| ?cole Normale Sup?rieure de Kouba                                                                  |
+| ?cole Normale Sup?rieure de Laghouat                                                               |
+| ?cole Normale Sup?rieure d?Oran                                                                    |
+| ?cole Sup?rieure de Comptabilit? et de Finances de Constantine                                     |
+| ?cole Sup?rieure en Informatique 8 Mai 1945 de Sidi-Bel-Abb?s                                      |
+| ?cole Sup?rieure en Sciences Appliqu?es de Tlemcen                                                 |
+| ?cole Sup?rieure en Sciences Biologiques d?Oran (ESSBO)                                            |
+| ?cole Sup?rieure en Sciences et Technologies de l?Informatique et du Num?rique (ESTIN)             |
+| University of Economics - Varna                                                                    |
+| Edwin Clark University                                                                             |
+| Elizade University                                                                                 |
+| Emir Abdelkader University of Islamic Sciences                                                     |
+| Institute of Engineering, Technical and Transport Communications of Turkmenistan                   |
+| Escola Superior de Enfermagem do Porto (ESEP)                                                      |
+| Escuela Superior Polit?cnica de Chimborazo                                                         |
+| Eski?ehir Technical University                                                                     |
+| Universidade Estadual do Maranh?o                                                                  |
+| Universidade Estadual do Norte do Paran? (UENP)                                                    |
+| European University                                                                                |
+| European University of Armenia                                                                     |
+| European University of Tunis                                                                       |
+| Fergana Medical Institute of Public Health                                                         |
+| Fergana State University                                                                           |
+| Finis Terrae University                                                                            |
+| Forman Christian College                                                                           |
+| Francisk Skorina Gomel State University                                                            |
+| Fukushima University                                                                               |
+| University of Gafsa                                                                                |
+| Gangadhar Meher University                                                                         |
+| University of Garmian                                                                              |
+| University of Ghardaia                                                                             |
+| The Government Sadiq College Women University Bahawalpur                                           |
+| Gulf Medical University                                                                            |
+| Gulistan State University                                                                          |
+| University of Hafr Al Batin                                                                        |
+| Hagoromo University of International Studies                                                       |
+| Hakuoh University                                                                                  |
+| Hali? University                                                                                   |
+| H?me University of Applied Sciences                                                                |
+| Hanseo University                                                                                  |
+| University of Health Sciences Lahore                                                               |
+| School of Higher Commercial Studies (EHEC Algiers)                                                 |
+| Higher National School of Renewable Energies, Environment and Sustainable Development              |
+| Higher School of Management and Digital Economy (HSMDE)                                            |
+| Higher School of Agronomy - Mostaganem (ESAM)                                                      |
+| Higher School of Management - Tlemcen                                                              |
+| Hilla University College                                                                           |
+| Hiroshima International University                                                                 |
+| Ho Chi Minh City Open University                                                                   |
+| Hodeida University                                                                                 |
+| Hokkaido University of Science                                                                     |
+| University of Home Economics Lahore                                                                |
+| Ho Technical University                                                                            |
+| Hryhorii Skovoroda University in Pereiaslav                                                        |
+| Humboldt State University                                                                          |
+| Ibn Khaldoun University                                                                            |
+| ICFAI University, Dehradun                                                                         |
+| Imam Al-Kadhum College (IKC)                                                                       |
+| Independent University, Bangladesh                                                                 |
+| Information Technology University of the Punjab                                                    |
+| Universidad Internacional del Ecuador                                                              |
+| International American University                                                                  |
+| International Engineering and Technology University (METU)                                         |
+| International University for the Humanities and Development                                        |
+| International IT University                                                                        |
+| Institute of International Relations of the Ministry of Foreign Affairs of Turkmenistan            |
+| Inter-State School of Veterinary Sciences and Medicine                                             |
+| Iqra University                                                                                    |
+| Universitas Islam Sultan Agung                                                                     |
+| Istanbul Arel University                                                                           |
+| Istanbul K?lt?r University                                                                         |
+| Istanbul Okan University                                                                           |
+| Ivano Frankivsk National Technical University of Oil and Gas                                       |
+| Jadara University                                                                                  |
+| Japan University of Economics                                                                      |
+| University of Jendouba                                                                             |
+| Jizzakh Polytechnic Institute                                                                      |
+| Jizzakh State Pedagogical University                                                               |
+| John von Neumann University                                                                        |
+| Kabarak University                                                                                 |
+| University of Kabianga                                                                             |
+| Karaganda Buketov University                                                                       |
+| Karakalpak State University                                                                        |
+| Karshi Engineering Economics Institute                                                             |
+| Kazakh-British Technical University                                                                |
+| Kazakh National Women?s Teacher Training University                                                |
+| Kazakhstan Medical University KSPH                                                                 |
+| Keisen University                                                                                  |
+| Kharkiv National Automobile and Highway University                                                 |
+| Kharkiv National University of Internal Affairs                                                    |
+| Khemis Miliana University                                                                          |
+| Kimyo International University in Tashkent                                                         |
+| King Abdullah University of Science and Technology (KAUST)                                         |
+| King Danylo University                                                                             |
+| King Edward Medical University                                                                     |
+| Kinnaird College for Women                                                                         |
+| Kohsar University Murree                                                                           |
+| Kokugakuin University                                                                              |
+| Konan University                                                                                   |
+| KPR Institute of Engineering and Technology                                                        |
+| Kumasi Technical University                                                                        |
+| Kursk State Medical University                                                                     |
+| K?tahya Health Sciences University                                                                 |
+| Kutaisi University                                                                                 |
+| Kuwait College of Science and Technology (KCST)                                                    |
+| Kyoto Koka Women?s University                                                                      |
+| Kyoto Notre Dame University                                                                        |
+| K. Zhubanov Aktobe Regional University                                                             |
+| Lahore Leads University                                                                            |
+| Larbi Tebessi University                                                                           |
+| Liaquat University of Medical and Health Sciences (LUMHS)                                          |
+| Lincoln University College                                                                         |
+| Lira University                                                                                    |
+| Universit? du Littoral C?te d?Opale                                                                |
+| London Academy of Music and Dramatic Art (LAMDA)                                                   |
+| Lviv State University of Life Safety                                                               |
+| University of Magallanes                                                                           |
+| Universidad del Magdalena                                                                          |
+| University Centre of Maghnia                                                                       |
+| Management & Science University (MSU)                                                              |
+| Universidad Manuela Beltr?n                                                                        |
+| Margulan University                                                                                |
+| Mariano Marcos State University                                                                    |
+| University of Mataram                                                                              |
+| M. Auezov South Kazakhstan University                                                              |
+| Universidad Mayor de San Sim?n                                                                     |
+| University of Medea                                                                                |
+| Medizinische Hochschule Hannover                                                                   |
+| Universitas Mercu Buana                                                                            |
+| Middle East University                                                                             |
+| Minhaj University Lahore                                                                           |
+| Mizoram University                                                                                 |
+| University of Mohamed Lamine Debaghin Setif 2                                                      |
+| Monroe College                                                                                     |
+| Moscow Technical University of Communications and Informatics                                      |
+| University of Mostar                                                                               |
+| Universitas Muhammadiyah Yogyakarta                                                                |
+| Musashino University                                                                               |
+| Universidad Nacional Abierta y a Distancia (UNAD)                                                  |
+| Universidad Nacional de Asunci?n                                                                   |
+| Universidad Nacional de Rafaela (UNRaf)                                                            |
+| Nakhon Ratchasima Rajabhat University                                                              |
+| Namal University                                                                                   |
+| Narxoz University                                                                                  |
+| Nasarawa State University, Keffi                                                                   |
+| Universidad Nacional Agraria La Molina                                                             |
+| National University of Food Technologies                                                           |
+| National School of Artificial Intelligence (ENSIA)                                                 |
+| National Textile University                                                                        |
+| Netaji Subhas University of Technology                                                             |
+| Northern Border University                                                                         |
+| University Centre of El-Bayadh                                                                     |
+| Nueva Ecija University of Science and Technology (NEUST)                                           |
+| Universidad Nur                                                                                    |
+| Odesa I.I. Mechnikov National University                                                           |
+| University of Okara                                                                                |
+| Open Christian University                                                                          |
+| O.P. Jindal Global University                                                                      |
+| Universit? d?Oran 2 Mohamed Ben Ahmed                                                              |
+| Oran Graduate School of Economics                                                                  |
+| Osol Al-Deen University College                                                                    |
+| University of Oum El Bouaghi                                                                       |
+| Universidad del Pac?fico                                                                           |
+| Universidad de Pamplona                                                                            |
+| Panth?on-Assas University (Paris 2)                                                                |
+| Petre Shotadze Tbilisi Medical Academy                                                             |
+| Petroleum University of Technology                                                                 |
+| Petro Mohyla Black Sea National University                                                         |
+| Plateau State University, Bokkos                                                                   |
+| Pontifical Catholic University of Argentina                                                        |
+| University of Poonch Rawalakot                                                                     |
+| Presbyterian University, Ghana                                                                     |
+| Presidency University                                                                              |
+| Prince Mohammad Bin Fahd University                                                                |
+| Prydniprovska State Academy of Civil Engineering and Architecture                                  |
+| Pskov State University                                                                             |
+| PUC-Campinas                                                                                       |
+| Quaid-e-Awam University of Engineering, Science and Technology (QUEST)                             |
+| Queen Arwa University                                                                              |
+| Universidade Rainha Njinga a Mbande (URNM)                                                         |
+| Rajamangala University of Technology Thanyaburi (RMUTT)                                            |
+| Ritsumeikan Asia Pacific University (APU)                                                          |
+| Royal College of Academics                                                                         |
+| Royal Academy of Dramatic Art (RADA)                                                               |
+| University of Saida                                                                                |
+| Saint Thomas University, Colombia                                                                  |
+| Samsun University                                                                                  |
+| University of Santander                                                                            |
+| Universidad Santo Tom?s                                                                            |
+| Sarsen Amanzholov East Kazakhstan University                                                       |
+| SDU University                                                                                     |
+| Sebha University                                                                                   |
+| Seisa Dohto University                                                                             |
+| Seyitnazar Seydi Turkmen State Pedagogical Institute                                               |
+| Shah Abdul Latif University, Khairpur                                                              |
+| Shaheed Mohtarma Benazir Bhutto Medical University                                                 |
+| SIMAD University                                                                                   |
+| Skolkovo Institute of Science and Technology (Skoltech)                                            |
+| Sohar University                                                                                   |
+| Soochow University, Taiwan                                                                         |
+| University of Souk Ahras                                                                           |
+| Institute of Southern Punjab - Multan                                                              |
+| Southern Technical University                                                                      |
+| Stavropol State Agrarian University                                                                |
+| St Luke?s International University                                                                 |
+| University of Sufism and Modern Sciences (USMS)                                                    |
+| Sukkur IBA University                                                                              |
+| University of Swabi                                                                                |
+| Takushoku University                                                                               |
+| University of Tamanghasset                                                                         |
+| Tashkent Institute of Chemical Technology                                                          |
+| Tashkent State Pedagogical University named after Nizami                                           |
+| Tata Institute of Fundamental Research                                                             |
+| T. C. Demiro?lu Bilim University                                                                   |
+| Teacher Education College of Setif                                                                 |
+| Technical University of Moldova                                                                    |
+| University of Technology Nowshera                                                                  |
+| Universidad T?cnica de Manab?                                                                      |
+| Universidad Tecnol?gica de Bol?var                                                                 |
+| Universidad Tecnol?gica de Santiago (UTESA)                                                        |
+| Teerthanker Mahaveer University                                                                    |
+| Teikyo Heisei University                                                                           |
+| Universiti Teknologi Brunei                                                                        |
+| Termiz Institute of Agrotechnology and Innovative Development                                      |
+| University of the Thai Chamber of Commerce                                                         |
+| University of Thi-Qar                                                                              |
+| Thomas Adewumi University                                                                          |
+| Tishk International University                                                                     |
+| Tissemsilt University                                                                              |
+| Tohoku Gakuin University                                                                           |
+| Tokyo University of Technology                                                                     |
+| Toraighyrov University                                                                             |
+| University of Tripoli                                                                              |
+| Turan-Astana University                                                                            |
+| Turkmen State Architecture and Construction Institute                                              |
+| Turkmen State Institute of Economics and Management                                                |
+| Tver State Technical University                                                                    |
+| UEES, Espiritu Santo University                                                                    |
+| Ulyanovsk State University                                                                         |
+| Ulyanovsk State Technical University                                                               |
+| UNESC                                                                                              |
+| Universiapolis - Universit? Internationale d?Agadir                                                |
+| Ural State University of Economics                                                                 |
+| Uruk University                                                                                    |
+| Uzbekistan State University of World Languages                                                     |
+| Uzbek State University of Physical Culture and Sport                                               |
+| Vasyl Stefanyk Precarpathian National University                                                   |
+| Vinayaka Mission?s Research Foundation                                                             |
+| Visvesvaraya Technological University                                                              |
+| Volgograd State Medical University                                                                 |
+| University of Warith Alanbiyaa                                                                     |
+| Wasit University                                                                                   |
+| Westcliff University                                                                               |
+| Women University Mardan                                                                            |
+| The Women University Multan                                                                        |
+| World University of Bangladesh (WUB)                                                               |
+| Ya?ar University                                                                                   |
+| Zhetysu University                                                                                 |
+| Ziane Achour University of Djelfa

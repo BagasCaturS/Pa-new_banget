@@ -65,13 +65,6 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-center h-16">
           <div class="flex items-center">
-            <div class="flex-shrink-0">
-              <img
-                class="h-8 w-8"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                alt="Logo"
-                />
-              </div>
             <div
             class="hidden md:-my-px md:ml-10 md:flex md:items-center md:grow-0"
             >
@@ -154,8 +147,8 @@
               </select>
               <div class="mt-4">
                 <label for="search" class="block text-gray-700 font-bold mb-2">Search University</label>
-                <input type="text" name="search" id="search" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Enter university name">
-                <ul id="suggestion-list"></ul>
+                <input type="text" id="cari" name="cari" placeholder="Search for a university" class="w-full p-2 border border-gray-300 rounded">
+                  <ul id="suggestions" class="mt-2 bg-white border border-gray-300 rounded w-full"></ul>
                 
               </div>
               <input type="submit" value="Submit" name="submit" class="pointer mt-4 px-4 py-2 bg-indigo-800 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700">
@@ -170,7 +163,7 @@
       if (isset($_POST['submit'])) {
         $tanggal = $_POST['tanggal'];
         $selectedParameter = $_POST['parameter'];
-        $searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
+        $searchTerm = isset($_POST['cari']) ? $_POST['cari'] : '';
         
         
         $searchCondition = '';
@@ -203,6 +196,7 @@
               echo "<th>Research</th>";
               echo "<th>Rank Research</th>";
               echo "<th>Tanggal</th>";
+              echo "<th>Univ details</th>";
               echo "</tr>";
               
               while ($row = $result->fetch_assoc()) {
@@ -223,6 +217,7 @@
                             echo "<td>" . $row["research"] . "</td>";
                             echo "<td>" . $row["rank_rsc"] . "</td>";
                             echo "<td>" . $row["tanggal"] . "</td>";
+                            echo "<td><a href='details.php?id=" . $row["id_ova"] . "'>View Details</a></td>";
                             echo "</tr>";
                           }
                           
@@ -237,6 +232,7 @@
           ?>
           
   <script src="search.js"></script>
+  <script src="landing_search.js"></script>
   <script src="src/main.js"></script> <!-- Link to the external JS file -->
   </body>
   </html>
