@@ -68,9 +68,14 @@
                                 Crawl Data
                             </button>
                         </div>
+                        <div id="progress-container" class="w-full bg-gray-300 rounded-full h-2.5 mt-4 hidden">
+                            <div id="progress-bar" class="bg-indigo-500 h-2.5 rounded-full" style="width: 0%;"></div>
+                            <p class="p-4 text-center text-gray-400">Kecepatan crawling tergantung dari kecepatan
+                                internet anda</p>
+                        </div>
                     </form>
                 </div>
-                <div class="px-8 py-4 bg-gray-700 text-center">
+                <div class="mt-10 px-8 py-4 bg-gray-700 text-center">
 
                 </div>
             </div>
@@ -78,6 +83,30 @@
 
 
     </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function (event) {
+            // event.preventDefault(); // Prevent the form from submitting immediately
+
+            const progressBar = document.getElementById('progress-bar');
+            const progressContainer = document.getElementById('progress-container');
+            progressContainer.classList.remove('hidden');
+
+            // Example of how the progress bar might be updated
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                progressBar.style.width = progress + '%';
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    // Submit the form after progress reaches 100%
+                    event.target.submit();
+                }
+            }, 1020); // Simulate progress update every second
+        });
+    </script>
+
+
 </body>
 
 </html>

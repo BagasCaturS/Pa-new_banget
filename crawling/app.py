@@ -30,7 +30,7 @@ rows = res["data"]
 conn = mysql.connector.connect(
     host="localhost",
     user="root",        # ganti dengan username MySQL
-    password="",    # ganti dengan password MySQL
+    password="",    
     database="dummy_the4" # ganti dengan nama database MySQL
 )
 cursor = conn.cursor()
@@ -221,7 +221,7 @@ def insert_data(df, table_name, columns):
         sql = f"INSERT INTO {table_name} ({columns_str}) VALUES ({placeholders})"
         try:
             cursor.execute(sql, tuple(row))
-            print(f"Successfully inserted data into {table_name}")
+            # print(f"Successfully inserted data into {table_name}")
         except mysql.connector.Error as e:
             print(f"Error inserting data into {table_name}: {e}")
         except Exception as e:
