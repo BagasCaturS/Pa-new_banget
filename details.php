@@ -73,6 +73,7 @@ if (isset($_GET['id'])) {
         c.student_staff_ratio,
         c.pc_intl_students,
         c.female_male_ratio,
+        c.stats_proportion_of_isr,
         c.tanggal AS campus_info_tanggal
     FROM 
         overall o
@@ -118,12 +119,33 @@ if (isset($_GET['id'])) {
         echo "<p>Lokasi Universitas: " . $row["lokasi"] . "</p>";
         echo "</div>";
         
-        echo "<div class='p-4 shadow-md rounded-md w-80 bg-red-300 flex flex-col justify-center items-start'>";
+        echo "<div class='p-4 shadow-md rounded-md w-fit bg-red-300 flex flex-col justify-center items-start'>";
         echo "<p class='font-bold'>University Details: </p>";
-        echo "<p>Number of Students Ratio: " . $row["number_students"] . "</p>";
-        echo "<p>International Students: " . $row["pc_intl_students"] . "</p>";
-        echo "<p>Student-staff Ratio: " . $row["student_staff_ratio"] . "</p>";
-        echo "<p>Female-Male Ratio: " . $row["female_male_ratio"] . "</p>";
+       echo "<div class='flex gap-4'>";
+        echo "<div class='flex w-fit flex-col justify-center items-start'>";
+        echo "<p>Number of Students Ratio  </p>";
+        echo "<p>International Students </p>";
+        echo "<p>Student-staff Ratio  </p>";
+        echo "<p>Female-Male Ratio  </p>";
+        echo "<p>ISR (Interdiscipline Science Research)</p>";
+        echo "</div>";
+        echo "<div class='flex flex-col justify-center items-end'>";
+        echo "<p>:</p>";
+        echo "<p>:</p>";
+        echo "<p>:</p>";
+        echo "<p>:</p>";
+        echo "<p>:</p>";
+        echo "</div>";
+        echo "<div class='flex flex-col justify-center items-end'>";
+        echo "<p> " . $row["number_students"] . "</p>";
+        echo "<p> " . $row["pc_intl_students"] . "</p>";
+        echo "<p> " . $row["student_staff_ratio"] . "</p>";
+        echo "<p> " . $row["female_male_ratio"] . "</p>";
+        echo "<p> " . $row["stats_proportion_of_isr"] . "</p>";
+        echo "</div>";
+        echo "</div>";
+
+
         echo "</div>";
 
         echo "</div>";

@@ -7,6 +7,7 @@ CREATE TABLE campus_info(
   ,student_staff_ratio VARCHAR(255) NOT NULL
   ,pc_intl_students    VARCHAR(255) NOT NULL
   ,female_male_ratio   VARCHAR(255) NOT NULL
+  ,stats_proportion_of_isr    VARCHAR(255) NOT NULL
   ,tanggal             INTEGER(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -93,11 +94,11 @@ CREATE TABLE `overall` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-drop database dummy_the;
-create database dummy_the;
-use dummy_the;
+drop database dummy_the2;
+create database dummy_the2;
+use dummy_the2;
 
-alter table international_outlook RENAME COLUMN rank_int_outook to rank_int_outlook;
+-- alter table international_outlook RENAME COLUMN rank_int_outook to rank_int_outlook;
 
 
 -- Query insert data
