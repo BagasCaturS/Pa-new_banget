@@ -1,4 +1,62 @@
-Style untuk form login
+.suggestion {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.suggestion:hover {
+  background-color: #f1f1f1;
+}
+
+#suggestion-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 30rem;
+  z-index: 99999;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 10px;
+  border: 5px solid #000;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 8px;
+}
+
+th {
+  /* background-color: #1f2937; */
+  /* color: white; */
+}
+
+td {
+  border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+
 form.loginForm {
   width: 400px;
   margin: 50px auto;
@@ -60,20 +118,7 @@ form.signupForm input[type="submit"] {
   cursor: pointer;
 }
 
-.teks-tengah {
-  width: 320px;
-  padding: 10px;
-  border: 5px solid gray;
-  margin: 0;
-}
 
-body {
-  background-color: wheat;
-  background-repeat: no-repeat;
-}
-.border {
-  border: #4caf50 solid;
-}
 
 .chartContainer {
   background-color: rgb(255, 255, 255);
@@ -126,10 +171,22 @@ th {
   background-color: #f2f2f2;
   padding: 8px;
 }
-#lineChart {
-  
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
-
-#barChart {
-  
+.pagination a {
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #007bff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.pagination .current-page {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
 }

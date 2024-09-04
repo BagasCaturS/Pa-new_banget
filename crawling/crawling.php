@@ -30,7 +30,7 @@
 <body>
 
 
-    <div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="flex items-center justify-center min-h-screen bg-zinc-900">
 
         <div class="max-w-lg w-full">
             <div style="box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);"
@@ -57,7 +57,7 @@
                                     placeholder="Masukkan directory penyimpanan" required>
                             </div>
                             <div class="mt-4">
-                                <p class="text-gray-400">Cara pengambilan token dapat dilihat <a class="text-indigo-500"
+                                <p class="text-gray-400">Cara pengambilan token dan penyimpanan dapat dilihat <a class="text-indigo-500"
                                         href="tutorial.php">disini</a></p>
                             </div>
                         </div>

@@ -94,9 +94,9 @@ CREATE TABLE `overall` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-drop database dummy_the4;
-create database dummy_the4;
-use dummy_the4;
+drop database dummy_the3;
+create database dummy_the3;
+use dummy_the3;
 
 -- alter table international_outlook RENAME COLUMN rank_int_outook to rank_int_outlook;
 

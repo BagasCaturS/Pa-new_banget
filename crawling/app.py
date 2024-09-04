@@ -31,10 +31,18 @@ conn = mysql.connector.connect(
     host="localhost",
     user="root",        # ganti dengan username MySQL
     password="",    
-    database="dummy_the4" # ganti dengan nama database MySQL
+    database="dummy_the3" # ganti dengan nama database MySQL
 )
 cursor = conn.cursor()
 
+cursor.execute("SELECT COUNT(*) FROM campus_info WHERE tanggal = %s", (tanggal,))
+year_exists = cursor.fetchone()[0]
+
+if year_exists > 0:
+    print(f"Data untuk tahun {tanggal} Sudah tersedia di database. Proses penambahan data dibatalkan.")
+    cursor.close()
+    conn.close()
+    sys.exit(1)
 # Mengambil ID terakhir dari setiap tabel yang diperlukan
 cursor.execute("SELECT MAX(id_ova) FROM overall")
 last_id_ova = cursor.fetchone()[0] or 0
@@ -67,7 +75,12 @@ data_citation = []
 data_campus_info = []
 
 def replace_na(value):
-    return "data tidak ditemukan pada sumber" if value == "n/a" or value == "0" else value
+    # Cek apakah nilai dimulai dengan '=' dan hapus jika ada
+    if isinstance(value, str) and value.startswith('='):
+        value = value[1:]  # Menghapus '=' di awal string
+    
+    return "data tidak ditemukan pada sumber" if value in ["n/a", "0"] else value
+
 # Memproses data yang diambil
 for i in range(len(rows)):
     # Increment ID
@@ -226,7 +239,6 @@ def insert_data(df, table_name, columns):
             print(f"Error inserting data into {table_name}: {e}")
         except Exception as e:
             print(f"Unexpected error: {e}")
-
 
 
 

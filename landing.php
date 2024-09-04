@@ -5,67 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <link rel="stylesheet" href="style.css" />
 
   <title>Index</title>
   <style>
-    .suggestion {
-      padding: 5px 10px;
-      cursor: pointer;
-      background-color: #fff;
-      transition: background-color 0.3s ease;
-      position: relative;
-      z-index: 1;
-    }
-
-    .suggestion:hover {
-      background-color: #f1f1f1;
-    }
-
-    #suggestion-list {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      position: absolute;
-      width: 30rem;
-      z-index: 99999;
-      max-height: 200px;
-      overflow-y: auto;
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      border-radius: 10px;
-      border: 5px solid #000;
-    }
-
-    th,
-    td {
-      text-align: center;
-      padding: 8px;
-    }
-
-    th {
-      background-color: #1f2937;
-      color: white;
-    }
-
-    td {
-      border: 1px solid #ddd;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-
-    tr:hover {
-      background-color: #ddd;
-    }
-
-    .pointer {
-      cursor: pointer;
-    }
+    
   </style>
 </head>
 
@@ -101,18 +45,11 @@
         if (isset($_POST['submit'])) {
           $selectedParameter = $_POST['parameter'];
           echo "<h2 class='text-lg font-bold mb-2 uppercase '>$selectedParameter</h2>";
-          $conn->close();
         }
         ?>
         <div class="flex justify-center items-center">
           <form action="" method="POST" class="w-1/2">
             <select name="parameter" class="w-full mt-2 border border-gray-300 rounded-lg p-2">
-              <!-- <option value="research" name="research" <?php echo (isset($_POST['parameter']) && $_POST['parameter'] == 'research') ? 'selected' : ''; ?>>Research</option>
-                <option value="citation" name="citation" <?php echo (isset($_POST['parameter']) && $_POST['parameter'] == 'citation') ? 'selected' : ''; ?>>Citation</option>
-                <option value="teaching" name="teaching" <?php echo (isset($_POST['parameter']) && $_POST['parameter'] == 'teaching') ? 'selected' : ''; ?>>Teaching</option>
-                <option value="industry_income" name="industry_income" <?php echo (isset($_POST['parameter']) && $_POST['parameter'] == 'industry_income') ? 'selected' : ''; ?>>Industry Income</option>
-                <option value="international_outlook" name="international_outlook" <?php echo (isset($_POST['parameter']) && $_POST['parameter'] == 'international_outlook') ? 'selected' : ''; ?>>International Outlook</option> -->
-              <!-- <option value="campus_info" name="campus_info" <?php echo (isset($_POST['parameter']) && $_POST['parameter'] == 'campus_info') ? 'selected' : ''; ?>>Campus Info</option> -->
               <option value="ova" name="ova" <?php echo (isset($_POST['parameter']) && $_POST['parameter'] == 'ova') ? 'selected' : ''; ?>>Overall Score</option>
               <input />
               <div>
@@ -138,7 +75,6 @@
                   }
 
                   // Close the connection
-                  $conn->close();
                   ?>
                 </select>
             </select>
@@ -150,89 +86,231 @@
 
             </div>
             <input type="submit" value="Submit" name="submit"
-              class="pointer mt-4 px-4 py-2 bg-indigo-800 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700">
+              class="pointer mt-4 px-4 py-2 bg-indigo-800 text-white font-semibold rounded-lg shadow-md transition-all hover:bg-blue-700">
         </div>
         </form>
 
       </div>
     </div>
+    <!-- <label for="limit" class="block text-gray-700 font-bold mb-2">Limit</label>
+                <select name="limit" id="limit" class="w-full p-2 border border-gray-300 rounded-md">
+                  <option value=""></option> -->
   </div>
   <?php
-  include '1koneksidb.php';
-  if (isset($_POST['submit'])) {
-    $tanggal = $_POST['tanggal'];
-    $selectedParameter = $_POST['parameter'];
-    $searchTerm = isset($_POST['cari']) ? $_POST['cari'] : '';
+// Pagination and search logic
+include '1koneksidb.php';
 
+$selectedParameter = isset($_POST['parameter']) ? $_POST['parameter'] : (isset($_GET['parameter']) ? $_GET['parameter'] : '');
+$selectedYear = isset($_POST['tanggal']) ? $_POST['tanggal'] : (isset($_GET['tanggal']) ? $_GET['tanggal'] : '');
+$searchTerm = isset($_POST['cari']) ? $_POST['cari'] : (isset($_GET['cari']) ? $_GET['cari'] : '');
+$page = 0;
+$limit = 100; // Number of records per page
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1; // Get the current page number
+$offset = ($page - 1) * $limit; // Calculate the starting row for the SQL query
 
-    $searchCondition = '';
-    $coba = '';
-    if (!empty($searchTerm)) {
-      $searchCondition = " AND nama_univ LIKE '%$searchTerm%'";
+// If search term is provided, ignore pagination and search across all pages
+if (!empty($searchTerm)) {
+  // Get all records that match the search term, no pagination
+  $sql = "SELECT * FROM overall WHERE nama_univ LIKE '%$searchTerm%' AND tanggal = '$selectedYear'";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+    echo "<table id='universityTable'>";
+    echo "<tr>";
+    echo "<th>ID</th>";
+    echo "<th>Nama Universitas</th>";
+    echo "<th>Lokasi</th>";
+    echo "<th>Overall Score</th>";
+    echo "<th>World Rank</th>";
+    echo "<th>Citation</th>";
+    echo "<th>Rank Citation</th>";
+    echo "<th>Teaching</th>";
+    echo "<th>Rank Teaching</th>";
+    echo "<th>International Outlook</th>";
+    echo "<th>Rank International Outlook</th>";
+    echo "<th>Industry Income</th>";
+    echo "<th>Rank Industry Income</th>";
+    echo "<th>Research</th>";
+    echo "<th>Rank Research</th>";
+    echo "<th>Tanggal</th>";
+    echo "<th>Univ Details</th>";
+    echo "</tr>";
+
+    while ($row = $result->fetch_assoc()) {
+      echo "<tr>";
+      echo "<td>" . $row["id_ova"] . "</td>";
+      echo "<td>" . $row["nama_univ"] . "</td>";
+      echo "<td>" . $row["lokasi"] . "</td>";
+      echo "<td>" . $row["score_ova"] . "</td>";
+      echo "<td>" . $row["wrld_rank"] . "</td>";
+      echo "<td>" . $row["citation"] . "</td>";
+      echo "<td>" . $row["rank_ctn"] . "</td>";
+      echo "<td>" . $row["teaching"] . "</td>";
+      echo "<td>" . $row["rank_teaching"] . "</td>";
+      echo "<td>" . $row["int_outlook"] . "</td>";
+      echo "<td>" . $row["rank_int_outlook"] . "</td>";
+      echo "<td>" . $row["income"] . "</td>";
+      echo "<td>" . $row["rank_inc"] . "</td>";
+      echo "<td>" . $row["research"] . "</td>";
+      echo "<td>" . $row["rank_rsc"] . "</td>";
+      echo "<td>" . $row["tanggal"] . "</td>";
+      echo "<td><a href='details.php?id=" . $row["id_ova"] . "'>View Details</a></td>";
+      echo "</tr>";
     }
 
-    if ($selectedParameter === "ova") {
-      $sql = "SELECT * FROM overall where tanggal = '$tanggal' $searchCondition $coba";
-      if ($sql !== "") {
-        $result = $conn->query($sql);
+    echo "</table>";
+  } else {
+    echo "No data found for the search term '$searchTerm'.";
+  }
+} else {
+  // If no search term, perform normal pagination
+  // Get total number of records for pagination
+  $totalResultQuery = "SELECT COUNT(*) as total FROM overall WHERE tanggal = '$selectedYear'";
+  $totalResult = $conn->query($totalResultQuery);
+  $totalRows = $totalResult->fetch_assoc()['total'];
+  $totalPages = ceil($totalRows / $limit);
 
-        if ($result->num_rows > 0) {
-          echo "<table>";
-          echo "<tr>";
-          echo "<th>ID</th>";
-          echo "<th>Nama Universitas</th>";
-          echo "<th>Lokasi</th>";
-          echo "<th>Overall Score</th>";
-          echo "<th>World Rank</th>";
-          echo "<th>Citation</th>";
-          echo "<th>Rank Citation</th>";
-          echo "<th>Teaching</th>";
-          echo "<th>Rank Teaching</th>";
-          echo "<th>International Outlook</th>";
-          echo "<th>Rank International Outlokk</th>";
-          echo "<th>Industry Income</th>";
-          echo "<th>Rank Industry Income</th>";
-          echo "<th>Research</th>";
-          echo "<th>Rank Research</th>";
-          echo "<th>Tanggal</th>";
-          echo "<th>Univ details</th>";
-          echo "</tr>";
+  // Fetch records for the current page
+  $sql = "SELECT * FROM overall WHERE tanggal = '$selectedYear' LIMIT $limit OFFSET $offset";
+  $result = $conn->query($sql);
 
-          while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row["id_ova"] . "</td>";
-            echo "<td>" . $row["nama_univ"] . "</td>";
-            echo "<td>" . $row["lokasi"] . "</td>";
-            echo "<td>" . $row["score_ova"] . "</td>";
-            echo "<td>" . $row["wrld_rank"] . "</td>";
-            echo "<td>" . $row["citation"] . "</td>";
-            echo "<td>" . $row["rank_ctn"] . "</td>";
-            echo "<td>" . $row["teaching"] . "</td>";
-            echo "<td>" . $row["rank_teaching"] . "</td>";
-            echo "<td>" . $row["int_outlook"] . "</td>";
-            echo "<td>" . $row["rank_int_outlook"] . "</td>";
-            echo "<td>" . $row["income"] . "</td>";
-            echo "<td>" . $row["rank_inc"] . "</td>";
-            echo "<td>" . $row["research"] . "</td>";
-            echo "<td>" . $row["rank_rsc"] . "</td>";
-            echo "<td>" . $row["tanggal"] . "</td>";
-            echo "<td><a href='details.php?id=" . $row["id_ova"] . "'>View Details</a></td>";
-            echo "</tr>";
-          }
+  if ($result->num_rows > 0) {
+    echo "<table id='universityTable'>";
+    echo "<tr>";
+    echo "<th>ID</th>";
+    echo "<th>Nama Universitas</th>";
+    echo "<th>Lokasi</th>";
+    echo "<th>Overall Score</th>";
+    echo "<th>World Rank</th>";
+    echo "<th>Citation</th>";
+    echo "<th>Rank Citation</th>";
+    echo "<th>Teaching</th>";
+    echo "<th>Rank Teaching</th>";
+    echo "<th>International Outlook</th>";
+    echo "<th>Rank International Outlook</th>";
+    echo "<th>Industry Income</th>";
+    echo "<th>Rank Industry Income</th>";
+    echo "<th>Research</th>";
+    echo "<th>Rank Research</th>";
+    echo "<th>Tanggal</th>";
+    echo "<th>Univ Details</th>";
+    echo "</tr>";
 
-          echo "</table>";
+    while ($row = $result->fetch_assoc()) {
+      echo "<tr>";
+      echo "<td>" . $row["id_ova"] . "</td>";
+      echo "<td>" . $row["nama_univ"] . "</td>";
+      echo "<td>" . $row["lokasi"] . "</td>";
+      echo "<td>" . $row["score_ova"] . "</td>";
+      echo "<td>" . $row["wrld_rank"] . "</td>";
+      echo "<td>" . $row["citation"] . "</td>";
+      echo "<td>" . $row["rank_ctn"] . "</td>";
+      echo "<td>" . $row["teaching"] . "</td>";
+      echo "<td>" . $row["rank_teaching"] . "</td>";
+      echo "<td>" . $row["int_outlook"] . "</td>";
+      echo "<td>" . $row["rank_int_outlook"] . "</td>";
+      echo "<td>" . $row["income"] . "</td>";
+      echo "<td>" . $row["rank_inc"] . "</td>";
+      echo "<td>" . $row["research"] . "</td>";
+      echo "<td>" . $row["rank_rsc"] . "</td>";
+      echo "<td>" . $row["tanggal"] . "</td>";
+      echo "<td><a href='details.php?id=" . $row["id_ova"] . "'>View Details</a></td>";
+      echo "</tr>";
+    }
+
+    echo "</table>";
+
+    // Pagination controls
+    if ($totalPages > 1) {
+      echo "<div class='pagination flex flex-wrap'>";
+      // Previous button
+      if ($page > 1) {
+        echo "<a href='?page=" . ($page - 1) . "&parameter=$selectedParameter&tanggal=$selectedYear&cari=$searchTerm'>&laquo; Previous</a>";
+      }
+
+      // Page number links
+      for ($i = 1; $i <= $totalPages; $i++) {
+        if ($i == $page) {
+          echo "<span class='current-page'>$i</span>";
         } else {
-          echo "No data available.";
+          echo "<a href='?page=$i&parameter=$selectedParameter&tanggal=$selectedYear&cari=$searchTerm'>$i</a>";
         }
       }
+
+      // Next button
+      if ($page < $totalPages) {
+        echo "<a href='?page=" . ($page + 1) . "&parameter=$selectedParameter&tanggal=$selectedYear&cari=$searchTerm'>Next &raquo;</a>";
+      }
+
+      echo "</div>";
     }
-    $conn->close();
+  } else {
+    echo "No data available.";
   }
-  ?>
+}
+
+$conn->close();
+?>
+
 
   <script src="search.js"></script>
-  <script src="landing_search.js"></script>
+  <!-- <script src="landing_search.js"></script> -->
   <script src="src/main.js"></script> <!-- Link to the external JS file -->
+  <script>
+    // Function to parse a range and return the average
+    function parseRange(value) {
+      const range = value.split('-');
+      if (range.length === 2) {
+        const min = parseFloat(range[0]);
+        const max = parseFloat(range[1]);
+        return (min + max) / 2;
+      }
+      return parseFloat(value); // If not a range, return the value itself
+    }
+
+    // Function to sort table
+    function sortTable(table, col, type, isAsc) {
+      const tbody = table.tBodies[0];
+      const rowsArray = Array.from(tbody.rows);
+
+      const compare = (rowA, rowB) => {
+        const cellA = rowA.cells[col].innerText.trim();
+        const cellB = rowB.cells[col].innerText.trim();
+
+        let valA, valB;
+        if (type === 'number') {
+          valA = parseRange(cellA);
+          valB = parseRange(cellB);
+          return isAsc ? valA - valB : valB - valA;
+        } else {
+          // For text sorting
+          return isAsc
+            ? cellA.localeCompare(cellB, 'en', { sensitivity: 'base' })
+            : cellB.localeCompare(cellA, 'en', { sensitivity: 'base' });
+        }
+      };
+
+      rowsArray.sort(compare);
+      tbody.append(...rowsArray);  // Re-insert the sorted rows
+    }
+
+    // Add event listeners to table headers (th)
+    document.querySelectorAll('#universityTable th').forEach((header, index) => {
+      header.addEventListener('click', () => {
+        const table = header.closest('table');
+        const type = header.getAttribute('data-sort');
+        const isAsc = !header.classList.contains('asc');
+
+        sortTable(table, index, type, isAsc);
+
+        // Toggle asc/desc class
+        header.classList.toggle('asc', isAsc);
+        header.classList.toggle('desc', !isAsc);
+      });
+    });
+  </script>
+
+
 </body>
 
 </html>

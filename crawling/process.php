@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -25,36 +26,38 @@
         </div>
     </nav>
 </head>
+
 <body>
-    
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $token = $_POST["token"];
-    $directory = $_POST["directory"];
 
-    // Buat folder jika belum ada
-    if (!file_exists($directory)) {
-        mkdir($directory, 0777, true);
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $token = $_POST["token"];
+        $directory = $_POST["directory"];
+
+        // Buat folder jika belum ada
+        if (!file_exists($directory)) {
+            mkdir($directory, 0777, true);
+        }
+
+        // Jalankan Python script untuk crawling data
+        $command = escapeshellcmd("py app.py $token $directory");
+        $output = shell_exec($command);
+
+
+        echo "<div class='container justify-center mt-16 items-center mx-auto gap-2 bg-indigo-300 rounded-md shadow-md w-1/2 p-4 flex flex-col bg-secondary-700'>";
+        echo "<p class='font-bold text-xl'>Penyimpanan data ke Database</p>";
+        echo "<p>$output</p>";
+        echo "<p>Data yang tersimpan pada <span class='font-bold'>$directory</span>  dapat dihapus atau disimpan</p>";
+        echo "<div class='flex justify-start w-full items-center'>";
+        echo "<a class='text-indigo-700 underline underline-offset-4' href='../landing.php'>Kembali ke halaman utama</a>";
+        echo "</div>";
+        echo "</div>";
+
+
     }
-
-    // Jalankan Python script untuk crawling data
-    $command = escapeshellcmd("py app.py $token $directory");
-    $output = shell_exec($command);
-
-
-    echo "<div class='container justify-center mt-16 items-center mx-auto gap-2 bg-indigo-300 rounded-md shadow-md w-1/2 p-4 flex flex-col bg-secondary-700'>";
-    echo "<p class='font-bold text-xl'>Penyimpanan data ke database berhasil</p>";
-    echo "<p>$output</p>";
-    echo "<p>Data yang tersimpan pada $directory dapat dihapus atau disimpan</p>";
-    echo "<div class='flex justify-start w-full items-center'>";
-    echo "<a class='text-indigo-700 underline underline-offset-4' href='crawling.php'>Kembali ke halaman utama</a>";
-    echo "</div>";
-    echo "</div>";
-
-
-}
-?>
+    ?>
 
 
 </body>
+
 </html>

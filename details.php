@@ -46,7 +46,7 @@
     }
 </style>
 </head>
-<body>
+<body class="bg-gray-100">
 <?php
 include '1koneksidb.php';
 
