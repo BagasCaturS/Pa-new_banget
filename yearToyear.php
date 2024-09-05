@@ -98,44 +98,49 @@ if (isset($_POST['start_year']) && isset($_POST['end_year']) && isset($_POST['na
 
         <div class="shadow-xl rounded-md p-4">
 
-            <form method="post" action="yearToyear.php">
-                <div class="flex flex-col">
+            <form class='flex items-center flex-col' method="post" action="yearToyear.php">
+            <h2 class="text-center text-2xl font-bold mb-4">Perkembangan Skor dan Peringkat dari Tahun ke Tahun</h2>
 
-                    <h1 class="text-center font-bold text-xl">Perkembangan Universitas dari Tahun ke Tahun</h1>
-                    <div class="flex flex-col">
-                        <label for="nama_univ">Nama Universitas:</label>
+                <div class="flex flex-col w-1/2">
+
+                    <div class="flex flex-col justify-center items-center">
+                        <label for="nama_univ">Masukkan Nama Universitas:</label>
                         <input type="text" name="nama_univ" id="nama_univ"
                             class="w-full p-2 border border-black rounded" placeholder="Search for University..."
                             value="<?php echo isset($_POST['nama_univ']) ? htmlspecialchars($_POST['nama_univ']) : 'Telkom University'; ?>"
                             autocomplete="off">
-                        <ul id="suggestion4" class="mt-2 bg-white border border-gray-300 rounded w-fit"></ul>
+                        <ul id="suggestion4" class="mt-2 mb-2 bg-white border border-gray-300 rounded w-fit"></ul>
                     </div>
                 </div>
+                <div class="flex items-center justify-evenly w-1/6 mb-4">
 
-                <label for="start_year">Mulai Tahun:</label>
-                <select name="start_year" id="start_year">
-                    <?php foreach ($years as $year): ?>
-                        <option value="<?php echo $year; ?>" <?php echo (isset($_POST['start_year']) && $_POST['start_year'] == $year) ? 'selected' : ''; ?>>
-                            <?php echo $year; ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
+                    <!-- <label for="start_year"></label> -->
+                    <select class="border border-gray-400 rounded px-2 py-1" name="start_year" id="start_year">
+                        <?php foreach ($years as $year): ?>
+                            <option value="<?php echo $year; ?>" <?php echo (isset($_POST['start_year']) && $_POST['start_year'] == $year) ? 'selected' : ''; ?>>
+                                <?php echo $year; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
 
-                <label for="end_year">Hingga Tahun:</label>
-                <select name="end_year" id="end_year">
-                    <?php foreach ($years as $year): ?>
-                        <option value="<?php echo $year; ?>" <?php echo (isset($_POST['end_year']) && $_POST['end_year'] == $year) ? 'selected' : '2024'; ?>>
-                            <?php echo $year; ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
+                    <!-- <label for="end_year">-</label> -->
+                     <p>-</p>
+                    <select class="border border-gray-400 rounded px-2 py-1" name="end_year" id="end_year">
+                        <?php foreach ($years as $year): ?>
+                            <option value="<?php echo $year; ?>" <?php echo (isset($_POST['end_year']) && $_POST['end_year'] == $year) ? 'selected' : '2024'; ?>>
+                                <?php echo $year; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
 
 
-                <button type="submit">Lihat Perkembangan</button>
+                <button
+                    class="p-4 rounded bg-blue-500 text-white hover:bg-blue-700 hover:shadow-none shadow-xl transition"
+                    type="submit">Lihat Perkembangan</button>
             </form>
             <?php if (!empty($chart_data) && !empty($radar_data)): ?>
                 <div class="mt-8">
-                    <h2 class="text-center text-2xl font-bold mb-4">Perkembangan Skor dan Peringkat dari Tahun ke Tahun</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <?php foreach ($chart_data as $year => $scores): ?>
                             <div class="bg-white p-4 shadow-md rounded-md flexe flex-col">
@@ -254,7 +259,7 @@ if (isset($_POST['start_year']) && isset($_POST['end_year']) && isset($_POST['na
                                 labels: ['Teaching', 'Research', 'Citation', 'Income', 'International Outlook'],
                                 datasets: [
                                     <?php foreach ($chart_data as $year => $dataScore): ?>
-                                                                                                                                                    {
+                                                                                                                                                                    {
                                             label: '<?php echo $year; ?>',
                                             data: [<?php echo implode(',', $dataScore); ?>],
                                             borderColor: getRandomColor(<?php echo $year; ?>),
@@ -292,7 +297,7 @@ if (isset($_POST['start_year']) && isset($_POST['end_year']) && isset($_POST['na
                                     <?php foreach ($radar_data as $year => $data):
                                         $data_cleaned = array_map('clean_and_floor', $data);
                                         ?>
-                                                                                                                                                    {
+                                                                                                                                                                    {
                                             label: '<?php echo $year; ?>',
                                             data: [<?php echo implode(',', $data_cleaned); ?>],
                                             borderColor: getRandomColor(<?php echo $year; ?>),
