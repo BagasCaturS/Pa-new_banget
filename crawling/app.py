@@ -39,7 +39,9 @@ cursor.execute("SELECT COUNT(*) FROM campus_info WHERE tanggal = %s", (tanggal,)
 year_exists = cursor.fetchone()[0]
 
 if year_exists > 0:
-    print(f"Data untuk tahun {tanggal} Sudah tersedia di database. Proses penambahan data dibatalkan.")
+    print("<p class='font-bold text-xl'>Penyimpanan Gagal</p>")
+    gagal = f"<p>Data untuk tahun {tanggal}<b> sudah ada di database</b>. Proses penambahan data dibatalkan.</p>"
+    print(gagal)
     cursor.close()
     conn.close()
     sys.exit(1)
@@ -148,7 +150,7 @@ print(f"Teaching data successfully saved to {os.path.join(directory, f'THE_Ranki
 
 df_research = pd.DataFrame(data_research, columns=['id_rsc', 'nama_univ', 'research', "rank_rsc", "tanggal", "id_info"])
 df_research.to_excel(os.path.join(directory, f"THE_Ranking_research_{tanggal}.xlsx"), index=False)
-print(f"Research data successfully saved to {os.path.join(directory, f'THE_Ranking_research_{tanggal}.xlsx')}")
+print(f"Research data successfully saved to {os.path.join(directory, f'THE_Ranking_research_{tanggal}.xlsx')}") 
 
 df_int_outlook = pd.DataFrame(data_int_outlook, columns=['id_int_outlook', 'nama_univ', 'int_outlook', "rank_int_outlook", "tanggal", "id_info"])
 df_int_outlook.to_excel(os.path.join(directory, f"THE_Ranking_int_outlook_{tanggal}.xlsx"), index=False)
@@ -241,7 +243,7 @@ def insert_data(df, table_name, columns):
             print(f"Unexpected error: {e}")
 
 
-
+print("<p class='font-bold text-xl'>Data berhasil disimpan ke Database</p>")
 # Memasukkan data dari file Excel ke tabel MySQL
 insert_data(df_campus_info, 'campus_info', ['id_info','wrld_rank', 'nama_univ', "lokasi", 'number_students', 'student_staff_ratio', 'pc_intl_students', 'female_male_ratio',"stats_proportion_of_isr", "tanggal"])
 insert_data(df_teaching, 'teaching', ['id_teaching', 'nama_univ', 'teaching', "rank_teaching", "tanggal", "id_info"])

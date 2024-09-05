@@ -34,7 +34,7 @@ function getFirstFourDigits(value) {
     if (value.toLowerCase().includes("reporter")) {
         return value; // Return the original value if it contains "reporter"
     }
-
+// data telkom bisa keluar karena d slice tapi data yang masih 501-dsb gabisa
     return value.toString().slice(0, 4);
 }
 
@@ -180,28 +180,3 @@ function updateChart(university, index, chartType) {
         myRadarChart.update();
     }
 }
-
-// sort header
-
-// function goToUniversity() {
-//     const universityName = prompt("Enter the name of the university:");
-//     if (universityName) {
-//         const rows = document.querySelectorAll("table tr");
-//         let found = false;
-        
-//         rows.forEach(row => {
-//             const cells = row.getElementsByTagName("td");
-//             if (cells.length > 0 && cells[2].innerText.toLowerCase() === universityName.toLowerCase()) {
-//                 row.scrollIntoView({ behavior: "smooth", block: "center" });
-//                 row.style.backgroundColor = "yellow";
-//                 found = true;
-//             } else {
-//                 row.style.backgroundColor = "";
-//             }
-//         });
-
-//         if (!found) {
-//             alert("University not found.");
-//         }
-//     }
-// }

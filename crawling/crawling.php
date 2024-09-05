@@ -20,6 +20,10 @@
                             class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Filter</a>
                         <a href="crawling.php"
                             class="px-3 py-2 rounded-md text-sm font-medium leading-5 bg-indigo-900 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Crawling</a>
+                        <a href="../yearToyear.php"
+                            class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Years
+                            comparison</a>
+
                     </div>
                 </div>
             </div>
@@ -57,8 +61,8 @@
                                     placeholder="Masukkan directory penyimpanan" required>
                             </div>
                             <div class="mt-4">
-                                <p class="text-gray-400">Cara pengambilan token dan penyimpanan dapat dilihat <a class="text-indigo-500"
-                                        href="tutorial.php">disini</a></p>
+                                <p class="text-gray-400">Cara pengambilan token dan penyimpanan dapat dilihat <a
+                                        class="text-indigo-500" href="tutorial.php">disini</a></p>
                             </div>
                         </div>
                         <div class="mt-6">

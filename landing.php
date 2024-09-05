@@ -177,23 +177,23 @@ if (!empty($searchTerm)) {
   if ($result->num_rows > 0) {
     echo "<table id='universityTable'>";
     echo "<tr>";
-    echo "<th>ID</th>";
-    echo "<th>Nama Universitas</th>";
-    echo "<th>Lokasi</th>";
-    echo "<th>Overall Score</th>";
-    echo "<th>World Rank</th>";
-    echo "<th>Citation</th>";
-    echo "<th>Rank Citation</th>";
-    echo "<th>Teaching</th>";
-    echo "<th>Rank Teaching</th>";
-    echo "<th>International Outlook</th>";
-    echo "<th>Rank International Outlook</th>";
-    echo "<th>Industry Income</th>";
-    echo "<th>Rank Industry Income</th>";
-    echo "<th>Research</th>";
-    echo "<th>Rank Research</th>";
-    echo "<th>Tanggal</th>";
-    echo "<th>Univ Details</th>";
+    echo "<th data-sort='number'>ID</th>";
+    echo "<th data-sort='number'>Nama Universitas</th>";
+    echo "<th data-sort='number'>Lokasi</th>";
+    echo "<th data-sort='number'>Overall Score</th>";
+    echo "<th data-sort='number'>World Rank</th>";
+    echo "<th data-sort='number'>Citation</th>";
+    echo "<th data-sort='number'>Rank Citation</th>";
+    echo "<th data-sort='number'>Teaching</th>";
+    echo "<th data-sort='number'>Rank Teaching</th>";
+    echo "<th data-sort='number'>International Outlook</th>";
+    echo "<th data-sort='number'>Rank International Outlook</th>";
+    echo "<th data-sort='number'>Industry Income</th>";
+    echo "<th data-sort='number'>Rank Industry Income</th>";
+    echo "<th data-sort='number'>Research</th>";
+    echo "<th data-sort='number'>Rank Research</th>";
+    echo "<th data-sort='number'>Tanggal</th>";
+    echo "<th data-sort='number'>Univ Details</th>";
     echo "</tr>";
 
     while ($row = $result->fetch_assoc()) {
@@ -253,8 +253,8 @@ $conn->close();
 ?>
 
 
-  <script src="search.js"></script>
-  <!-- <script src="landing_search.js"></script> -->
+  <!-- <script src="search.js"></script> -->
+  <script src="landing_search.js"></script>
   <script src="src/main.js"></script> <!-- Link to the external JS file -->
   <script>
     // Function to parse a range and return the average

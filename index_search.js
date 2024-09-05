@@ -65,4 +65,3 @@ function insertSuggestionIntoInput3(suggestion) {
     suggestionsList.innerHTML = '';
 }
 
-

@@ -45,7 +45,6 @@
 
 
         echo "<div class='container justify-center mt-16 items-center mx-auto gap-2 bg-indigo-300 rounded-md shadow-md w-1/2 p-4 flex flex-col bg-secondary-700'>";
-        echo "<p class='font-bold text-xl'>Penyimpanan data ke Database</p>";
         echo "<p>$output</p>";
         echo "<p>Data yang tersimpan pada <span class='font-bold'>$directory</span>  dapat dihapus atau disimpan</p>";
         echo "<div class='flex justify-start w-full items-center'>";
