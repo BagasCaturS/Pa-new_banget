@@ -48,9 +48,17 @@
         echo "<p>$output</p>";
         echo "<p>Data yang tersimpan pada <span class='font-bold'>$directory</span>  dapat dihapus atau disimpan</p>";
         echo "<div class='flex justify-start w-full items-center'>";
-        echo "<a class='text-indigo-700 underline underline-offset-4' href='../landing.php'>Kembali ke halaman utama</a>";
+        // echo "<a class='text-indigo-700 underline underline-offset-4' href='../landing.php'>Kembali ke halaman utama</a>";
+        echo "<a href='../landing.php'class='cursor-pointer transition-all 
+bg-gray-700 text-white px-6 py-2 rounded-lg
+border-indigo-500	
+border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
+active:border-b-[2px] active:brightness-90 active:translate-y-[2px] hover:shadow-xl hover:shadow-indigo-300 shadow-green-300 active:shadow-none'>
+  Kembali ke halaman utama
+</a>";
         echo "</div>";
         echo "</div>";
+        /* From Uiverse.io by carlosepcc */
 
 
     }
