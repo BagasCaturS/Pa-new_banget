@@ -75,7 +75,7 @@ if (isset($_POST['start_year']) && isset($_POST['end_year']) && isset($_POST['na
                 <div class="flex items-center">
                     <div class="hidden md:-my-px md:ml-10 md:flex md:items-center md:grow-0">
                         <a href="landing.php"
-                            class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-white focus:outline-none focus:text-white focus:bg-indigo-700">Home</a>
+                            class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 focus:outline-none focus:text-white focus:bg-indigo-700">Home</a>
                         <a href="index.php"
                             class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Compare</a>
                         <a href="filter.php"
@@ -83,7 +83,7 @@ if (isset($_POST['start_year']) && isset($_POST['end_year']) && isset($_POST['na
                         <a href="crawling/crawling.php"
                             class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Crawling</a>
                         <a href="yearToyear.php"
-                            class="px-3 py-2 rounded-md text-sm font-medium bg-indigo-900 leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Year
+                            class="px-3 py-2 rounded-md text-sm font-medium bg-indigo-900 leading-5 text-white  hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Year
                             to year comparison</a>
 
                     </div>
@@ -99,7 +99,7 @@ if (isset($_POST['start_year']) && isset($_POST['end_year']) && isset($_POST['na
         <div class="shadow-xl rounded-md p-4">
 
             <form class='flex items-center flex-col' method="post" action="yearToyear.php">
-            <h2 class="text-center text-2xl font-bold mb-4">Perkembangan Skor dan Peringkat dari Tahun ke Tahun</h2>
+                <h2 class="text-center text-2xl font-bold mb-4">Perkembangan Skor dan Peringkat dari Tahun ke Tahun</h2>
 
                 <div class="flex flex-col w-1/2">
 
@@ -114,7 +114,6 @@ if (isset($_POST['start_year']) && isset($_POST['end_year']) && isset($_POST['na
                 </div>
                 <div class="flex items-center justify-evenly w-1/6 mb-4">
 
-                    <!-- <label for="start_year"></label> -->
                     <select class="border border-gray-400 rounded px-2 py-1" name="start_year" id="start_year">
                         <?php foreach ($years as $year): ?>
                             <option value="<?php echo $year; ?>" <?php echo (isset($_POST['start_year']) && $_POST['start_year'] == $year) ? 'selected' : ''; ?>>
@@ -123,8 +122,7 @@ if (isset($_POST['start_year']) && isset($_POST['end_year']) && isset($_POST['na
                         <?php endforeach; ?>
                     </select>
 
-                    <!-- <label for="end_year">-</label> -->
-                     <p>-</p>
+                    <p>Hingga</p>
                     <select class="border border-gray-400 rounded px-2 py-1" name="end_year" id="end_year">
                         <?php foreach ($years as $year): ?>
                             <option value="<?php echo $year; ?>" <?php echo (isset($_POST['end_year']) && $_POST['end_year'] == $year) ? 'selected' : '2024'; ?>>
@@ -138,6 +136,12 @@ if (isset($_POST['start_year']) && isset($_POST['end_year']) && isset($_POST['na
                 <button
                     class="p-4 rounded bg-blue-500 text-white hover:bg-blue-700 hover:shadow-none shadow-xl transition"
                     type="submit">Lihat Perkembangan</button>
+                <div class="mt-4 ">
+
+                    <a href="crawling/crawling.php"
+                        class="px-2 py-1 bg-slate-300 rounded focus:outline  hover:bg-slate-400 text-blue-500 hover:text-blue-500">Tambahkan
+                        data</a>
+                </div>
             </form>
             <?php if (!empty($chart_data) && !empty($radar_data)): ?>
                 <div class="mt-8">
@@ -243,8 +247,8 @@ if (isset($_POST['start_year']) && isset($_POST['end_year']) && isset($_POST['na
 
         <?php if (isset($chart_data) && count($chart_data) > 0): ?>
             <!-- Grafik Batang -->
-            <div class="flex justify-center items-center mt-4 h-auto  ">
-                <div class="w-1/2 ">
+            <div class="flex justify-center items-center mt-4 h-auto">
+                <div class="w-1/2 flex align-start">
                     <canvas id="barChart"></canvas>
                     <script>
                         function getRandomColor(seed) {
@@ -256,10 +260,10 @@ if (isset($_POST['start_year']) && isset($_POST['end_year']) && isset($_POST['na
                         const barChart = new Chart(ctxBar, {
                             type: 'bar',
                             data: {
-                                labels: ['Teaching', 'Research', 'Citation', 'Income', 'International Outlook'],
+                                labels: ['Teaching Score', 'Research Score', 'Citation Score', 'Income Score', 'International Outlook Score'],
                                 datasets: [
                                     <?php foreach ($chart_data as $year => $dataScore): ?>
-                                                                                                                                                                    {
+                                                                                                                                                                                                            {
                                             label: '<?php echo $year; ?>',
                                             data: [<?php echo implode(',', $dataScore); ?>],
                                             borderColor: getRandomColor(<?php echo $year; ?>),
@@ -292,12 +296,12 @@ if (isset($_POST['start_year']) && isset($_POST['end_year']) && isset($_POST['na
                         const radarChart = new Chart(ctxRadar, {
                             type: 'radar',
                             data: {
-                                labels: ['Teaching', 'Research', 'Citation', 'Income', 'International Outlook', 'World Rank'],
+                                labels: ['Teaching Rank', 'Research Rank', 'Citation Rank', 'Income Rank', 'International Outlook Rank', 'World Rank'],
                                 datasets: [
                                     <?php foreach ($radar_data as $year => $data):
                                         $data_cleaned = array_map('clean_and_floor', $data);
                                         ?>
-                                                                                                                                                                    {
+                                                                                                                                                                  {
                                             label: '<?php echo $year; ?>',
                                             data: [<?php echo implode(',', $data_cleaned); ?>],
                                             borderColor: getRandomColor(<?php echo $year; ?>),

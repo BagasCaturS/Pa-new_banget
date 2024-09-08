@@ -2,6 +2,13 @@
 <html lang="en">
 
 <head>
+    <?php
+    session_start();
+    if (!isset($_SESSION['username'])) {
+        header('Location: ../login/login.php'); // Redirect to login if not logged in
+        exit();
+    }
+    ?>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <meta charset="UTF-8">
@@ -13,19 +20,20 @@
                 <div class="flex items-center">
                     <div class="hidden md:-my-px md:ml-10 md:flex md:items-center md:grow-0">
                         <a href="../landing.php"
-                            class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-white focus:outline-none focus:text-white focus:bg-indigo-700">Home</a>
+                            class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 focus:outline-none focus:text-white focus:bg-indigo-700">Home</a>
                         <a href="../index.php"
                             class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300  hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Compare</a>
                         <a href="../filter.php"
                             class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Filter</a>
                         <a href="crawling.php"
-                            class="px-3 py-2 rounded-md text-sm font-medium leading-5 bg-indigo-900 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Crawling</a>
+                            class="px-3 py-2 rounded-md text-sm text-white font-medium leading-5 bg-indigo-900  hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Crawling</a>
                         <a href="../yearToyear.php"
                             class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Years
                             comparison</a>
 
                     </div>
                 </div>
+
             </div>
         </div>
     </nav>
@@ -37,6 +45,15 @@
     <div class="flex items-center justify-center min-h-screen bg-zinc-900">
 
         <div class="max-w-lg w-full">
+            <div class="flex w-full justify-center items-center">
+                <form class="flex flex-col items-center justify-end gap-3 mb-2" action="../login/logout.php">
+                    <h1 class="p-2 bg-blue-400 text-white rounded-md">Selamat datang,
+                        <?php echo $_SESSION['username']; ?>
+                    </h1>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
+                        type="submit">Logout</button>
+                </form>
+            </div>
             <div style="box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);"
                 class="bg-gray-800 rounded-lg shadow-xl overflow-hidden">
                 <div class="p-8">

@@ -93,6 +93,11 @@ CREATE TABLE `overall` (
   FOREIGN KEY (id_teaching) REFERENCES teaching (id_teaching)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
 
 drop database dummy_the3;
 create database dummy_the3;

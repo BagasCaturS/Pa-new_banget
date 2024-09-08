@@ -20,13 +20,16 @@
         <div class="flex items-center">
           <div class="hidden md:-my-px md:ml-10 md:flex md:items-center md:grow-0">
             <a href="landing.php"
-              class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-white bg-indigo-900 focus:outline-none focus:text-white focus:bg-indigo-700">Home</a>
+              class="px-3 py-2 rounded-md bg-indigo-900 text-sm font-medium leading-5 text-white focus:outline-none focus:text-white focus:bg-indigo-700">Home</a>
             <a href="index.php"
-              class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300  hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Compare</a>
+              class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Compare</a>
             <a href="filter.php"
               class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Filter</a>
             <a href="crawling/crawling.php"
               class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Crawling</a>
+            <a href="yearToyear.php"
+              class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-indigo-700 focus:outline-none focus:text-white focus:bg-indigo-700">Year
+              to year comparison</a>
           </div>
         </div>
       </div>
@@ -97,160 +100,160 @@
                   <option value=""></option> -->
   </div>
   <?php
-// Pagination and search logic
-include '1koneksidb.php';
+  // Pagination and search logic
+  include '1koneksidb.php';
 
-$selectedParameter = isset($_POST['parameter']) ? $_POST['parameter'] : (isset($_GET['parameter']) ? $_GET['parameter'] : '');
-$selectedYear = isset($_POST['tanggal']) ? $_POST['tanggal'] : (isset($_GET['tanggal']) ? $_GET['tanggal'] : '');
-$searchTerm = isset($_POST['cari']) ? $_POST['cari'] : (isset($_GET['cari']) ? $_GET['cari'] : '');
-$page = 0;
-$limit = 100; // Number of records per page
-$page = isset($_GET['page']) ? intval($_GET['page']) : 1; // Get the current page number
-$offset = ($page - 1) * $limit; // Calculate the starting row for the SQL query
+  $selectedParameter = isset($_POST['parameter']) ? $_POST['parameter'] : (isset($_GET['parameter']) ? $_GET['parameter'] : '');
+  $selectedYear = isset($_POST['tanggal']) ? $_POST['tanggal'] : (isset($_GET['tanggal']) ? $_GET['tanggal'] : '');
+  $searchTerm = isset($_POST['cari']) ? $_POST['cari'] : (isset($_GET['cari']) ? $_GET['cari'] : '');
+  $page = 0;
+  $limit = 100; // Number of records per page
+  $page = isset($_GET['page']) ? intval($_GET['page']) : 1; // Get the current page number
+  $offset = ($page - 1) * $limit; // Calculate the starting row for the SQL query
+  
+  // If search term is provided, ignore pagination and search across all pages
+  if (!empty($searchTerm)) {
+    // Get all records that match the search term, no pagination
+    $sql = "SELECT * FROM overall WHERE nama_univ LIKE '%$searchTerm%' AND tanggal = '$selectedYear'";
+    $result = $conn->query($sql);
 
-// If search term is provided, ignore pagination and search across all pages
-if (!empty($searchTerm)) {
-  // Get all records that match the search term, no pagination
-  $sql = "SELECT * FROM overall WHERE nama_univ LIKE '%$searchTerm%' AND tanggal = '$selectedYear'";
-  $result = $conn->query($sql);
-
-  if ($result->num_rows > 0) {
-    echo "<table id='universityTable'>";
-    echo "<tr>";
-    echo "<th>ID</th>";
-    echo "<th>Nama Universitas</th>";
-    echo "<th>Lokasi</th>";
-    echo "<th>Overall Score</th>";
-    echo "<th>World Rank</th>";
-    echo "<th>Citation</th>";
-    echo "<th>Rank Citation</th>";
-    echo "<th>Teaching</th>";
-    echo "<th>Rank Teaching</th>";
-    echo "<th>International Outlook</th>";
-    echo "<th>Rank International Outlook</th>";
-    echo "<th>Industry Income</th>";
-    echo "<th>Rank Industry Income</th>";
-    echo "<th>Research</th>";
-    echo "<th>Rank Research</th>";
-    echo "<th>Tanggal</th>";
-    echo "<th>Univ Details</th>";
-    echo "</tr>";
-
-    while ($row = $result->fetch_assoc()) {
+    if ($result->num_rows > 0) {
+      echo "<table id='universityTable'>";
       echo "<tr>";
-      echo "<td>" . $row["id_ova"] . "</td>";
-      echo "<td>" . $row["nama_univ"] . "</td>";
-      echo "<td>" . $row["lokasi"] . "</td>";
-      echo "<td>" . $row["score_ova"] . "</td>";
-      echo "<td>" . $row["wrld_rank"] . "</td>";
-      echo "<td>" . $row["citation"] . "</td>";
-      echo "<td>" . $row["rank_ctn"] . "</td>";
-      echo "<td>" . $row["teaching"] . "</td>";
-      echo "<td>" . $row["rank_teaching"] . "</td>";
-      echo "<td>" . $row["int_outlook"] . "</td>";
-      echo "<td>" . $row["rank_int_outlook"] . "</td>";
-      echo "<td>" . $row["income"] . "</td>";
-      echo "<td>" . $row["rank_inc"] . "</td>";
-      echo "<td>" . $row["research"] . "</td>";
-      echo "<td>" . $row["rank_rsc"] . "</td>";
-      echo "<td>" . $row["tanggal"] . "</td>";
-      echo "<td><a href='details.php?id=" . $row["id_ova"] . "'>View Details</a></td>";
+      echo "<th>ID</th>";
+      echo "<th>Nama Universitas</th>";
+      echo "<th>Lokasi</th>";
+      echo "<th>Overall Score</th>";
+      echo "<th>World Rank</th>";
+      echo "<th>Citation</th>";
+      echo "<th>Rank Citation</th>";
+      echo "<th>Teaching</th>";
+      echo "<th>Rank Teaching</th>";
+      echo "<th>International Outlook</th>";
+      echo "<th>Rank International Outlook</th>";
+      echo "<th>Industry Income</th>";
+      echo "<th>Rank Industry Income</th>";
+      echo "<th>Research</th>";
+      echo "<th>Rank Research</th>";
+      echo "<th>Tanggal</th>";
+      echo "<th>Univ Details</th>";
       echo "</tr>";
-    }
 
-    echo "</table>";
-  } else {
-    echo "No data found for the search term '$searchTerm'.";
-  }
-} else {
-  // If no search term, perform normal pagination
-  // Get total number of records for pagination
-  $totalResultQuery = "SELECT COUNT(*) as total FROM overall WHERE tanggal = '$selectedYear'";
-  $totalResult = $conn->query($totalResultQuery);
-  $totalRows = $totalResult->fetch_assoc()['total'];
-  $totalPages = ceil($totalRows / $limit);
-
-  // Fetch records for the current page
-  $sql = "SELECT * FROM overall WHERE tanggal = '$selectedYear' LIMIT $limit OFFSET $offset";
-  $result = $conn->query($sql);
-
-  if ($result->num_rows > 0) {
-    echo "<table id='universityTable'>";
-    echo "<tr>";
-    echo "<th data-sort='number'>ID</th>";
-    echo "<th data-sort='number'>Nama Universitas</th>";
-    echo "<th data-sort='number'>Lokasi</th>";
-    echo "<th data-sort='number'>Overall Score</th>";
-    echo "<th data-sort='number'>World Rank</th>";
-    echo "<th data-sort='number'>Citation</th>";
-    echo "<th data-sort='number'>Rank Citation</th>";
-    echo "<th data-sort='number'>Teaching</th>";
-    echo "<th data-sort='number'>Rank Teaching</th>";
-    echo "<th data-sort='number'>International Outlook</th>";
-    echo "<th data-sort='number'>Rank International Outlook</th>";
-    echo "<th data-sort='number'>Industry Income</th>";
-    echo "<th data-sort='number'>Rank Industry Income</th>";
-    echo "<th data-sort='number'>Research</th>";
-    echo "<th data-sort='number'>Rank Research</th>";
-    echo "<th data-sort='number'>Tanggal</th>";
-    echo "<th data-sort='number'>Univ Details</th>";
-    echo "</tr>";
-
-    while ($row = $result->fetch_assoc()) {
-      echo "<tr>";
-      echo "<td>" . $row["id_ova"] . "</td>";
-      echo "<td>" . $row["nama_univ"] . "</td>";
-      echo "<td>" . $row["lokasi"] . "</td>";
-      echo "<td>" . $row["score_ova"] . "</td>";
-      echo "<td>" . $row["wrld_rank"] . "</td>";
-      echo "<td>" . $row["citation"] . "</td>";
-      echo "<td>" . $row["rank_ctn"] . "</td>";
-      echo "<td>" . $row["teaching"] . "</td>";
-      echo "<td>" . $row["rank_teaching"] . "</td>";
-      echo "<td>" . $row["int_outlook"] . "</td>";
-      echo "<td>" . $row["rank_int_outlook"] . "</td>";
-      echo "<td>" . $row["income"] . "</td>";
-      echo "<td>" . $row["rank_inc"] . "</td>";
-      echo "<td>" . $row["research"] . "</td>";
-      echo "<td>" . $row["rank_rsc"] . "</td>";
-      echo "<td>" . $row["tanggal"] . "</td>";
-      echo "<td><a href='details.php?id=" . $row["id_ova"] . "'>View Details</a></td>";
-      echo "</tr>";
-    }
-
-    echo "</table>";
-
-    // Pagination controls
-    if ($totalPages > 1) {
-      echo "<div class='pagination flex flex-wrap'>";
-      // Previous button
-      if ($page > 1) {
-        echo "<a href='?page=" . ($page - 1) . "&parameter=$selectedParameter&tanggal=$selectedYear&cari=$searchTerm'>&laquo; Previous</a>";
+      while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row["id_ova"] . "</td>";
+        echo "<td>" . $row["nama_univ"] . "</td>";
+        echo "<td>" . $row["lokasi"] . "</td>";
+        echo "<td>" . $row["score_ova"] . "</td>";
+        echo "<td>" . $row["wrld_rank"] . "</td>";
+        echo "<td>" . $row["citation"] . "</td>";
+        echo "<td>" . $row["rank_ctn"] . "</td>";
+        echo "<td>" . $row["teaching"] . "</td>";
+        echo "<td>" . $row["rank_teaching"] . "</td>";
+        echo "<td>" . $row["int_outlook"] . "</td>";
+        echo "<td>" . $row["rank_int_outlook"] . "</td>";
+        echo "<td>" . $row["income"] . "</td>";
+        echo "<td>" . $row["rank_inc"] . "</td>";
+        echo "<td>" . $row["research"] . "</td>";
+        echo "<td>" . $row["rank_rsc"] . "</td>";
+        echo "<td>" . $row["tanggal"] . "</td>";
+        echo "<td><a href='details.php?id=" . $row["id_ova"] . "'>View Details</a></td>";
+        echo "</tr>";
       }
 
-      // Page number links
-      for ($i = 1; $i <= $totalPages; $i++) {
-        if ($i == $page) {
-          echo "<span class='current-page'>$i</span>";
-        } else {
-          echo "<a href='?page=$i&parameter=$selectedParameter&tanggal=$selectedYear&cari=$searchTerm'>$i</a>";
+      echo "</table>";
+    } else {
+      echo "No data found for the search term '$searchTerm'.";
+    }
+  } else {
+    // If no search term, perform normal pagination
+    // Get total number of records for pagination
+    $totalResultQuery = "SELECT COUNT(*) as total FROM overall WHERE tanggal = '$selectedYear'";
+    $totalResult = $conn->query($totalResultQuery);
+    $totalRows = $totalResult->fetch_assoc()['total'];
+    $totalPages = ceil($totalRows / $limit);
+
+    // Fetch records for the current page
+    $sql = "SELECT * FROM overall WHERE tanggal = '$selectedYear' LIMIT $limit OFFSET $offset";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+      echo "<table id='universityTable'>";
+      echo "<tr>";
+      echo "<th data-sort='number'>ID</th>";
+      echo "<th data-sort='number'>Nama Universitas</th>";
+      echo "<th data-sort='number'>Lokasi</th>";
+      echo "<th data-sort='number'>Overall Score</th>";
+      echo "<th data-sort='number'>World Rank</th>";
+      echo "<th data-sort='number'>Citation</th>";
+      echo "<th data-sort='number'>Rank Citation</th>";
+      echo "<th data-sort='number'>Teaching</th>";
+      echo "<th data-sort='number'>Rank Teaching</th>";
+      echo "<th data-sort='number'>International Outlook</th>";
+      echo "<th data-sort='number'>Rank International Outlook</th>";
+      echo "<th data-sort='number'>Industry Income</th>";
+      echo "<th data-sort='number'>Rank Industry Income</th>";
+      echo "<th data-sort='number'>Research</th>";
+      echo "<th data-sort='number'>Rank Research</th>";
+      echo "<th data-sort='number'>Tanggal</th>";
+      echo "<th data-sort='number'>Univ Details</th>";
+      echo "</tr>";
+
+      while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row["id_ova"] . "</td>";
+        echo "<td>" . $row["nama_univ"] . "</td>";
+        echo "<td>" . $row["lokasi"] . "</td>";
+        echo "<td>" . $row["score_ova"] . "</td>";
+        echo "<td>" . $row["wrld_rank"] . "</td>";
+        echo "<td>" . $row["citation"] . "</td>";
+        echo "<td>" . $row["rank_ctn"] . "</td>";
+        echo "<td>" . $row["teaching"] . "</td>";
+        echo "<td>" . $row["rank_teaching"] . "</td>";
+        echo "<td>" . $row["int_outlook"] . "</td>";
+        echo "<td>" . $row["rank_int_outlook"] . "</td>";
+        echo "<td>" . $row["income"] . "</td>";
+        echo "<td>" . $row["rank_inc"] . "</td>";
+        echo "<td>" . $row["research"] . "</td>";
+        echo "<td>" . $row["rank_rsc"] . "</td>";
+        echo "<td>" . $row["tanggal"] . "</td>";
+        echo "<td><a href='details.php?id=" . $row["id_ova"] . "'>View Details</a></td>";
+        echo "</tr>";
+      }
+
+      echo "</table>";
+
+      // Pagination controls
+      if ($totalPages > 1) {
+        echo "<div class='pagination flex flex-wrap'>";
+        // Previous button
+        if ($page > 1) {
+          echo "<a href='?page=" . ($page - 1) . "&parameter=$selectedParameter&tanggal=$selectedYear&cari=$searchTerm'>&laquo; Previous</a>";
         }
-      }
 
-      // Next button
-      if ($page < $totalPages) {
-        echo "<a href='?page=" . ($page + 1) . "&parameter=$selectedParameter&tanggal=$selectedYear&cari=$searchTerm'>Next &raquo;</a>";
-      }
+        // Page number links
+        for ($i = 1; $i <= $totalPages; $i++) {
+          if ($i == $page) {
+            echo "<span class='current-page'>$i</span>";
+          } else {
+            echo "<a href='?page=$i&parameter=$selectedParameter&tanggal=$selectedYear&cari=$searchTerm'>$i</a>";
+          }
+        }
 
-      echo "</div>";
+        // Next button
+        if ($page < $totalPages) {
+          echo "<a href='?page=" . ($page + 1) . "&parameter=$selectedParameter&tanggal=$selectedYear&cari=$searchTerm'>Next &raquo;</a>";
+        }
+
+        echo "</div>";
+      }
+    } else {
+      echo "No data available.";
     }
-  } else {
-    echo "No data available.";
   }
-}
 
-$conn->close();
-?>
+  $conn->close();
+  ?>
 
 
   <!-- <script src="search.js"></script> -->
