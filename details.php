@@ -86,29 +86,7 @@ if (isset($_GET['id'])) {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        // echo "<div class='max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md'>";
-        // echo "<h2 class='text-2xl font-semibold text-gray-800 mb-4'>University Details</h2>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Name of University:</span> " . $row["nama_univ"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Location:</span> " . $row["lokasi"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Overall Score:</span> " . $row["score_ova"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>World Rank:</span> " . $row["wrld_rank"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Citation:</span> " . $row["citation"] . " Rank: " . $row["rank_ctn"] . "</p>";
-       
-        // echo "<p class='text-gray-600'><span class='font-medium'>Rank Citation:</span> " . $row["rank_ctn"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Teaching:</span> " . $row["teaching"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Rank Teaching:</span> " . $row["rank_teaching"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>International Outlook:</span> " . $row["int_outlook"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Rank International Outlook:</span> " . $row["rank_int_outlook"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Industry Income:</span> " . $row["income"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Rank Industry Income:</span> " . $row["rank_inc"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Research:</span> " . $row["research"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Rank Research:</span> " . $row["rank_rsc"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Number of Students:</span> " . $row["number_students"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Student-Staff Ratio:</span> " . $row["student_staff_ratio"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>International Students:</span> " . $row["pc_intl_students"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Female-Male Ratio:</span> " . $row["female_male_ratio"] . "</p>";
-        // echo "<p class='text-gray-600'><span class='font-medium'>Date:</span> " . $row["overall_tanggal"] . "</p>";
-        // echo "</div>";
+        
         
         //dimulai disini
         echo "<div class='container p-4 flex flex-col bg-secondary-700 mx-auto justify-items-center'>";

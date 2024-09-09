@@ -94,8 +94,8 @@ CREATE TABLE `overall` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(100) NOT NULL,
+    id INT (255) AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL
 );
 

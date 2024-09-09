@@ -42,15 +42,15 @@
 <body>
 
 
-    <div class="flex items-center justify-center min-h-screen bg-zinc-900">
+    <div class="flex items-center justify-center min-h-screen bg-gray-100">
 
         <div class="max-w-lg w-full">
             <div class="flex w-full justify-center items-center">
                 <form class="flex flex-col items-center justify-end gap-3 mb-2" action="../login/logout.php">
-                    <h1 class="p-2 bg-blue-400 text-white rounded-md">Selamat datang,
+                    <h1 class="p-2 bg-blue-500 text-white rounded-md">Selamat datang,
                         <?php echo $_SESSION['username']; ?>
                     </h1>
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
+                    <button class="bg-indigo-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
                         type="submit">Logout</button>
                 </form>
             </div>
