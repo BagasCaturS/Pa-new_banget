@@ -35,9 +35,10 @@ function getFirstFourDigits(value) {
         return value; // Return the original value if it contains "reporter"
     }
 // data telkom bisa keluar karena d slice tapi data yang masih 501-dsb gabisa
+    // return value.toString().slice(0, 4);
     return value.toString().slice(0, 4);
 }
-
+// documen object model
 document.addEventListener("DOMContentLoaded", function() {
     if (universityData[0]) {
         const sanitizedData = sanitizeData(universityData[0]);
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function updateUniversityDetails(university, index) {
     document.getElementById(`univ${index}`).innerHTML = university.nama_univ || 'N/A';
     document.getElementById(`lokasi${index}`).innerHTML = university.lokasi || 'N/A';
-    document.getElementById(`wrld_rank${index}`).innerHTML = university.wrld_rank || 'N/A';
+    // document.getElementById(`wrld_rank${index}`).innerHTML = university.wrld_rank || 'N/A';
     document.getElementById(`teaching${index}`).innerHTML = university.teaching || 'N/A';
     document.getElementById(`research${index}`).innerHTML = university.research || 'N/A';
     document.getElementById(`citation${index}`).innerHTML = university.citation || 'N/A';
@@ -135,6 +136,29 @@ function updateChart(university, index, chartType) {
         myBarChart.update();
     }
 
+    // function clean_and_floor(value) {
+    //     const cleaned = value.replace(/[-+–]/g, ''); // Clean the value, remove unwanted characters
+    //     return Math.floor(cleaned); // Return floored value
+    // }
+    
+    // // Apply the clean_and_floor function to an array of values
+    // function clean_and_floor_array(values) {
+    //     return values.map((val) => clean_and_floor(val)); // Apply to each element of the array
+    // }
+
+    function clean_and_floor_array(value) {
+        // If the input is an array, map the function to each element
+        
+        if (Array.isArray(value)) {
+            return value.map((val) => clean_and_floor_array(val));
+        }
+        
+        // If the input is a single value, clean and floor it
+        const cleaned = value.replace(/[-+–]/g, ''); // Clean the value, remove unwanted characters
+        return Math.floor(cleaned); // Return floored value
+    }
+    
+    
     if (!myRadarChart) {
         const ctxRadar = document.getElementById('radarChart').getContext('2d');
         myRadarChart = new Chart(ctxRadar, {
@@ -144,7 +168,7 @@ function updateChart(university, index, chartType) {
                 datasets: [
                     {
                         label: university.nama_univ,
-                        data: ranking,
+                        data: clean_and_floor_array(ranking), // Apply cleaning and flooring to ranking array
                         backgroundColor: backgroundColors,
                         borderColor: borderColors,
                         borderWidth: 1,
@@ -164,14 +188,14 @@ function updateChart(university, index, chartType) {
         });
     } else {
         if (myRadarChart.data.datasets[index - 1]) {
-            myRadarChart.data.datasets[index - 1].data = ranking;
+            myRadarChart.data.datasets[index - 1].data = clean_and_floor_array(ranking); // Apply cleaning and flooring
             myRadarChart.data.datasets[index - 1].label = university.nama_univ;
             myRadarChart.data.datasets[index - 1].backgroundColor = backgroundColors;
             myRadarChart.data.datasets[index - 1].borderColor = borderColors;
         } else {
             myRadarChart.data.datasets.push({
                 label: university.nama_univ,
-                data: ranking,
+                data: clean_and_floor_array(ranking), // Apply cleaning and flooring
                 backgroundColor: backgroundColors,
                 borderColor: borderColors,
                 borderWidth: 1
@@ -179,4 +203,5 @@ function updateChart(university, index, chartType) {
         }
         myRadarChart.update();
     }
+    
 }

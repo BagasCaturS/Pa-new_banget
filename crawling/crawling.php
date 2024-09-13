@@ -58,7 +58,7 @@
                 class="bg-gray-800 rounded-lg shadow-xl overflow-hidden">
                 <div class="p-8">
                     <h2 class="text-center text-3xl font-extrabold text-white">
-                        THE Ranking Data Crawler
+                        THE Ranking Data Scrapper
                     </h2>
                     <p class="mt-4 text-center text-gray-400 mb-4">Masukkan API dan direktori penyimpanan</p>
                     <form action="process.php" method="post">
@@ -86,7 +86,7 @@
                             <button
                                 class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-gray-900 bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                 type="submit">
-                                Crawl Data
+                                Scrap Data
                             </button>
                         </div>
                         <div id="progress-container" class="w-full bg-gray-300 rounded-full h-2.5 mt-4 hidden">

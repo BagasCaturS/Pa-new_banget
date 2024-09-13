@@ -181,8 +181,8 @@
       echo "<table id='universityTable'>";
       echo "<tr>";
       echo "<th data-sort='number'>ID</th>";
-      echo "<th data-sort='number'>Nama Universitas</th>";
-      echo "<th data-sort='number'>Lokasi</th>";
+      echo "<th data-sort='text'>Nama Universitas</th>";
+      echo "<th data-sort='text'>Lokasi</th>";
       echo "<th data-sort='number'>Overall Score</th>";
       echo "<th data-sort='number'>World Rank</th>";
       echo "<th data-sort='number'>Citation</th>";
@@ -198,7 +198,7 @@
       echo "<th data-sort='number'>Tanggal</th>";
       echo "<th data-sort='number'>Univ Details</th>";
       echo "</tr>";
-
+      
       while ($row = $result->fetch_assoc()) {
         echo "<tr>";
         echo "<td>" . $row["id_ova"] . "</td>";
@@ -258,7 +258,7 @@
 
   <!-- <script src="search.js"></script> -->
   <script src="landing_search.js"></script>
-  <script src="src/main.js"></script> <!-- Link to the external JS file -->
+  <!-- <script src="src/main.js"></script> Link to the external JS file -->
   <script>
     // Function to parse a range and return the average
     function parseRange(value) {
@@ -286,7 +286,7 @@
           valB = parseRange(cellB);
           return isAsc ? valA - valB : valB - valA;
         } else {
-          // For text sorting
+          // For text sorting (alphabetical sorting)
           return isAsc
             ? cellA.localeCompare(cellB, 'en', { sensitivity: 'base' })
             : cellB.localeCompare(cellA, 'en', { sensitivity: 'base' });
@@ -311,9 +311,12 @@
         header.classList.toggle('desc', !isAsc);
       });
     });
-  </script>
+</script>
+
 
 
 </body>
 
 </html>
+
+

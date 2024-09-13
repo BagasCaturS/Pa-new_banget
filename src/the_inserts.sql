@@ -100,8 +100,8 @@ CREATE TABLE users (
 );
 
 drop database dummy_the3;
-create database dummy_the3;
-use dummy_the3;
+create database sidang;
+use sidang;
 
 -- alter table international_outlook RENAME COLUMN rank_int_outook to rank_int_outlook;
 

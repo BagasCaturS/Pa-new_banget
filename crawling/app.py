@@ -31,7 +31,7 @@ conn = mysql.connector.connect(
     host="localhost",
     user="root",        # ganti dengan username MySQL
     password="",    
-    database="dummy_the3" # ganti dengan nama database MySQL
+    database="sidang" # ganti dengan nama database MySQL
 )
 cursor = conn.cursor()
 

@@ -103,7 +103,7 @@
                 // $tanggal2 = $_POST['tanggal2'] ?? '';
                 // $tanggal3 = $_POST['tanggal3'] ?? '';
             
-                // Function to get university data
+                // fungsi mengambil data universitas
                 function getUniversityData($conn, $univName, $tanggal)
                 {
                     if ($univName) {
@@ -206,6 +206,18 @@
                     </td>
                     <td id="outlook3" class="py-2 px-4 border border-black">
                         <?php echo $data3['int_outlook'] ?? 'Data tidak ditemukan pada sumber'; ?>
+                    </td>
+                </tr>
+                <tr class="border border-black">
+                    <th class="py-2 px-4 border border-black">Industry Income</th>
+                    <td id="income1" class="py-2 px-4 border border-black">
+                        <?php echo $data1['income'] ?? 'Data tidak ditemukan pada sumber'; ?>
+                    </td>
+                    <td id="income2" class="py-2 px-4 border border-black">
+                        <?php echo $data2['income'] ?? 'Data tidak ditemukan pada sumber'; ?>
+                    </td>
+                    <td id="income3" class="py-2 px-4 border border-black">
+                        <?php echo $data3['income'] ?? 'Data tidak ditemukan pada sumber'; ?>
                     </td>
                 </tr>
                 <tr class="border border-black">

@@ -263,7 +263,7 @@ if (isset($_POST['start_year']) && isset($_POST['end_year']) && isset($_POST['na
                                 labels: ['Teaching Score', 'Research Score', 'Citation Score', 'Income Score', 'International Outlook Score'],
                                 datasets: [
                                     <?php foreach ($chart_data as $year => $dataScore): ?>
-                                                                                                                                                                                                            {
+                                                                                                                                                                                                                    {
                                             label: '<?php echo $year; ?>',
                                             data: [<?php echo implode(',', $dataScore); ?>],
                                             borderColor: getRandomColor(<?php echo $year; ?>),
@@ -301,7 +301,7 @@ if (isset($_POST['start_year']) && isset($_POST['end_year']) && isset($_POST['na
                                     <?php foreach ($radar_data as $year => $data):
                                         $data_cleaned = array_map('clean_and_floor', $data);
                                         ?>
-                                                                                                                                                                  {
+                                                                                                                                                                          {
                                             label: '<?php echo $year; ?>',
                                             data: [<?php echo implode(',', $data_cleaned); ?>],
                                             borderColor: getRandomColor(<?php echo $year; ?>),
